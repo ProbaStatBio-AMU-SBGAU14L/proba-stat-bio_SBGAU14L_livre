@@ -40,6 +40,6 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
 4. Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
 
     - Choix d’un test de comparaison de moyennes
-    - Calcul de la statistique $t$ observée $t_obs$
+    - Calcul de la statistique $t$ observée $t_{\text{obs}}$
 
 5. 
