@@ -14,9 +14,9 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
 
 1. Introduction
 
-  - Objectifs pédagogiques
-  - Logistique (matériel + logiciels)
-  - Organisation du cours
-  - Contenus couverts par le cours
-  - Modalités de contrôle des connaissances
-  - Accès aux supports: Ametice + github
+    - Objectifs pédagogiques
+    - Logistique (matériel + logiciels)
+    - Organisation du cours
+    - Contenus couverts par le cours
+    - Modalités de contrôle des connaissances
+    - Accès aux supports: Ametice + github
