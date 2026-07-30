@@ -20,3 +20,12 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
     - Contenus couverts par le cours
     - Modalités de contrôle des connaissances
     - Accès aux supports: Ametice + github
+
+2. Apprivoiser vos données : statistiques descriptives et exploratoires
+
+   - Cas d'étude : données protéomiques d'une étude immunologique
+   - Réduction des données
+   - Filtrage des données trop incomplètes
+   - Standardisation
+
+3. Des populations aux échantillons et retour : échantillonnage et estimation
