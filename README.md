@@ -49,10 +49,15 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
     - Acceptation ou rejet de l'hypothèse nulle
     - Visualiser des milliers de tests : MA plot et Volcano plot
     - Puissance d'un test
+    - Corrections de test multiple
 
-5. Test d'indépendance
+6. Enrichissement fonctionnel : test d'indépendance
 
-    - 
+    - Rapport des cotes (Odds ratio)
+    - Tableau de contingence
+    - Test khi carré ($\chi^2$) d'indépendance
+    - Test exact de Fisher
+    - Enrichissement fonctionnel des protéines différntiellement représentées
 
 7. Test d'ajustement
 
@@ -62,4 +67,13 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
     - Evaluation visuelle : Q-Q plots
     - Epreuve de normalité : test de Shapiro-Wilk
 
+
+8. Référentiel : distributions théoriques de probabilités
+
+    - Poisson
+    - Binomiale
+    - Hypergéométrique
+    - $\chi^2$
+    - Normale
+    - Student
 
