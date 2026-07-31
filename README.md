@@ -39,7 +39,12 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
 
 4. Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
 
+    - Principe général du test d'hypothèse
     - Choix d’un test de comparaison de moyennes
-    - Calcul de la statistique $t$ observée $t_{\text{obs}}$
+    - Effet de taille : la statistique $t$ observée $t_{\text{obs}}$
+    - La distribution de Student
+    - Test bilatéral ou unilatéral
+    - Acceptation ou rejet de l'hypothèse nulle
+    - Visualiser des milliers de tests : MA plot et Volcano plot
 
 5. 
