@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Livre du cours "Probabilités et statistiques pour la biologie"
 
 Notes détaillées pour le cours "Probalilités et statistiques pour la biologie" (SBGAU14L) enseigné dans différents Masters de biologie d'Aix-Marseille Université
