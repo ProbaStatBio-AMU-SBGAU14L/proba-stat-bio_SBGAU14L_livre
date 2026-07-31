@@ -36,6 +36,7 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
    - Impact de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne
    - L'erreur standard
    - Distribution d'échantillonnage de la variance
+   - Intervalles de confiance autour de la moyenne
 
 4. Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
 
@@ -44,7 +45,21 @@ Notes détaillées pour le cours "Probalilités et statistiques pour la biologie
     - Effet de taille : la statistique $t$ observée $t_{\text{obs}}$
     - La distribution de Student
     - Test bilatéral ou unilatéral
+    - Tests non-paramétriques
     - Acceptation ou rejet de l'hypothèse nulle
     - Visualiser des milliers de tests : MA plot et Volcano plot
+    - Puissance d'un test
 
-5. 
+5. Test d'indépendance
+
+    - 
+
+7. Test d'ajustement
+
+    - Paramètres d'ajustement
+    - Evaluation visuelle : histogrammes
+    - Test d'ajustement général : $\chi^2$
+    - Evaluation visuelle : Q-Q plots
+    - Epreuve de normalité : test de Shapiro-Wilk
+
+
