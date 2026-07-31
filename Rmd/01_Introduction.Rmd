@@ -43,6 +43,34 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+
+```{r settings, include=FALSE, echo=FALSE, eval=TRUE}
+library(knitr)
+
+knitr::opts_knit$set(root.dir = "..")
+
+options(width = 300)
+# options(encoding = 'UTF-8')
+knitr::opts_chunk$set(
+  fig.width = 7, fig.height = 5, 
+  fig.path = '../figures/01/01_',
+  fig.align = "center", 
+  size = "tiny", 
+  echo = TRUE, 
+  eval = TRUE, 
+  warning = FALSE, 
+  message = FALSE, 
+  results = TRUE, 
+  comment = "")
+
+options(scipen = 12) ## Max number of digits for non-scientific notation
+# knitr::asis_output("\\footnotesize")
+
+```
+
+
+
 Cet ouvrage contient les notes détaillés du module d'enseignement **"Probabilîtés et statistiques pour la biologie"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France). 
 
 ## Objectifs pédagogiques
