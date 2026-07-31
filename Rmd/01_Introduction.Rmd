@@ -7,15 +7,9 @@ date: "Version: `r Sys.Date()`"
 bibliography: references.bib
 link-citations: true
 output:
-  pdf_document:
-    fig_caption: true
-    highlight: zenburn
+  word_document:
     toc: true
-    toc_depth: 3
-    number_sections: true
-    keep_tex: false
-    includes:
-      in_header: cerulean-header.tex
+    toc_depth: '3'
   html_document:
     self_contained: no
     code_folding: hide
@@ -36,9 +30,15 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
-  word_document:
+  pdf_document:
+    fig_caption: true
+    highlight: zenburn
     toc: true
-    toc_depth: '3'
+    toc_depth: 3
+    number_sections: true
+    keep_tex: false
+    includes:
+      in_header: cerulean-header.tex
 editor_options:
   chunk_output_type: console
 ---
