@@ -1,0 +1,61 @@
+---
+title: "Introduction"
+author: 
+  - "[Andreas Zanzoni](https://orcid.org/0000-0002-4818-6161)"
+  - "[Jacques van Helden](https://orcid.org/0000-0002-8799-8584)"
+date: "Version: `r Sys.Date()`"
+bibliography: references.bib
+link-citations: true
+output:
+  html_document:
+    self_contained: no
+    code_folding: hide
+    collapsed: true
+    fig_caption: true
+    highlight: zenburn
+    theme: cerulean
+    toc: true
+    toc_depth: 3
+    toc_float: true
+  pdf_document:
+    fig_caption: true
+    highlight: zenburn
+    toc: true
+    toc_depth: 3
+  html_notebook:
+    self_contained: yes
+    code_folding: show
+    collapsed: false
+    fig_caption: true
+    highlight: zenburn
+    theme: cerulean
+    toc: true
+    toc_depth: 3
+    toc_float: true
+  word_document:
+    toc: true
+    toc_depth: '3'
+editor_options:
+  chunk_output_type: console
+---
+
+Cet ouvrage contient les notes détaillés du module d'enseignement **"Probabilîtés et statistiques pour la biologie"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France). 
+
+## Objectifs pédagogiques
+
+
+
+## Logistique (matériel + logiciels)
+
+
+## Organisation du cours
+
+
+## Contenus couverts par le cours
+
+
+## Modalités de contrôle des connaissances
+
+
+## Accès aux supports: Ametice + github
+
