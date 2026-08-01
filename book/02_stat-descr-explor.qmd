@@ -1,0 +1,10 @@
+# Apprivoiser vos données : statistiques descriptives et exploratoires
+
+## Cas d'étude : données protéomiques d'une étude immunologique
+
+## Réduction des données
+
+## Filtrage des données trop incomplètes
+
+## Standardisation
+

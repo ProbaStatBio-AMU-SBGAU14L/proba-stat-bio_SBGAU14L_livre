@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+
+Cet ouvrage contient les notes détaillés du module d'enseignement **"Probabilîtés et statistiques pour la biologie"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France).
+

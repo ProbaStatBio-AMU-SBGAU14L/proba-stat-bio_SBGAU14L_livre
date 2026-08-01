@@ -1,0 +1,13 @@
+# Référentiel : distributions théoriques de probabilités  {.unnumbered}
+
+## Poisson
+
+## Binomiale
+
+## Hypergéométrique
+
+## Khi carré ($\chi^2$)
+
+## Normale
+
+## Student

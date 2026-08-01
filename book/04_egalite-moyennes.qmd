@@ -1,0 +1,21 @@
+# Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
+
+## Principe général du test d'hypothèse
+
+## Choix d’un test de comparaison de moyennes
+
+## Effet de taille : la statistique t observée tobs
+
+## La distribution de Student
+
+## Test bilatéral ou unilatéral
+
+## Tests non-paramétriques
+
+## Acceptation ou rejet de l'hypothèse nulle
+
+## Visualiser des milliers de tests : MA plot et Volcano plot
+
+## Puissance d'un test
+
+## Corrections de test multiple

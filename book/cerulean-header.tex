@@ -1,0 +1,51 @@
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% Cerulean colors
+\definecolor{cerulean}{HTML}{2FA4E7}
+\definecolor{ceruleandark}{HTML}{157AB5}
+\definecolor{lightgray}{HTML}{F5F5F5}
+
+% Section headings
+\sectionfont{\color{cerulean}}
+\subsectionfont{\color{ceruleandark}}
+\subsubsectionfont{\color{ceruleandark}}
+
+\titleformat{\section}
+  {\Large\bfseries\color{cerulean}}
+  {\thesection}
+  {1em}
+  {}
+  [\color{cerulean}\titlerule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{ceruleandark}}
+  {\thesubsection}
+  {1em}
+  {}
+
+% Page header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\color{cerulean}\leftmark}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{
+  \hbox to\headwidth{
+    \color{cerulean}
+    \leaders\hrule height \headrulewidth\hfill
+  }
+}
+
+% Configure hyperlinks after hyperref has been loaded
+\AtBeginDocument{
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=ceruleandark,
+    urlcolor=cerulean,
+    citecolor=ceruleandark
+  }
+}

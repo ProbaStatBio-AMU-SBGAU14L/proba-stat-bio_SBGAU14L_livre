@@ -1,0 +1,72 @@
+project:
+  type: book
+  execute-dir: project
+  resources:
+    - figures/**
+
+book:
+  title: "Probabilités et statistiques pour la biologie"
+  author: 
+    - "[Andreas Zanzoni](https://orcid.org/0000-0002-4818-6161)"
+    - "[Jacques van Helden](https://orcid.org/0000-0002-8799-8584)"
+  date: today
+  date-format: "YYYY-MM-DD"
+  chapters:
+    - index.qmd
+    - 01_introduction.qmd
+    - 02_stat-descr-explor.qmd
+    - 03_echantillonnage-estimation.qmd
+    - 04_egalite-moyennes.qmd
+    - 05_enrichissement-fonctionnel.qmd
+    - 06_ajustement.qmd
+    - A1_distrib-theoriques.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+
+knitr:
+  opts_chunk:
+    fig.width: 7
+    fig.height: 5
+    fig.align: center
+    echo: true
+    warning: false
+    message: false
+    comment: ""
+
+format:
+  html:
+    theme: 
+      - cerulean
+    highlight-style: zenburn
+    self_contained: yes
+    code_folding: show
+    collapsed: false
+    fig_caption: true
+    toc: true
+    toc-depth: 3
+    toc_float: true
+
+  docx: 
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    highlight-style: zenburn
+
+
+  pdf:
+    documentclass: scrreprt
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    classoption:
+      - numbers=endperiod
+    highlight-style: zenburn
+    include-in-header:
+      - cerulean-header.tex
+
+
+editor: source
+

@@ -1,0 +1,11 @@
+# Enrichissement fonctionnel : test d'indépendance
+
+## Rapport des cotes (Odds ratio)
+
+## Tableau de contingence
+
+## Test khi carré ($\chi^2$) d'indépendance
+
+## Test exact de Fisher
+
+## Enrichissement fonctionnel des protéines différntiellement représentées

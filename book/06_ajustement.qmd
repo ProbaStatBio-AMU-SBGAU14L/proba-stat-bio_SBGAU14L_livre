@@ -1,0 +1,11 @@
+# Test d'ajustement
+
+## Paramètres d'ajustement
+
+## Evaluation visuelle : histogrammes
+
+## Test d'ajustement général : $\chi^2$
+
+## Evaluation visuelle : Q-Q plots
+
+## Epreuve de normalité : test de Shapiro-Wilk

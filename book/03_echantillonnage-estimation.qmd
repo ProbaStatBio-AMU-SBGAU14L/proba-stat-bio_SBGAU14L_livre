@@ -1,0 +1,16 @@
+# Des populations aux échantillons et retour : échantillonnage et estimation
+
+##Estimer les paramètres d'une population à partir d'un échantillon
+
+## Espérance
+
+## Distribution d'échantillonnage de la moyenne
+
+## Impact de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne
+
+## L'erreur standard
+
+## Distribution d'échantillonnage de la variance
+
+## Intervalles de confiance autour de la moyenne
+
