@@ -1,4 +1,4 @@
-# Référentiel : distributions théoriques de probabilités  {.unnumbered}
+# Référentiel : distributions théoriques de probabilités
 
 ## Poisson
 
@@ -6,7 +6,7 @@
 
 ## Hypergéométrique
 
-## Khi carré (\texorpdfstring{$\chi^2$}{χ²})
+## Kri carré ($\chi^2$)
 
 ## Normale
 
@@ -18,7 +18,7 @@
 ### Test unilatéral à gauche
 
 
-```{r student_density_left_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Fonction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à gauche " }
+```{r student_density_left_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Fonction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à gauche "}
 
 alpha <- 0.05
 df <- 10
@@ -46,7 +46,7 @@ abline(v = t_threshold,   col = "red")
 ### Test unilatéral à droite
 
 
-```{r student_density_right_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Donction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à droite. " }
+```{r student_density_right_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Fonction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à droite. "}
 
 alpha <- 0.05
 df <- 10
@@ -74,7 +74,7 @@ abline(v = t_threshold,   col = "red")
 
 ### Test bilatéral
 
-```{r student_density_bilateral_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Donction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test bilatéral. " }
+```{r student_density_bilateral_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Fonction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test bilatéral. "}
 
 alpha <- 0.05
 df <- 10
