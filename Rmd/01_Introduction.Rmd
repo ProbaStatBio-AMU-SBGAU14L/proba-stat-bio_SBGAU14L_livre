@@ -4,22 +4,21 @@ author:
   - "[Andreas Zanzoni](https://orcid.org/0000-0002-4818-6161)"
   - "[Jacques van Helden](https://orcid.org/0000-0002-8799-8584)"
 date: "Version: `r Sys.Date()`"
-bibliography: references.bib
+bibliography: ../references.bib
 link-citations: true
 output:
   word_document:
     toc: true
     toc_depth: '3'
-  html_document:
-    self_contained: no
-    code_folding: hide
-    collapsed: true
+  pdf_document:
     fig_caption: true
     highlight: zenburn
-    theme: cerulean
     toc: true
     toc_depth: 3
-    toc_float: true
+    number_sections: true
+    keep_tex: false
+    includes:
+      in_header: cerulean-header.tex
   html_notebook:
     self_contained: yes
     code_folding: show
@@ -30,25 +29,25 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
-  pdf_document:
+  html_document:
+    self_contained: no
+    code_folding: hide
+    collapsed: true
     fig_caption: true
     highlight: zenburn
+    theme: cerulean
     toc: true
     toc_depth: 3
-    number_sections: true
-    keep_tex: false
-    includes:
-      in_header: cerulean-header.tex
+    toc_float: true
 editor_options:
   chunk_output_type: console
 ---
-
-
 
 ```{r settings, include=FALSE, echo=FALSE, eval=TRUE}
 library(knitr)
 
 knitr::opts_knit$set(root.dir = "..")
+
 
 options(width = 300)
 # options(encoding = 'UTF-8')
@@ -70,24 +69,35 @@ options(scipen = 12) ## Max number of digits for non-scientific notation
 ```
 
 
+Cet ouvrage contient les notes détaillés du module d'enseignement **"Probabilîtés et statistiques pour la biologie"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France).
 
-Cet ouvrage contient les notes détaillés du module d'enseignement **"Probabilîtés et statistiques pour la biologie"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France). 
+Un petit test de figure
 
-## Objectifs pédagogiques
+```{r normal_sampling}
 
+hist(rnorm(100000,5,1), breaks=100, col="#CCBBFF")
 
+```
 
-## Logistique (matériel + logiciels)
+```{r read_data}
+proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
+log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
+dim(log2_LFQ)
+names(log2_LFQ)
+row.names(log2_LFQ)
+# View(log2_LFQ)
 
+```
 
-## Organisation du cours
+# Objectifs pédagogiques
 
+# Logistique (matériel + logiciels)
 
-## Contenus couverts par le cours
+# Organisation du cours
 
+# Contenus couverts par le cours
 
-## Modalités de contrôle des connaissances
+# Modalités de contrôle des connaissances
 
-
-## Accès aux supports: Ametice + github
+# Accès aux supports: Ametice + github
 
