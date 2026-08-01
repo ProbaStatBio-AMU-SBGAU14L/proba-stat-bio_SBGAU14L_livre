@@ -19,9 +19,11 @@ book:
     - 04_egalite-moyennes.qmd
     - 05_enrichissement-fonctionnel.qmd
     - 06_ajustement.qmd
+    - references.qmd
+
+  appendices:
     - A1_distrib-theoriques.qmd
     - A2_formulas.qmd
-    - references.qmd
 
 bibliography: references.bib
 
@@ -31,7 +33,7 @@ knitr:
     fig.width: 7
     fig.height: 5
     fig.align: center
-    echo: true
+    echo: false
     warning: false
     message: false
     comment: ""
@@ -42,7 +44,9 @@ format:
       - cerulean
     highlight-style: zenburn
     self_contained: yes
-    code_folding: show
+    code-tools: true
+    code-fold: true
+    code-summary: "Afficher le code"
     collapsed: false
     fig_caption: true
     toc: true
