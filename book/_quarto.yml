@@ -20,6 +20,7 @@ book:
     - 05_enrichissement-fonctionnel.qmd
     - 06_ajustement.qmd
     - A1_distrib-theoriques.qmd
+    - A2_formulas.qmd
     - references.qmd
 
 bibliography: references.bib

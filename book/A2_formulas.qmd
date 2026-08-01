@@ -1,0 +1,54 @@
+# Formules mathématiques
+
+## Tests de Student et de Welch
+
+- Les symboles grecs ($\mu$, $\sigma$) correspondent aux statistiques de population, les symboles romains ($\bar{x}$, $s$) aux statistiques d'échantillon.
+- L'accent circonflexe ($\hat{ }$) indique les estimateurs de paramètres de population calculés à partir de paramètres d'échantillons. 
+
+| Symboles et formules       | Description   |
+|:--------------------------------------------------:|:------------------------------|
+| $\mu_{1},  \mu_{2}$ | Moyennes respectives des populations 1 et 2. |
+| | |
+| $\sigma_{1}, \sigma_{2}$ | Ecarts-types respectifs des populations 1 and 2. |
+| | |
+| $N_1$, $N_2$ | Tailles (nombre d'individus) des populations 1 et 2. |
+| | |
+| $n_1$, $n_2$ | Effectifs (nombre d'individus) des échantillons prélevés sur les populations 1 et 2. |
+| | |
+| $\hat{\mu}_1 =\bar{x}_{1} ~=~ \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \; ; \;  \hat{\mu}_2 ~=~ \bar{x}_{2} ~=~  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$ | Moyennes d'échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives |
+| | |
+| $\delta ~=~ \mu_{2} ~-~ \mu_{1}$ | Différence entre les moyennes des populations. |
+| | |
+| $d ~=~ \hat{\delta} ~=~ \hat{\mu}_2 ~-~ \hat{\mu}_1  ~=~ \bar{x}_2 ~-~ \bar{x}_1$ | $d$ ~=~ **Taille d'effet**: dans un test de comparaison de moyennes, il s'agit de la différence | | |
+entre les moyennes d'échantillons, utilisée comme estimateur de $\delta$. |
+| | |
+| $s^2_{1}, s^2_{2}$ | Variances mesurées sur les échantillons. |
+| | |
+| $\hat{\sigma}^2_1 ~=~ \frac{n_1}{n_1-1} s^2_{1} ~=~ \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} ~-~ \bar{x}_1)^2 \quad$ $\hat{\sigma}^2_2 ~=~ \frac{n_2}{n_2-1} s^2_{2} ~=~ \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} ~-~ \bar{x}_2)^2$ | Estimateurs corrigés (non biaisés) de la variance des populations respectives |  
+| | |
+| $\hat{\sigma}_1 ~=~ \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 ~=~ \sqrt{\hat{\sigma}^2_2}$ | Estimateurs corrigés (non biaisés) de l'écart-type des populations respectives |  
+| | |
+| $\hat{\sigma}_p ~=~ \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}}$ | Ecart-type groupé (*pooled standard deviation*), utilisé comme estimateur de l'écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). |
+| | |
+| $\hat{\sigma}_\delta ~=~ \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}$  | Erreur standard sur la différence entre moyennes, en supposant que les populations ont la même variance (test de Student). |
+| | |
+| $t_{\text{obs}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\hat{\sigma}_{\mu_1 ~-~ \mu_2}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\sqrt{\frac {\hat{\sigma}^2_{1}}{n_1} + \frac{\hat{\sigma}^2_{2}}{n_2}}}$ | statistique $t$ observée, formule basée sur les estimateurs |
+| | |
+| $t_{S} ~=~ \frac{\hat{\delta}}{\hat{\sigma}_\delta} ~=~  \frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$ | statistique $t$ de Student |
+| | |
+| $t_{W}=\frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac {s^2_{1}}{n_1 ~-~ 1} + \frac{s^2_{2}}{n_2 ~-~ 1}}}$ | statistique $t$ de Welch |
+| | |
+| $\nu_S ~=~ n_1 + n_2 -2$ | Degrees of freedom for the $t$ distribution in a Student test |
+| | |
+| $\nu_W ~=~ \frac{\left( \frac{\hat{s}_1^2}{n_1} + \frac{\hat{s}_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{\hat{s}_1^2}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{\hat{s}_2^2}{n_2} \right)^2}$ | Welch degrees of freedom, computed from the corrected estimators of population variances $\hat{s_1}^2$ and $\hat{s_2}^2$ |
+| | |
+| $\nu_W ~=~ \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}$ | Welch degrees of freedom, computed from the sample variances $s_1^2$ and $s_2^2$  |
+| | |
+| | | 
+| | | 
+
+
+
+
+
+
