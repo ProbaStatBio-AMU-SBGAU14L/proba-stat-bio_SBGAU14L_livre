@@ -6,8 +6,131 @@
 
 ## Hypergéométrique
 
-## Khi carré ($\chi^2$)
+## Khi carré (\texorpdfstring{$\chi^2$}{χ²})
 
 ## Normale
 
 ## Student
+
+
+## Distribution de Student
+
+### Test unilatéral à gauche
+
+
+```{r student_density_left_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Fonction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à gauche " }
+
+alpha <- 0.05
+df <- 10
+t_threshold <- qt(p = alpha, df = df)
+
+x <- seq(from=-4, to=4, by=0.01)
+dens <- dt(x, df = df)
+plot(x, 
+     dens, 
+     main = paste0("Student density, left-sided test with df=", df),
+     xlab = "t",
+     ylab = "d(t)",
+     type='l', 
+     col = "blue",
+     las = 1)
+grid()
+x_reject = seq(from = -4, to = t_threshold, by = 0.01)
+x_accept = seq(from = t_threshold, to = 4, by = 0.01)
+lines(x_reject, dt(x_reject, df = df), type = "h", col = "red")
+lines(x_accept, dt(x_accept, df = df), type = "h", col = "#00BB00")
+abline(v=0)
+abline(v = t_threshold,   col = "red")
+```
+
+### Test unilatéral à droite
+
+
+```{r student_density_right_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Donction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test unilatéral à droite. " }
+
+alpha <- 0.05
+df <- 10
+t_threshold <- qt(p = 1 - alpha, df = df)
+
+x <- seq(from=-4, to=4, by=0.01)
+dens <- dt(x, df = df)
+plot(x, 
+     dens, 
+     main = paste0("Student density, right-sided test with df=", df),
+     xlab = "t",
+     ylab = "d(t)",
+     type='l', 
+     col = "blue",
+     las = 1)
+grid()
+x_reject = seq(from=t_threshold, to = 4.0, by=0.01)
+x_accept = seq(from=-4, to = t_threshold, by=0.01)
+lines(x_reject, dt(x_reject, df = df), type = "h", col = "red")
+lines(x_accept, dt(x_accept, df = df), type = "h", col = "#00BB00")
+abline(v=0)
+abline(v = t_threshold,   col = "red")
+```
+
+
+### Test bilatéral
+
+```{r student_density_bilateral_test, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Donction de densité de Student. Les aires marquées en vert indiquent la région d'acceptation de l'hypothèse nulle $H_0$, celles marquées en rouge la région de rejet, dans le cas d'un test bilatéral. " }
+
+alpha <- 0.05
+df <- 10
+t_threshold <- abs(qt(p = alpha/2, df = df))
+
+x <- seq(from=-4, to=4, by=0.01)
+dens <- dt(x, df = df)
+plot(x, 
+     dens, 
+     main = paste0("Student density, bilateral test with df=", df),
+     xlab = "t",
+     ylab = "d(t)",
+     type='l', 
+     col = "blue",
+     las = 1)
+grid()
+x_up = seq(from=t_threshold, to = 4.0, by=0.01)
+x_mid = seq(from=-t_threshold, to = t_threshold, by=0.01)
+x_down = seq(from=-4.0, to = -t_threshold, by=0.01)
+lines(x_up, dt(x_up, df = df), type = "h", col = "red")
+lines(x_mid, dt(x_mid, df = df), type = "h", col = "#00BB00")
+lines(x_down, dt(x_down, df = df), type = "h", col = "red")
+abline(v=0)
+abline(v = c(-t_threshold, t_threshold),   col = "red")
+
+
+```
+
+
+
+```{r student_CDF, fig.width=7, fig.height=4.5, out.width="80%", fig.cap="Cumulative Distribution Function (CDF) of the Student distribution. "}
+
+alpha <- 0.05
+df <- 10
+t_threshold <- abs(qt(p = alpha/2, df = df))
+x <- seq(from=-4, to=4, by=0.01)
+dens <- dt(x, df = df)
+
+
+cdf <- pt(x, df = 10, lower.tail = TRUE)
+plot(x, 
+     cdf, 
+     main = "Student Cumulative Distribution Function, df = 10",
+     xlab = "t",
+     ylab = expression(P(X <= x)),
+     type='l', 
+     col = "darkviolet",
+     las = 1)
+grid()
+abline(v=0)
+abline(v = c(-t_threshold, t_threshold),  col = "red")
+arrows(x0=-4, x1 = -t_threshold, y0 = 0.2, y1 = 0.2, col = "red", length = 0.1, code = 2, lwd = 2)
+arrows(x0=t_threshold, x1 = 4, y0 = 0.8, y1 = 0.8, col = "red", length = 0.1, code = 1, lwd=2)
+arrows(x0=-t_threshold, x1 = t_threshold, y0 = 0.5, y1 = 0.5, col = "#00BB00", length = 0.1, code = 3, lwd=2)
+
+```
+
+
+
