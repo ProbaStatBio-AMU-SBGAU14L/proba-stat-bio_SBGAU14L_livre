@@ -13,7 +13,7 @@ hist(rnorm(100000,5,1), breaks=100, col="#CCBBFF")
 See @canale_proteomics_2023 for additional discussion of literate programming.
 
 ```{r read_data}
-proteome_table <- "../data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
+proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
 log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
 dim(log2_LFQ)
 names(log2_LFQ)
