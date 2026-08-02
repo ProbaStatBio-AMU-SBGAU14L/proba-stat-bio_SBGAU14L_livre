@@ -493,10 +493,9 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 #   export_flowchart(flowchart, "logigramme.svg")
 #   export_flowchart(flowchart, "logigramme.png")
 #   export_flowchart(flowchart, "logigramme.pdf")
-
-export_flowchart <- function(flowchart, fichier) {
+export_flowchart <- function(flowchart, filename) {
   
-  extension <- tolower(tools::file_ext(fichier))
+  extension <- tolower(tools::file_ext(filename))
   
   if (!extension %in% c("svg", "png", "pdf")) {
     stop("L'extension doit être .svg, .png ou .pdf.")
@@ -512,7 +511,7 @@ export_flowchart <- function(flowchart, fichier) {
   texte_svg <- DiagrammeRsvg::export_svg(flowchart)
   
   if (extension == "svg") {
-    writeLines(text = texte_svg, con = fichier, useBytes = TRUE)
+    writeLines(text = texte_svg, con = filename, useBytes = TRUE)
   } else {
     if (!requireNamespace("rsvg", quietly = TRUE)) {
       stop(
@@ -524,13 +523,13 @@ export_flowchart <- function(flowchart, fichier) {
     svg_brut <- charToRaw(enc2utf8(texte_svg))
     
     if (extension == "png") {
-      rsvg::rsvg_png(svg = svg_brut, file = fichier)
+      rsvg::rsvg_png(svg = svg_brut, file = filename)
     } else {
-      rsvg::rsvg_pdf(svg = svg_brut, file = fichier)
+      rsvg::rsvg_pdf(svg = svg_brut, file = filename)
     }
   }
   
-  invisible(normalizePath(fichier, mustWork = FALSE))
+  invisible(normalizePath(filename, mustWork = FALSE))
 }
 
 
@@ -541,7 +540,6 @@ export_flowchart <- function(flowchart, fichier) {
 #
 # In the Quarto chunk, the insersion size can be managed with the out-width parameter
 #   #| out-width: 100%
-
 include_mean_test_choice <- function(
     folder = "figures/generated",
     filename = "mean_test_choice_flowchart",
@@ -551,39 +549,67 @@ include_mean_test_choice <- function(
     stop("Missing package: knitr")
   }
   
-  dir.create(folder, recursive = TRUE, showWarnings = FALSE)
+  if (!requireNamespace("xfun", quietly = TRUE)) {
+    stop("Missing package: xfun")
+  }
   
-  file_svg <- file.path(folder, paste0(filename, ".svg"))
-  file_pdf <- file.path(folder, paste0(filename, ".pdf"))
-  file_png <- file.path(folder, paste0(filename, ".png"))
+  # Dossier de création, relatif à la racine d’exécution Quarto
+  dir.create(
+    folder,
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
   
-  #  Generate the files required for the current output format
   if (knitr::is_latex_output()) {
-    if (regenerate || !file.exists(file_pdf)) {
-      flowchart <- mean_comparison_test_flowchart()
-      export_flowchart(flowchart, file_pdf)
-    }
-    return(knitr::include_graphics(file_pdf))
+    extension <- "pdf"
+  } else {
+    # PNG pour HTML et DOCX
+    extension <- "png"
   }
   
-  if (knitr::is_html_output()) {
-    if (regenerate || !file.exists(file_svg)) {
-      flowchart <- mean_comparison_test_flowchart()
-      export_flowchart(flowchart, file_svg)
-    }
-    return(knitr::include_graphics(file_svg))
-  }
+  # Chemin réel utilisé par R pour créer le fichier
+  output_file <- normalizePath(
+    file.path(folder, paste0(filename, ".", extension)),
+    winslash = "/",
+    mustWork = FALSE
+  )
   
-  # Drawback solution for other formats, e.g. DOCX.
-  if (regenerate || !file.exists(file_png)) {
+  if (regenerate || !file.exists(output_file)) {
     flowchart <- mean_comparison_test_flowchart()
-    export_flowchart(flowchart, file_png)
+    export_flowchart(flowchart, output_file)
   }
-  knitr::include_graphics(file_png)
+  
+  if (!file.exists(output_file)) {
+    stop("Figure not generated: ", output_file)
+  }
+  
+  # Répertoire du fichier .qmd actuellement traité
+  input_file <- knitr::current_input(dir = TRUE)
+  
+  if (!nzchar(input_file)) {
+    stop("Unable to determine the current Quarto input file.")
+  }
+  
+  input_dir <- dirname(
+    normalizePath(
+      input_file,
+      winslash = "/",
+      mustWork = TRUE
+    )
+  )
+  
+  # Chemin de la figure relatif au fichier .qmd
+  inclusion_file <- xfun::relative_path(
+    output_file,
+    dir = input_dir
+  )
+  
+  knitr::include_graphics(
+    path = inclusion_file,
+    rel_path = FALSE,
+    error = FALSE
+  )
 }
-
-
-
 
 # Use in RStudio :
 # flowchart <- mean_comparison_test_flowchart()
@@ -604,7 +630,7 @@ include_mean_test_choice <- function(
 # #| echo: false
 # #| out-width: 100%
 #
-# source("R/logigramme_tests_moyennes_DiagrammeR_Quarto.R")
+# source("R/mean-compa-choice_flowchart.R")
 # include_mean_test_choice(
 #   folder = "figures/generated",
 #   filename = "mean_test_choice_flowchart"

@@ -3,10 +3,10 @@ project:
   execute-dir: project
   output-dir: rendered
 
-  resources:
-    - figures/**
-    - figures/generated/**
-    - figures/manual_exports/**
+  # resources:
+  #   - figures/**
+  #   - figures/generated/**
+  #   - figures/manual_exports/**
 
 book:
   title: "Probabilités et statistiques pour la biologie"

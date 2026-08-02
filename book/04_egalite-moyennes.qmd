@@ -22,7 +22,7 @@ Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égali
 source("R/mean-compa-choice_flowchart.R", local = knitr::knit_global())
 
 include_mean_test_choice(
-  folder = "../figures/generated",
+  folder = "figures/generated",
   filename = "mean_test_choice_flowchart",
    regenerate = TRUE
 )
