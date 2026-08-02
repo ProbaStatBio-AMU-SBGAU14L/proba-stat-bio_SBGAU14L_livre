@@ -1,8 +1,12 @@
 project:
   type: book
   execute-dir: project
+  output-dir: book/_book
+
   resources:
     - figures/**
+    - figures/generated/**
+    - figures/manual_exports/**
 
 book:
   title: "Probabilités et statistiques pour la biologie"
@@ -13,19 +17,19 @@ book:
   date-format: "YYYY-MM-DD"
   chapters:
     - index.qmd
-    - 01_introduction.qmd
-    - 02_stat-descr-explor.qmd
-    - 03_echantillonnage-estimation.qmd
-    - 04_egalite-moyennes.qmd
-    - 05_enrichissement-fonctionnel.qmd
-    - 06_ajustement.qmd
-    - references.qmd
+    - book/01_introduction.qmd
+    - book/02_stat-descr-explor.qmd
+    - book/03_echantillonnage-estimation.qmd
+    - book/04_egalite-moyennes.qmd
+    - book/05_enrichissement-fonctionnel.qmd
+    - book/06_ajustement.qmd
+    - book/references.qmd
 
   appendices:
-    - A1_distrib-theoriques.qmd
-    - A2_formulas.qmd
+    - book/A1_distrib-theoriques.qmd
+    - book/A2_formulas.qmd
 
-bibliography: references.bib
+bibliography: book/references.bib
 
 
 knitr:
@@ -70,7 +74,7 @@ format:
       - numbers=endperiod
     highlight-style: zenburn
     include-in-header:
-      - cerulean-header.tex
+      - book/cerulean-header.tex
 
 
 editor: source
