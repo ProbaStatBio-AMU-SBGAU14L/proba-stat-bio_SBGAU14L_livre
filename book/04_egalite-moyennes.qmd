@@ -1,6 +1,6 @@
 # Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
 
-Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique. 
+Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.
 
 ## Principe général du test d'hypothèse
 
@@ -8,7 +8,7 @@ Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égali
 
 
 ```{r}
-#| label: choix-du-test_ChatGPT
+#| label: choice_mean_compa_test
 #| fig-cap: "**Choix du test d'égalité des moyennes**. "
 #| echo: false
 #| warning: false
@@ -19,17 +19,21 @@ Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égali
 
 
 ## Script implémenté par ChatGPT pour reproduire une diapo (manuelle) du cours
-source("R/logigramme_choix-test-moyenne_DiagrammeR.R")
+source("R/mean-compa-choice_flowchart.R", local = knitr::knit_global())
 
-inclure_logigramme_tests_moyennes(
-  dossier = "figures",
-  nom = "choix_test_moyennes"
+include_mean_test_choice(
+  folder = "../figures/generated",
+  filename = "mean_test_choice_flowchart",
+   regenerate = TRUE
 )
+
 
 ```
 
 
-## Effet de taille : la statistique t observée tobs
+
+## Effet de taille : la statistique $t$ observée ($t_{\text{obs}}$)
+
 
 ## La distribution de Student
 
@@ -39,7 +43,7 @@ inclure_logigramme_tests_moyennes(
 
 ```{r}
 #| label: student_distrib_fig
-#| fig-cap: "**Régions d'acceptation et de rejet de l'hypothèse nulle dans le cadre du test de Student**, illustrées par une distribution avec 10 degrés de liberté ($\nu_S=1°$). Panneaux de gauche : fonction de densité. Panneaux de droite : function de répartition (Cumularive Distribution Function, CDF). Panneaux du haut : test bilatéral ; panneaux du milieu : test unilatéral à droite ; panneaux du bas : test unilatéral à gauche. Flèches vertes : régions d'acceptation ; flèches rouges : régions de rejet. "
+#| fig-cap: "**Régions d'acceptation et de rejet de l'hypothèse nulle dans le cadre du test de Student**, illustrées par une distribution avec 10 degrés de liberté. Panneaux de gauche : fonction de densité. Panneaux de droite : function de répartition (Cumularive Distribution Function, CDF). Panneaux du haut : test bilatéral ; panneaux du milieu : test unilatéral à droite ; panneaux du bas : test unilatéral à gauche. Flèches vertes : régions d'acceptation ; flèches rouges : régions de rejet. "
 #| echo: false
 #| warning: false
 #| message: false
@@ -177,9 +181,6 @@ arrows(x0=-t_threshold, x1 =4, y0 = 1.2, y1 = 1.2, col = "#00BB00", length = 0.1
 
 
 ```
-
-
-
 
 ## Tests non-paramétriques
 

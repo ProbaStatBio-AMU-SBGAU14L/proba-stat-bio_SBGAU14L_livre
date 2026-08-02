@@ -1,13 +1,5 @@
 # Introduction
 
-Un petit test de figure
-
-```{r normal_sampling, fig.cap="Histogramme d'un échantillon de 100.000 nombres tirés aléatoirement dans une distribution normale de moyenne 5 et d'écart-type 1", fig.width=7, fig.height=5, out.width="80%"}
-
-hist(rnorm(100000,5,1), breaks=100, col="#CCBBFF")
-
-```
-
 ## Study case
 
 See @canale_proteomics_2023 for additional discussion of literate programming.

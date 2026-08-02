@@ -19,7 +19,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
   }
   
   code_dot <- r"{
-  digraph mean-test-choice_flowchart {
+  digraph mean_test_choice_flowchart {
 
     graph [
       layout = dot,
@@ -97,7 +97,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
     ];
 
     q_large [
-      label = "Grands échantillons\n(n ≳ 30 par groupe)"
+      label = "Grands échantillons\n(n ≳ 30 par groupe)",
       group = "large",
       shape = box,
       fillcolor = "#FFF2CC",
@@ -169,6 +169,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
     oui_paired_nonparam [
       label = "oui",
       group = "nonparam",
+      group = "signed_ranks",
       shape = box,
       fillcolor = "#E2F0D9",
       color = "#548235",
@@ -180,6 +181,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
     non_paired_nonparam [
       label = "non",
       group = "nonparam",
+      group = "WMW",
       shape = box,
       fillcolor = "#FCE4D6",
       color = "#C00000",
@@ -285,7 +287,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
       group = "var",
       shape = box,
       fillcolor = "#D9EAF7",
-      width = 2.75,
+      width = 1.5,
       height = 0.72
     ];
 
@@ -295,7 +297,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
       group = "var",
       shape = box,
       fillcolor = "#D9EAF7",
-      width = 2.75,
+      width = 1.5,
       height = 0.72
     ];
 
@@ -305,7 +307,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
       group = "param",
       shape = box,
       fillcolor = "#D9EAF7",
-      width = 2.75,
+      width = 2.55,
       height = 0.72
     ];
   
@@ -313,18 +315,20 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
     wilcox_mann_whitney [
       label = "Wilcoxon–Mann–Whitney",
       group = "nonparam",
+      group = "WMW",
       shape = box,
       fillcolor = "#D9EAF7",
-      width = 4,
+      width = 3.8,
       height = 0.72
     ];
   
     wilcox_signed_rank [
       label = "Rangs signés de Wilcoxon",
       group = "nonparam",
+      group = "signed_ranks",
       shape = box,
       fillcolor = "#D9EAF7",
-      width = 4,
+      width = 3.8,
       height = 0.72
     ];
 
@@ -540,60 +544,57 @@ export_flowchart <- function(flowchart, fichier) {
 
 include_mean_test_choice <- function(
     folder = "figures/generated",
-    filename = "mean-test-choice_flowchart",
+    filename = "mean_test_choice_flowchart",
     regenerate = TRUE) {
   
   if (!requireNamespace("knitr", quietly = TRUE)) {
-    stop("Le package 'knitr' est nécessaire.")
+    stop("Missing package: knitr")
   }
   
   dir.create(folder, recursive = TRUE, showWarnings = FALSE)
   
-  fichier_svg <- file.path(folder, paste0(filename, ".svg"))
-  fichier_pdf <- file.path(folder, paste0(filename, ".pdf"))
-  fichier_png <- file.path(folder, paste0(filename, ".png"))
+  file_svg <- file.path(folder, paste0(filename, ".svg"))
+  file_pdf <- file.path(folder, paste0(filename, ".pdf"))
+  file_png <- file.path(folder, paste0(filename, ".png"))
   
-  # Générer les fichiers utiles au format de sortie courant.
+  #  Generate the files required for the current output format
   if (knitr::is_latex_output()) {
-    if (regenerate || !file.exists(fichier_pdf)) {
+    if (regenerate || !file.exists(file_pdf)) {
       flowchart <- mean_comparison_test_flowchart()
-      export_flowchart(flowchart, fichier_pdf)
+      export_flowchart(flowchart, file_pdf)
     }
-    return(knitr::include_graphics(fichier_pdf))
+    return(knitr::include_graphics(file_pdf))
   }
   
   if (knitr::is_html_output()) {
-    if (regenerate || !file.exists(fichier_svg)) {
+    if (regenerate || !file.exists(file_svg)) {
       flowchart <- mean_comparison_test_flowchart()
-      export_flowchart(flowchart, fichier_svg)
+      export_flowchart(flowchart, file_svg)
     }
-    return(knitr::include_graphics(fichier_svg))
+    return(knitr::include_graphics(file_svg))
   }
   
-  # Repli pour les autres formats, par exemple DOCX.
-  if (regenerate || !file.exists(fichier_png)) {
+  # Drawback solution for other formats, e.g. DOCX.
+  if (regenerate || !file.exists(file_png)) {
     flowchart <- mean_comparison_test_flowchart()
-    export_flowchart(flowchart, fichier_png)
+    export_flowchart(flowchart, file_png)
   }
-  knitr::include_graphics(fichier_png)
+  knitr::include_graphics(file_png)
 }
 
 
 
 
 # Use in RStudio :
-flowchart <- mean_comparison_test_flowchart()
-flowchart
-#
+# flowchart <- mean_comparison_test_flowchart()
+# flowchart
+
 # In a chunk R Markdown HTML :
 # mean_comparison_test_flowchart()
 #
 # For a PDF document / report, it is generalluy simpler to export the flowchart in pdf or png format and to insert it in the doc with knitr::include_graphics().
 
 # Plot the diagram
-
-flowchart <- mean_comparison_test_flowchart
-flowchart
 
 # Exemple de chunk Quarto :
 #
@@ -606,7 +607,7 @@ flowchart
 # source("R/logigramme_tests_moyennes_DiagrammeR_Quarto.R")
 # include_mean_test_choice(
 #   folder = "figures/generated",
-#   filename = "mean-test-choice_flowchart"
+#   filename = "mean_test_choice_flowchart"
 # )
 # ```
 
