@@ -1,6 +1,28 @@
 # Des populations aux échantillons et retour : échantillonnage et estimation
 
-##Estimer les paramètres d'une population à partir d'un échantillon
+```{r}
+
+
+source(
+  "R/include_figures.R",
+  local = knitr::knit_global()
+)
+
+par(mfrow=c(2,1))
+
+include_manual_figure(
+  filename = "population_one_sample"
+)
+
+include_manual_figure(
+  filename = "population_some_samples"
+)
+
+par(mfrow=c(1,1))
+```
+
+
+## Estimer les paramètres d'une population à partir d'un échantillon
 
 ## Espérance
 
