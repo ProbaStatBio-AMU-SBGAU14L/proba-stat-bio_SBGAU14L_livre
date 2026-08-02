@@ -36,3 +36,10 @@ rsconnect/
 README.html
 .DS_Store
 figures
+
+/.quarto/
+**/*.quarto_ipynb
+index.aux
+index.log
+index.tex
+index.toc
