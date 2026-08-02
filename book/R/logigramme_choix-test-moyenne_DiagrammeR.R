@@ -79,6 +79,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 
     non_norm [
       label = "non",
+      group = "large",
       shape = box,
       fillcolor = "#FCE4D6",
       color = "#C00000",
@@ -97,6 +98,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 
     q_large [
       label = "Grands échantillons\n(n ≳ 30 par groupe)"
+      group = "large",
       shape = box,
       fillcolor = "#FFF2CC",
       width = 3.65,
@@ -105,6 +107,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 
     d_large [
       label = "",
+      group = "large",
       shape = diamond,
       fillcolor = "#F2F2F2",
       width = 0.75,
@@ -114,6 +117,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 
     oui_large [
       label = "oui",
+      group = "large",
       shape = box,
       fillcolor = "#E2F0D9",
       color = "#548235",
@@ -124,6 +128,7 @@ mean_comparison_test_flowchart <- function(width = NULL, height = NULL) {
 
     non_large [
       label = "non",
+      group = "large",
       shape = box,
       fillcolor = "#FCE4D6",
       color = "#C00000",
