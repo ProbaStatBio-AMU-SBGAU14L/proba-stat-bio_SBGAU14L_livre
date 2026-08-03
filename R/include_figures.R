@@ -8,49 +8,41 @@ include_manual_figure <- function(
     stop("Missing package: knitr")
   }
   
-  # Choix du format graphique selon le format du document
   extension <- if (knitr::is_latex_output()) {
     "pdf"
   } else if (knitr::is_html_output()) {
     html_format
   } else {
-    # DOCX et autres formats
     "png"
   }
   
-  # Chemin absolu du fichier à inclure
-  image_absolute <- normalizePath(
-    file.path(folder, paste0(filename, ".", extension)),
-    winslash = "/",
-    mustWork = FALSE
+  image_absolute <- vapply(
+    filename,
+    function(x) {
+      path <- normalizePath(
+        file.path(folder, paste0(x, ".", extension)),
+        winslash = "/",
+        mustWork = FALSE
+      )
+      
+      if (!file.exists(path) && extension != "png") {
+        path <- normalizePath(
+          file.path(folder, paste0(x, ".png")),
+          winslash = "/",
+          mustWork = FALSE
+        )
+      }
+      
+      if (check_file && !file.exists(path)) {
+        stop("Figure not found: ", path)
+      }
+      
+      path
+    },
+    character(1)
   )
   
-  # Repli sur PNG lorsque le format préféré n'existe pas
-  if (!file.exists(image_absolute) && extension != "png") {
-    extension <- "png"
-    
-    image_absolute <- normalizePath(
-      file.path(folder, paste0(filename, ".", extension)),
-      winslash = "/",
-      mustWork = FALSE
-    )
-  }
-  
-  if (check_file && !file.exists(image_absolute)) {
-    stop(
-      "Figure not found: ",
-      image_absolute,
-      "\nExpected basename: ",
-      filename
-    )
-  }
-  
-  # Le chemin transmis à Pandoc doit être relatif au fichier .qmd courant
   input_file <- knitr::current_input(dir = TRUE)
-  
-  if (!nzchar(input_file)) {
-    stop("Unable to determine the current Quarto input file.")
-  }
   
   input_dir <- dirname(
     normalizePath(
@@ -60,8 +52,10 @@ include_manual_figure <- function(
     )
   )
   
-  image_relative <- xfun::relative_path(
+  image_relative <- vapply(
     image_absolute,
+    xfun::relative_path,
+    character(1),
     dir = input_dir
   )
   
