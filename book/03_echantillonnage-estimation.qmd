@@ -1,25 +1,36 @@
 # Des populations aux échantillons et retour : échantillonnage et estimation
 
-```{r}
 
+## Principe de l'échantillonnage
+
+En statistique, on désigne par **population** l'ensemble des individus auxquels on s'intéresse @Dagnelie_1973 
+
+Dans un monde idéal, les scientifiques aimeraient pouvoir mesurer les propriétés de l'ensemble des objets d'intérêt pour s'assurer que les conclusions qu'ils en tirent correspondent à la réalité. Cependant, dans la majorité des cas, ceci est impossible, pour différentes raisons :
+
+- La population 
+
+La @fig-sampling-schema schématise le principe de l'échantillonnage. Le rectangle arrondi représente la population, l'ellipse un échantillon particulier tiré dans cette population. Les symboles grecs dénotent les paramètres de la population : moyenne ($\mu$) et écart-type ($\sigma$). Les symboles latins représentent la moyenne ($\bar{x}_1$) et l'écart-type ($s_1$) de l'échantillon.
+
+
+```{r}
+#| label: fig-sampling-schema
+#| out-width: "100%"
+#| fig-cap: "**Principe de l'échantillonnage.**   "
+#| fig-subcap:
+#|   - "Un échantillon particulier tiré dans la population."
+#|   - "Plusieurs échantillons tirés indépendamment."
+#| layout-ncol: 2
+#| echo: false
 
 source(
   "R/include_figures.R",
   local = knitr::knit_global()
 )
 
-par(mfrow=c(2,1))
-
-include_manual_figure(
-  filename = "population_one_sample"
-)
-
-include_manual_figure(
-  filename = "population_some_samples"
-)
-
-par(mfrow=c(1,1))
+include_manual_figure(c("population_one_sample",
+                        "population_some_samples"))
 ```
+
 
 
 ## Estimer les paramètres d'une population à partir d'un échantillon
