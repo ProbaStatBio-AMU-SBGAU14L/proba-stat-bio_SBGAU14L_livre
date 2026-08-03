@@ -1,15 +1,39 @@
 # Des populations aux échantillons et retour : échantillonnage et estimation
 
+## Populations et échantillons
+
+En statistique, on désigne par **population** l'ensemble des individus auxquels on s'intéresse [@Dagnelie_1973]. Voici quelques exemples de populations illustratives de la recherche en biologie : 
+
+- les êtres humains adultes actuellement vivants ;
+- la population humaine adulte de Marseille ;
+- l'ensemble des échantillons sanguins qu'on pourrait prélever dans la population adulte de Marseille ;
+- l'ensemble des échantillons de foie (biopsies) qu'on pourrait prélever sur la population adulte de Marseille ;
+- les souris de laboratoire de la souche C57BL/6, fréquemment utilisée pour les études en immunologie ;
+- l'ensemble de tous les clones d'*Escherichia coli* qu'on pourrait obtenir par culture dans des conditions données ;
+- les saupes de la baie de Marseille ;
+- les sangliers des calanques. 
+
+
+Dans un monde idéal, on voudrait disposer de mesures pour chacun de ces individus afin d'asseoir nos analyses sur des données qui reflètent la réalité dans son ensemble. Cependant, dans la majorité des cas, ceci est impossible, pour différentes raisons :
+
+- La population est parfois infinie, ou d'une taille finie mais trop vaste pour pouvoir être observée de manière exhaustive. 
+- La population est finie (par exemple la population adulte de Marseille), mais la collecte systématique des données représenterait un coût disproportionné par rapport à l'intérêt de l'étude. 
+- Le processus de collecte nécessiterait de détruire les individus, ou de leur causer des dommages (saupes de la baie de Marseille, biopsies chez les humains). 
+
+En pratique, on est donc amené à prélever un **échantillon** de la population, ce qui consiste à sélectionner un sous-ensemble des individus sur lesquels seront réalisées les observations ou les expérimentations. Dans le cas d'enquêtes (par exemple en épidémiologie), ce prélèvement est généralement effectué par un **tirage aléatoire** au sein de la population. Dans ce cas, il est important de s'assurer que les individus sont sélectionnés de façon indépendante les uns des autres (tirage aléatoire **simple**). Il faut par exemple éviter de biaiser le tirage en sélectionnant des individus liés par une proximité géographique, familiale, ou par tout autre facteur susceptible d'influencer les variables étudiées. Dans d'autres cas, les échantillons sont conditionnés par des considérations pratiques (par exemple l'ensemble des patients souffrant d'une pathologie donnée et qui se sont présentés à l'hôpital de la Timone pendant l'année 2025). 
+
+Les notions de population et d'échantillon s'appliquent également aux variables mesurées, et pas seulement aux individus. : 
+- la proportion d'individus infectés par un agent pathogène ;
+- la concentration d'hémogolobine dans le sang ;
+- la concentration d'un médicament dans le sang d'une souris de laboratoire.
+
+Une fois l'échantillon constitué, on réalise une ou plusieurs mesures sur chacun des individus qui le composent. On obtient ainsi un ensemble de données observationnelles ou expérimentales, qui peuvent ensuite être analysées selon différentes approches. Les méthodes de **statistique descriptive** visent à résumer ou à explorer les données observées (histogrammes, diagrammes en boîte, analyses en composantes principales, classification, etc.). Les méthodes de **statistique inférentielle** ont pour objectif de tirer des conclusions concernant la population à partir de l'échantillon, par exemple en estimant un paramètre de la population ou en testant une hypothèse.
 
 ## Principe de l'échantillonnage
 
-En statistique, on désigne par **population** l'ensemble des individus auxquels on s'intéresse @Dagnelie_1973 
 
-Dans un monde idéal, les scientifiques aimeraient pouvoir mesurer les propriétés de l'ensemble des objets d'intérêt pour s'assurer que les conclusions qu'ils en tirent correspondent à la réalité. Cependant, dans la majorité des cas, ceci est impossible, pour différentes raisons :
+La @fig-sampling-schema illustre le principe de l'échantillonnage. Le rectangle aux coins arrondis représente la population, tandis que les ellipses représentent des échantillons tirés dans cette population. Les symboles grecs correspondent aux paramètres de la population (moyenne $\mu$ et écart-type $\sigma$), tandis que les symboles latins représentent les statistiques calculées à partir d'un échantillon (moyenne $\bar{x}$ et écart-type $s$).
 
-- La population 
-
-La @fig-sampling-schema schématise le principe de l'échantillonnage. Le rectangle arrondi représente la population, l'ellipse un échantillon particulier tiré dans cette population. Les symboles grecs dénotent les paramètres de la population : moyenne ($\mu$) et écart-type ($\sigma$). Les symboles latins représentent la moyenne ($\bar{x}_1$) et l'écart-type ($s_1$) de l'échantillon.
 
 
 ```{r}
