@@ -29,7 +29,7 @@ book:
     - book/A1_distrib-theoriques.qmd
     - book/A2_formulas.qmd
 
-bibliography: book/references.bib
+bibliography: references.bib
 
 
 knitr:
