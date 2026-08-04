@@ -1,3 +1,9 @@
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+
+
 # Preface {.unnumbered}
 
 
