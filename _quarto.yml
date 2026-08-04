@@ -56,6 +56,13 @@ format:
     toc: true
     toc-depth: 3
     toc_float: true
+    # fontsize: 10pt
+    linestretch: 1.2
+    mainfont: "Calibri"
+    sansfont: "Calibri"
+    mathfont: "Latin Modern Math"
+    # mathfont: "Libertinus Math"
+    # mathfont: "STIX Two Math"
 
   docx: 
     toc: true
@@ -73,9 +80,20 @@ format:
     classoption:
       - numbers=endperiod
     highlight-style: zenburn
+    pdf-engine: lualatex
+    fontsize: 10.5pt
+    linestretch: 1.08
+    mainfont: "Calibri"
+    sansfont: "Calibri"
+    # mainfont: "Garamond"
+    # mainfont: "Noto Sans"
+    # mainfont: "Source Sans 3"
+    mathfont: "Latin Modern Math"
+    # mathfont: "Libertinus Math"
+    # mathfont: "STIX Two Math"
+    monofont: "Menlo"
     include-in-header:
       - book/cerulean-header.tex
-
 
 editor: source
 
