@@ -1,3 +1,7 @@
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
 # Formules mathématiques
 
 ## Tests de Student et de Welch

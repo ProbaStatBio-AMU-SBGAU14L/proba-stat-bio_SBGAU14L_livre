@@ -1,3 +1,8 @@
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+
 # Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
 
 Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.

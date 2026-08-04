@@ -1,4 +1,8 @@
-# Référentiel : distributions théoriques de probabilités
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+# Distributions théoriques de probabilités
 
 ## Poisson
 
@@ -30,6 +34,9 @@
 #| warning: false
 #| message: false
 
+library(knitr)
+# library(kableExtra)
+
 # Probabilités bilatérales indiquées en tête de colonne
 alpha <- c(0.90, 0.50, 0.30, 0.20, 0.10,
            0.05, 0.02, 0.01, 0.001)
@@ -53,18 +60,18 @@ student_table <- rbind(
   normal_values
 )
 
-# Affichage avec trois décimales et virgule décimale
-student_table <- apply(
-  student_table,
-  c(1, 2),
-  function(x) {
-    sub(
-      "\\.",
-      ",",
-      formatC(x, format = "f", digits = 3)
-    )
-  }
-)
+# # Affichage avec trois décimales et virgule décimale
+# student_table <- apply(
+#   student_table,
+#   c(1, 2),
+#   function(x) {
+#     sub(
+#       "\\.",
+#       ",",
+#       formatC(x, format = "f", digits = 3)
+#     )
+#   }
+# )
 
 student_table <- data.frame(
   "d.d.l." = c(as.character(ddl), "\u221e"),
@@ -73,11 +80,20 @@ student_table <- data.frame(
 )
 
 colnames(student_table)[-1] <- c(
-  sub("\\.", ",", sprintf("%.2f", alpha[-length(alpha)])),
-  sub("\\.", ",", sprintf("%.3f", alpha[length(alpha)]))
+  sprintf("%.2f", alpha[-length(alpha)]),
+  sprintf("%.3f", alpha[length(alpha)])
 )
 
-knitr::kable(
+
+
+options(
+  digits = 4,
+  scipen = 12,
+  OutDec = "."
+)
+
+
+kable(
   student_table,
   align = c("r", rep("r", length(alpha))),
   caption = paste0(
@@ -85,9 +101,21 @@ knitr::kable(
     "$P(|T_\\nu| \\geq t)=\\alpha$."
   ),
   booktabs = TRUE,
+  longtable = FALSE,
+  format = if (knitr::is_latex_output()) "latex" else NULL,
   row.names = FALSE,
-  escape = FALSE
-)
+  escape = FALSE, 
+  format.args = list(
+    decimal.mark = ".",
+    big.mark = "\u202f",
+    scientific = FALSE
+  ),
+)|>
+  kableExtra::kable_styling(
+    full_width = FALSE
+  )
+
+
 ```
 
 

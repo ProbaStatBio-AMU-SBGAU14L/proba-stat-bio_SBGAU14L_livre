@@ -1,17 +1,26 @@
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
 # Introduction
 
-## Study case
+## Cas d'étude
+
+### Expérience sur une poignée de rats
+
+[A ECRIRE]
+
+### Données protéomiques
 
 See @canale_proteomics_2023 for additional discussion of literate programming.
 
 ```{r read_data}
 proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
 log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
-dim(log2_LFQ)
-names(log2_LFQ)
-head(row.names(log2_LFQ))
+#dim(log2_LFQ)
+#names(log2_LFQ)
+#head(row.names(log2_LFQ))
 # View(log2_LFQ)
-
 ```
 
 ## Objectifs pédagogiques
@@ -25,3 +34,8 @@ head(row.names(log2_LFQ))
 ## Modalités de contrôle des connaissances
 
 ## Accès aux supports: Ametice + github
+
+
+## Convention typographique
+
+Afin de conserver une cohérence avec les logiciels statistiques utilisés dans les travaux pratiques (R) ainsi qu'avec la littérature scientifique internationale, les nombres décimaux sont notés avec un point (par exemple $3.1416$). Les groupes de trois chiffres sont séparés par une espace (par exemple $12\,345$).
