@@ -36,11 +36,13 @@ knitr:
   opts_chunk:
     fig.width: 7
     fig.height: 5
+    out.width: "100%"
     fig.align: center
     echo: false
     warning: false
     message: false
     comment: ""
+
 
 format:
   html:
