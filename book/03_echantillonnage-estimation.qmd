@@ -1,5 +1,5 @@
 ```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
- source("R/setup.R", local = knitr::knit_global())
+source("R/setup.R", local = knitr::knit_global())
 ```
 
 
@@ -246,21 +246,118 @@ par(mfrow = c(1, 1))
 La @fig-sampling-means-sample-size montre les résultats de cette expérience pour différentes tailles d'échantillons: $n \in \{`r paste(collapse=", ", n_values)`\}$. 
 
 
-La @tab-sampling-means-sample-size
+La @tab-sampling-means-synthesis et la @fig-sampling-means-synthesis synthétise les valeurs des paramètres de la population (1ère ligne) et des distributiosn d'échantillonnage de la moyenne,  pour des échantillon de tailles croissantes.  
 
 ```{r}
-#| label: tab-sampling-means-sample-size
+#| label: tab-sampling-means-synthesis
+
+## Table summarizing the results of the sampling means distributions
+sampling_means_summary <- 
+  data.frame(n = c(1, n_values),
+             x_bar = c(mu, means_m_values),
+             s2 = c(sigma2, means_var_values),
+             s = c(sigma, means_sd_values))
+rownames(sampling_means_summary) <- c("pop", n_values)
+
+colnames(sampling_means_summary) <- c(
+  "$n$",
+  "$\\overline{\\bar{x}}$",
+  "$s_{\\bar{x}}^2$",
+  "$s_{\\bar{x}}$"
+)
 
 ## Print a table with the results
 knitr::kable(
-  data.frame(n = n_values,
-             m = means_m_values,
-             var = means_var_values,
-             sd = means_sd_values),
-  digits = c(0, 5, 3, 3), 
-  caption = "Impact of sample size (n) on the mean, variance and standard deviation of the sampling means. ")
+  sampling_means_summary[-1], 
+  digits = 2, 
+  caption = "Impact of sample size ($n$) on the mean, variance and standard deviation of the sampling means. ")
 
 ```
+
+
+
+
+
+
+```{r}
+#| label: fig-sample-means-variance-sd
+#| fig-width: 10
+#| fig-height: 7
+#| fig-cap:  "**Impact of the sample size on the parameters of the sampling distribution.** For each sample size ($n$),  $`r R`$ samples were drawn independently, their means were computed, from which we derived the mean, variance and standard deviation of these $`R R`$ sample means. $ "
+#| fig-subcap: 
+#|  - "**Variance of the sample means**. Note that the variance of the sampling means decreases by a factor 2 when the sample size is doubled. "
+#|  - "**Variance of the sample means (logarithmic scales)**. With the logarihmic scales, the relationship between $n$ and $s_{\bar{x}} appars as a straight line. "
+#|  - "**Mean and standard deviation of the sample means**. Note the steadiness of the sample means (orange dots) and their conformity with the population mean (blue line). " 
+
+par(mfrow=c(2,2))
+
+## Plot the variance of sampling means as a function of sample size
+plot(n_values, 
+     means_var_values, 
+     type = "b",
+     pch = 19,
+     lty = "dashed",
+     col = "brown",
+     main = "Impact of sample size on the variance of sampling means",
+     ylim = c(0, ceiling(max(means_var_values))),
+     ylab = paste0("Variance of the sampling mean (", R, " replicates)"),
+     xlab = "Sample size (n)",
+     las = 1,
+     panel.first = c(grid(),
+                     abline(h=0, col="black"))
+     )
+
+## Plot the variance of sampling means as a function of sample size
+plot(n_values, means_var_values, 
+     type = "b",
+     pch = 19,
+     lty = "dashed",
+     col = "brown",
+     log = "xy",
+     main = "Impact of sample size on the variance of sampling means\n(logarithmic X and Y scales)",
+     ylab = paste0("Variance of the sampling mean (", R, " repetitions)"),
+     xlab = "Sample size (n)",
+     las = 1,
+     panel.first = c(grid(, equilogs = FALSE))
+     )
+
+
+## Plot the mean of sampling means as a function of sample size
+plot(n_values, 
+     means_m_values, 
+     type = "p",
+     pch = 19,
+     lty = "solid",
+     col = "orange",
+     main = "Impact of sample size on the distribution of sampling means",
+     ylim = c(mu - sigma, mu + sigma), 
+     ylab = paste0("Mean of the sampling mean (", R, " repetitions)"),
+     xlab = "Sample size (n)", 
+     las = 1,
+     panel.first = c(grid(),
+                     abline(h = mu, col = "blue", lwd = 1))
+     )
+
+
+arrows(x0 = n_values, 
+       x1 = n_values, 
+       y0 = means_m_values - means_sd_values,  
+       y1 = means_m_values + means_sd_values, 
+       code = 3, length = 0.07, lwd=2, 
+       col="brown") ## Mark an interval of ± 1 standard deviation around the mean
+legend("topright",
+       legend = c("mu", "mean of the means", "standard deviation of the means"),
+       lwd = c(1, 0, 2),
+       pch=c(NA, 19, NA),
+       col = c("blue", "orange", "brown")
+)
+
+par(mfrow=c(1,1))
+
+```
+
+
+
 
 
 ## Estimer les paramètres d'une population à partir d'un échantillon
