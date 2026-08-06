@@ -67,7 +67,7 @@ Le nombre de choix possibles peut être facilement calculé au moyen du **coeffi
 
 $$C = \frac{N!}{n!\cdot(n-1)!}$$
 
-A titre d'exemple, au sein d'une population de taille $N=1\,000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à $C = 3.4 \times 10^{41}$.
+A titre d'exemple, au sein d'une population de taille $N=1\,000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à $C \nobreak= 3.4 \times 10^{41}$.
 
 ## Distributions d'échantillonnage
 
@@ -117,7 +117,7 @@ grid() ## Add a grid
 ```
 
 
-Pour illustrer son principe, effectuons une simulation empirique en générant un jeu de données artificielles pour une population de $N = `r N`$ individus. 
+Pour illustrer son principe, effectuons une simulation empirique en générant un jeu de données artificielles pour une population de $N \nobreak= `r N`$ individus. 
 
 La @fig-population-histo montre la distribution complète de ces valeurs, pour l'ensemble de la population.
 
@@ -132,7 +132,7 @@ $$\sigma = \sqrt{\sigma} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = `r r
 
 ### Impact de la taille d'échantillon ($n$) sur la moyenne d'échantillon
 
-Nous tirons ensuite successivement un grand nombre d'échantillons ($R = 1\,000\,000$) nous calculons la moyenne et l'écart-type de chaque échantillon, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de chacun de ces paramètres d'échantillonnage.
+Nous tirons ensuite successivement un grand nombre d'échantillons ($R \nobreak= 1\,000\,000$) nous calculons la moyenne et l'écart-type de chaque échantillon, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de chacun de ces paramètres d'échantillonnage.
 
 ```{r}
 #| label: fig-sampling-means-sample-size
@@ -246,19 +246,24 @@ par(mfrow = c(1, 1))
 La @fig-sampling-means-sample-size montre les résultats de cette expérience pour différentes tailles d'échantillons: $n \in \{`r paste(collapse=", ", n_values)`\}$. 
 
 
-La @tab-sampling-means-synthesis et la @fig-sampling-means-synthesis synthétise les valeurs des paramètres de la population (1ère ligne) et des distributiosn d'échantillonnage de la moyenne,  pour des échantillon de tailles croissantes.  
+La @tbl-sampling-means-synthesis et la @fig-sampling-means-synthesis synthétise les valeurs des paramètres de la population (1ère ligne) et des distributiosn d'échantillonnage de la moyenne, pour des échantillon de tailles croissantes.  
 
 ```{r}
-#| label: tab-sampling-means-synthesis
+#| label: tbl-sampling-means-synthesis
+#| tbl-cap: '**Impact de la taille d’échantillon ($n$) sur la moyenne ($\overline{\bar{x}}$), la variance ($s^2_{\bar{x}}$) et l’écart-type ($s_{\bar{x}}$) de la moyenne d’échantillon.**'
 
-## Table summarizing the results of the sampling means distributions
+
+## Table summarizing the results of the population, followed by the sampling means distributions with increasing sample sizes
 sampling_means_summary <- 
   data.frame(n = c(1, n_values),
              x_bar = c(mu, means_m_values),
              s2 = c(sigma2, means_var_values),
              s = c(sigma, means_sd_values))
-rownames(sampling_means_summary) <- c("pop", n_values)
 
+## Use the population and sample sizes as row labels
+rownames(sampling_means_summary) <- c("Population", n_values)
+
+## Define mathematical column labels
 colnames(sampling_means_summary) <- c(
   "$n$",
   "$\\overline{\\bar{x}}$",
@@ -269,18 +274,18 @@ colnames(sampling_means_summary) <- c(
 ## Print a table with the results
 knitr::kable(
   sampling_means_summary[-1], 
-  digits = 2, 
-  caption = "Impact of sample size ($n$) on the mean, variance and standard deviation of the sampling means. ")
+  digits = 2,
+  escape=FALSE)
 
 ```
 
 
-
+Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R \nobreak= `r R`$ échantillons prélevés indépendamment correspond toujours à la moyenne de la population ($\mu \nobreak= `r mu`$). Par contre, l'augmentation de la taille d'échantillon ($n$) a un impact remarquable sur la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) : tandis que la population a une variance de $\sigma \nobreak= `r sigma`$, la variance d'échantillon diminue de façon proportionnelle à l'augmentation de la taille d'échantillon, comme le montre aussi la @fig-sampling-means-synthesis. 
 
 
 
 ```{r}
-#| label: fig-sample-means-variance-sd
+#| label: fig-sampling-means-synthesis
 #| fig-width: 10
 #| fig-height: 7
 #| fig-cap:  "**Impact of the sample size on the parameters of the sampling distribution.** For each sample size ($n$),  $`r R`$ samples were drawn independently, their means were computed, from which we derived the mean, variance and standard deviation of these $`R R`$ sample means. $ "
@@ -357,6 +362,8 @@ par(mfrow=c(1,1))
 ```
 
 
+## Distribution d'échantillonnage de la variance
+
 
 
 
@@ -364,12 +371,7 @@ par(mfrow=c(1,1))
 
 ## Espérance
 
-## Distribution d'échantillonnage de la moyenne
-
-## Impact de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne
 
 ## L'erreur standard
-
-## Distribution d'échantillonnage de la variance
 
 ## Intervalles de confiance autour de la moyenne
