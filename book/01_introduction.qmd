@@ -36,7 +36,15 @@ log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
 ## Accès aux supports: Ametice + github
 
 
-## Conventions typographiques
+## Conventions typographiques et sémantiques
+
+Le mot "statistique" a deux significations (dictionnaire Larousse) : 
+
+1. Ensemble des méthodes permettant d'analyser l'information contenue dans diverses données chiffrées. *La statistique mathématique, la statistique descriptive.*
+2. Ensemble de données chiffrées relatives à un domaine spécifique. *Des statistiques sur les exportations.*
+
+Les statisticiens préfèrent utiliser le singulier pour parler de leur science (au même titre que la biologie, la physique), et réservent le pluriel pour désigner des données collectées (les valeurs directement mesurées sur un échantillon) ou calculées (par exemple la moyenne ou la variance de cet échantillon). Nous nous conformerons à cette convention. 
+
 
 ### Nombres décimaux
 
