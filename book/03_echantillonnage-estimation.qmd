@@ -7,36 +7,31 @@ source("R/setup.R", local = knitr::knit_global())
 
 ## Populations et échantillons
 
-En statistique, on désigne par **population** l'ensemble des individus auxquels on s'intéresse [@Dagnelie_1973]. Voici quelques exemples de populations illustratives de la recherche en biologie :
+En statistique, on désigne par **population** l'ensemble des unités statistiques auxquelles on s'intéresse. Ces unités peuvent être des organismes, des patients, des prélèvements biologiques, des clones bactériens ou toute autre entité sur laquelle des observations peuvent être réalisées. 
+
+Voici quelques exemples de populations illustratives de la recherche en biologie :
 
 - les êtres humains adultes actuellement vivants ;
 - la population humaine adulte de Marseille ;
-- l'ensemble des échantillons sanguins qu'on pourrait prélever dans la population adulte de Marseille ;
-- l'ensemble des échantillons de foie (biopsies) qu'on pourrait prélever sur la population adulte de Marseille ;
 - les souris de laboratoire de la souche C57BL/6, fréquemment utilisée pour les études en immunologie ;
-- l'ensemble de tous les clones d'*Escherichia coli* qu'on pourrait obtenir par culture dans des conditions données ;
+- les clones d'*Escherichia coli* qu'on pourrait obtenir par culture dans des conditions données ;
 - les saupes de la baie de Marseille ;
-- les sangliers des calanques.
+- les sangliers des Calanques.
 
-Dans un monde idéal, on voudrait disposer de mesures pour chacun de ces individus afin d'asseoir nos analyses sur des données qui reflètent la réalité dans son ensemble. Cependant, dans la majorité des cas, ceci est impossible, pour différentes raisons :
+Pour chaque variable étudiée, on peut également considére la **population dzs valeurs** que cette variable prendrait sur l'ensemble des unités statistiques, par exemple :
+- le statut infecté ou non de chaque individu ;
+- la concentration d'hémoglobine dans le sang ;
+- la concentration d'un médicament dans le sang d'une souris de laboratoire. 
 
-- La population est parfois infinie, ou d'une taille finie mais trop vaste pour pouvoir être observée de manière exhaustive.
-- La population est finie (par exemple la population adulte de Marseille), mais la collecte systématique des données représenterait un coût disproportionné par rapport à l'intérêt de l'étude.
-- Le processus de collecte nécessiterait de détruire les individus, ou de leur causer des dommages (saupes de la baie de Marseille, biopsies chez les humains).
+Dans un monde idéal, on disposerait de mesures pour toutes les unités de la population, afin d'asseoir nos analyses sur des données qui reflètent la réalité dans son ensemble. Cependant, dans la majorité des cas, cette exhaustivité est impossible, pour différentes raisons. La population peut être infinie ou trop vaste, la collecte des données peut être coûteuse, ou encore la mesure nécessite une procédure invasive ou destructive
 
-En pratique, on est donc amené à prélever un **échantillon** de la population, ce qui consiste à sélectionner un sous-ensemble des individus sur lesquels seront réalisées les observations ou les expérimentations.
+En pratique, on est donc amené à sélectionner un **échantillon** c'est-à-dire un sous-ensemble de la population. Le nombre d'unités qui le composent est dénommé **effectif** ou **taille d'échantillon** et sera noté $n$ par la suite.
 
-Les notions de population et d'échantillon s'appliquent également aux variables mesurées, et pas seulement aux individus. :
-
-- la proportion d'individus infectés par un agent pathogène ;
-- la concentration d'hémogolobine dans le sang ;
-- la concentration d'un médicament dans le sang d'une souris de laboratoire.
-
-Une fois l'échantillon constitué, on réalise une ou plusieurs mesures sur chacun des individus qui le composent. On obtient ainsi un ensemble de données observationnelles ou expérimentales, qui peuvent ensuite être analysées selon différentes approches. Les méthodes de **statistique descriptive** visent à résumer ou à explorer les données observées (histogrammes, diagrammes en boîte, analyses en composantes principales, classification, etc.). Les méthodes de **statistique inférentielle** ont pour objectif de tirer des conclusions concernant la population à partir de l'échantillon, par exemple en estimant un paramètre de la population ou en testant une hypothèse.
+Une fois l'échantillon constitué, on réalise une ou plusieurs mesures sur chacun de ses unités. On obtient ainsi un ensemble de données d'observation ou expérimentales, qui peuvent ensuite être analysées selon différentes approches. Les méthodes de **statistique descriptive** servent à résumer ou à explorer les données obtenues (histogrammes, diagrammes en boîte, analyses en composantes principales, classification, etc.). Les méthodes de **statistique inférentielle** visent ensuite à tirer des conclusions concernant la population à partir des observations effectuées sur l'échantillon, notamment en estimant des paramètres de la population ou en testant des hypothèses.
 
 ## Principe de l'échantillonnage
 
-La @fig-sampling-schema illustre le principe du prélèvement d'un échantillon d'**effectif** $n$ (le nombre d'individus sélectionnés) dans une population de taille $N$. Le rectangle aux coins arrondis représente la population, tandis que les ellipses représentent des échantillons tirés dans cette population.
+La @fig-sampling-schema illustre le principe du prélèvement d'un échantillon d'effectif $n$ dans une population de taille $N$. Le rectangle aux coins arrondis représente la population, tandis que les ellipses représentent des échantillons tirés dans celle-ci.
 
 ```{r}
 #| label: fig-sampling-schema
@@ -44,7 +39,7 @@ La @fig-sampling-schema illustre le principe du prélèvement d'un échantillon 
 #| fig-cap: "**Principe de l'échantillonnage.**   "
 #| fig-subcap:
 #|   - "Un échantillon particulier tiré dans la population."
-#|   - "Plusieurs échantillons tirés indépendamment."
+#|   - "Plusieurs échantillons tirés indépendamment dans une même population."
 #| layout-ncol: 2
 #| echo: false
 
@@ -57,30 +52,38 @@ include_manual_figure(c("population_one_sample",
                         "population_some_samples"))
 ```
 
-Dans le cas d'enquêtes (par exemple en épidémiologie), ce prélèvement est généralement effectué par un **tirage aléatoire** au sein de la population. Dans ce cas, il est important de s'assurer que les individus sont sélectionnés de façon indépendante les uns des autres (tirage aléatoire **simple**). Il faut par exemple éviter de biaiser le tirage en sélectionnant des individus liés par une proximité géographique, familiale, ou par tout autre facteur susceptible d'influencer les variables étudiées. Dans d'autres cas, les échantillons sont conditionnés par des considérations pratiques (par exemple l'ensemble des patients souffrant d'une pathologie donnée et qui se sont présentés à l'hôpital de la Timone pendant l'année 2025).
+Dans un **tirage aléatoire simple sans remise**, tous les sous-ensembles possibles de $n$ unités ont la même probabilité d'être sélectionnés. Ce type de tirage vise à éviter qu'une partie de la population soit systématiquement su- ou sous-représentée dans l'échantillon. Il faut par exemple éviter de biaiser le tirage en sélectionnant des individus liés par une proximité géographique, familiale, ou par tout autre facteur susceptible d'influencer les variables étudiées. 
 
-Le panneau de gauche (a) de la @fig-sampling-schema illustre le prélèvement d'un échantillon particulier parmi les individus de la population. Les symboles grecs correspondent aux paramètres de la population (moyenne $\mu$ et écart-type $\sigma$), tandis que les symboles latins représentent les statistiques calculées à partir d'un échantillon (moyenne $\bar{x}$ et écart-type $s$).
 
-Le panneau de droite (b) souligne une difficulté inhérente à cette démarche : *a priori*, l'échantillon pourrait être constitué de n'importe quelle sous-ensemble de $n$ parmi les $N$ individus de la population. Or, chacun de ces échantillons potentiel aura sa propre moyenne ($\bar{x}_1$, $\bar{x}_2$, $\bar{x}_3$...) et son propre écart-type ($s_1$, $s_2$, $s_3$...).
+Dans de nombreuses études biologiques ou médicales, la collecte des échantillons est néanmoins conditionnés par des contraintes pratiques. Un échantillon pourrait par exemple être constitué de l'ensemble des patients souffrant d'une pathologie donnée et qui se sont présentés dans un hôpital donné pendant une période déterminée. Il s'agit alors d'un **échantillon de convenance**, susceptible de différer de la population cible et d'introduire des biais de sélection. 
 
-Le nombre de choix possibles peut être facilement calculé au moyen du **coefficient binomial**;
+Le panneau de gauche (a) de la @fig-sampling-schema illustre le prélèvement d'un échantillon particulier au sein d'une population. Les symboles grecs désignent les **paramètres de la population** – la moyenne $\mu$ et l'écart-type $\sigma$ –  tandis que les symboles latins désignent les statistiques calculées sur l'échantillon – sa moyenne $\bar{x}$^[La barre au-dessus d'une variable dénote la moyenne des valeurs observées. ] et son écart-type $s$.
 
-$$C = \frac{N!}{n!\cdot(n-1)!}$$
+Le panneau de droite (b) souligne une difficulté fondamentale : *a priori*, l'échantillon pourrait être constitué de n'importe quelle sous-ensemble de $n$ unités parmi les $N$ de la population. Chaque échantillon possède ses propres valeurs observées et conduit donc à une moyenne et un écart-type qui lui sont propres. 
 
-A titre d'exemple, au sein d'une population de taille $N=1\,000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à $C$ = $3.4 \times 10^{41}$.
+Le nombre d'échantillons distincts d'effectif $n$ que l'on peut extraire sans remise d'une population de taille $N$ est donnée par le **coefficient binomial**;
+
+$$C = \binom{N}{n} = \frac{N!}{n!(N - n)!}$$
+
+A titre d'exemple, dans une population de taille $N=1000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à 
+
+$$C = \binom{1000}{20} \frac{N!}{20! \times 998!} \approx 3.4 \times 10^{41}$$
+
+Il est donc impossile d'examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste. 
 
 ## Distributions d'échantillonnage
 
-Ceci ouvre un questionnement concernant l'échantillon particulier dont nous disposons pour nos analyses : les mesures prises sur cet échantillon sont-elles représentatives de l'ensemble de la population ? A quel point les paramètres de cet échantillons auraient-ils pu être différents si nous avions tiré un autre échantillon ? En théorie statistique, cette question est abordée par l'étude des **distributions d'échantillonnage**.
+L’échantillon dont nous disposons n’est qu’un des nombreux échantillons qui auraient pu être prélevés dans la population. Les statistiques calculées sur cet échantillon auraient donc pu prendre d’autres valeurs si le tirage avait été différent. On peut dès lors se demander à quel point les mesures prises sur cet échantillon sont-elles représentatives de l'ensemble de la population. En théorie statistique, cette question est abordée par l'étude des distributions d'échantillonnage. 
 
+La **distribution d’échantillonnage** d’une statistique décrit les valeurs que cette statistique peut prendre lorsqu’on répète le prélèvement d’échantillons de même taille, selon le même plan d’échantillonnage.
 
 
 ```{r}
 #| label: fig-population-histo
 #| fig-width: 7
 #| fig-height: 5
-#| out-width: "80%"
-#| fig-cap: "**Distribution des valeurs de l'ensemble de la population**. Ces valeurs seront utilisées ci-dessous pour tirer des échantillons et calculer la distribution de leurs paramètres. "
+#| out-width: "60%"
+#| fig-cap: "**Distribution des valeurs de l'ensemble de la population simulée**.  Cette population sera utilisée ci-dessous pour effectuer des tirages répétés d’échantillons et étudier les distributions d’échantillonnage des statistiques calculées sur ceux-ci."
 
 # Parameters
 N <- 10000 # Population size
@@ -99,10 +102,10 @@ hist(X,
      col="skyblue",
      border = "white",
      las = 1,   # display axis labels horizontally
-     xlab="X",
-     main=paste0("Mesures de la population complète",
+     xlab="X", 
+     main=paste0("Distribution des valeurs de la population complète",
                  "\n", # newline character
-                 "N=", format(N, scientific = FALSE),
+                 "N=", N,
                  ", mu=", round(mu, digits = 2),
                  ", sigma=", round(sigma, digits = 2)))
 
@@ -117,37 +120,50 @@ grid() ## Add a grid
 ```
 
 
-Pour illustrer son principe, effectuons une simulation empirique en générant un jeu de données artificielles pour une population de $N$ = `r N` individus. 
+Pour illustrer ce principe, nous générons une population artificielle de $N$ = `{r} N` individus. La @fig-population-histo représente la distribution des valeurs de la variable étudiée dans l'ensemble de cette population.
 
-La @fig-population-histo montre la distribution complète de ces valeurs, pour l'ensemble de la population.
+Puisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne ($\mu$), sa variance ($\sigma^2$, et son écart-type ($\sigma$). 
 
-Puisque nous disposons des mesures pour l'ensemble de cette population, nous pouvons calculer les indicateurs de tendance centrale (la moyenne de population, $\mu$) et de dispersion (la variance $\sigma^2$, et l'écart-type $\sigma$). 
+$$\mu = \frac{1}{N} \sum_{i=1}^N x_i = `{r} round(mu, digits = 2)`$$
 
-$$\mu = \frac{1}{N} \sum_{i=1}^N x_i = `r round(mu, digits = 2)`$$
+$$\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = `{r} round(sigma2, digits = 2)`$$
 
-$$\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = `r round(sigma2, digits = 2)`$$
+$$\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = `{r} round(sigma, digits = 2)`$$
 
-$$\sigma = \sqrt{\sigma} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = `r round(sigma, digits = 2)`$$
-
-
-### Impact de la taille d'échantillon ($n$) sur la moyenne d'échantillon
+### Effet de la taille d'échantillon sur la distribution d'échantillonnage de la moyenne
 
 ```{r}
 #| label: sampling-means-sample-size-param
 
 # Plot a histogram of the generated numbers
 R <- 100000 # number of replicates
-# n_values <- c(1, 2, 4, 8, 16, 32, 64)
 n_values <- c(2, 4, 8, 16, 32, 64)
+n_values_label <- paste(n_values, collapse = ", ")
+
 # my_min <- min(mu - 4 * sigma, floor(min(X)))
 # my_max <- max(mu + 4 * sigma, ceiling(max(X)))
 my_min <- floor(min(X))
 my_max <- ceiling(max(X))
 
+## Format the number of replicates for textual output
+R_label <- format(
+  R,
+  scientific = FALSE,
+  big.mark = "\u202F",
+  trim = TRUE
+)
+
 ```
 
 
-Nous tirons ensuite successivement un grand nombre d'échantillons ($R$ = `r R`) nous calculons la moyenne et l'écart-type de chaque échantillon, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de chacun de ces paramètres d'échantillonnage.
+Nous voudrions évaluer la correspondance entre la moyenne de la population ($\mu$) et celle des échantillons tiré aléatoirement dans cette population. 
+
+Pour cela, nous allons procéder à une expérimentation en tirant  successivement un grand nombre d'échantillons (nombre de répétitions : $R$ = `{r} R`). Nous calculons la moyenne ($\bar{x}_i$) de chaque échantillon $i$, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de la moyenne d'échantillon. Nous réalisons cette expérience pour différentes tailles d'échantillons : $n \in \{`{r} I(n_values_label)`\}$. 
+
+Pour chaque taille d'échantillon, les résultats sont représentés sous forme d'un histogrammes (@fig-sampling-means-sample-size), sur lequel nous marquons en bleu la moyenne de la population, en orange la moyenne des `r R` moyennes d'échantillons ($\overline{\bar{x}}$), et une flèche horizontale indique l'étendue de l'écart-type. 
+
+
+
 
 ```{r}
 #| label: fig-sampling-means-sample-size
@@ -192,17 +208,18 @@ for (n in n_values) {
   
   ## Draw a histogram
   h <- hist(sample_means, 
-       breaks = 100,
-       col="#DDFFDD",
-       border="#DDFFDD",
-#       border = "white",
-       las = 1,
-#       xlim = c(130, 170),
-       xlim=c(my_min, my_max), # define the limits of X axis to ensure consistency between successive histograms
-       main=paste0("Sampling mean from a uniform distribution",
-                   "\n", # newline character
-                   "n = ", format(n, scientific = FALSE, digits = 2),
-                   "; R = ", format(R, scientific = FALSE, big.mark = " ")))
+            main=paste0("Moyennes d'échantillons",
+                        "\n", # newline character
+                        "n = ", format(n, scientific = FALSE, digits = 2),
+                        "; R = ", format(R, scientific = FALSE, big.mark = " ")),
+            xlab = "Moyenne d'échantillon",
+            ylab = "Fréquence",
+            breaks = 100,
+            col="#DDFFDD",
+            border="#DDFFDD",
+            las = 1,
+            xlim=c(my_min, my_max), # define the limits of X axis to ensure consistency between successive histograms
+  )
 
   abline(v=seq(from = my_min, 
                to = my_max, 
@@ -236,7 +253,7 @@ for (n in n_values) {
     col = c("blue", "orange", "brown", NA),
     lty = c("solid", "dashed", "solid", NA),
     lwd = c(1, 2, 2, 0),
-    cex = 1.5
+    cex = 1.2
   )
   
 
@@ -248,12 +265,13 @@ par(mfrow = c(1, 1))
 
 ```
 
+Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$ = `{r} R` moyennes d'échantillons ($\overline{\bar{x}}$) correspond toujours à la moyenne de la population ($\mu$ = `{r} mu`). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l'échantillon augmente. 
+
+La @tbl-sampling-means-synthesis synthétise les statistiques (moyenne, variance, écart-type) calculées sur l'ensemble des `r R` moyennes d'échantillons, pour chacune des tailles d'échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population. 
 
 
-La @fig-sampling-means-sample-size montre les résultats de cette expérience pour différentes tailles d'échantillons: $n \in \{`r paste(collapse=", ", n_values)`\}$. 
+Le tableau met en évidence une relation inverse entre la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) et la taille de l'échantillon ($n$) : lorsque $n$ est doublé, cette variance est approximativement divisée par deux. 
 
-
-La @tbl-sampling-means-synthesis et la @fig-sampling-means-synthesis synthétise les valeurs des paramètres de la population (1ère ligne) et des distributiosn d'échantillonnage de la moyenne, pour des échantillon de tailles croissantes.  
 
 ```{r}
 #| label: tbl-sampling-means-synthesis
@@ -287,32 +305,32 @@ knitr::kable(
 ```
 
 
-Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$ = `r R` échantillons prélevés indépendamment correspond toujours à la moyenne de la population ($\mu$ = `r mu`). Par contre, l'augmentation de la taille d'échantillon ($n$) a un impact remarquable sur la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) : tandis que la population a une variance de $\sigma$ = `r sigma`, la variance d'échantillon diminue de façon proportionnelle à l'augmentation de la taille d'échantillon, comme le montre aussi la @fig-sampling-means-synthesis. 
-
+Cette relation est également illustrée sur la @fig-sampling-means-variance, avec des échelles linéaires (a) et logarithmiques (b). 
 
 
 ```{r}
-#| label: fig-sampling-means-synthesis
-#| fig-width: 10
-#| fig-height: 7
-#| fig-cap:  "**Impact of the sample size on the parameters of the sampling distribution.** For each sample size ($n$),  $`r R`$ samples were drawn independently, their means were computed, from which we derived the mean, variance and standard deviation of these $`r R`$ sample means. $ "
+#| label: fig-sampling-means-variance
+#| fig-width: 7
+#| fig-height: 5
+#| fig-cap: "**Impact de la taille d'échantillon sur la variance de la moyenne d'échantillon. ** Pour chaque taille d'échantillon ($n$), on a tiré aléatoirement dans la population $R$ échantillons indépendants, dont on a calculé la moyenne. "
 #| fig-subcap: 
-#|  - "**Variance of the sample means**. Note that the variance of the sampling means decreases by a factor 2 when the sample size is doubled. "
-#|  - "**Variance of the sample means (logarithmic scales)**. With the logarihmic scales, the relationship between $n$ and $s_{\bar{x}} appars as a straight line. "
-#|  - "**Mean and standard deviation of the sample means**. Note the steadiness of the sample means (orange dots) and their conformity with the population mean (blue line). " 
+#|  - "**Variance des moyennes d'échantillons**. Noter que la variance décroît d'un facteur deux quand la taille d'échantillon est doublée. . "
+#|  - "**Même graphique avec des échelles logarithmiques**. "
+#| layout-ncol: 2
 
-par(mfrow=c(2,2))
 
 ## Plot the variance of sampling means as a function of sample size
 plot(n_values, 
      means_var_values, 
+     main = paste0("Variance de la moyenne d'échantillon\n",  
+                   prettyNum(R, scientific = FALSE, big.mark = " "), 
+                   " répétitions"),
      type = "b",
      pch = 19,
      lty = "dashed",
      col = "brown",
-     main = "Impact of sample size on the variance of sampling means",
+     ylab = "Variance de la moyenne",
      ylim = c(0, ceiling(max(means_var_values))),
-     ylab = paste0("Variance of the sampling mean (", R, " replicates)"),
      xlab = "Sample size (n)",
      las = 1,
      panel.first = c(grid(),
@@ -320,34 +338,53 @@ plot(n_values,
      )
 
 ## Plot the variance of sampling means as a function of sample size
-plot(n_values, means_var_values, 
+plot(n_values, 
+     means_var_values, 
+     main = paste0("Variance de la moyenne d'échantillon (échelles logarithmiques)\n",  
+                   prettyNum(R, scientific = FALSE, big.mark = " "), 
+                   " répétitions"),
      type = "b",
      pch = 19,
      lty = "dashed",
      col = "brown",
      log = "xy",
-     main = "Impact of sample size on the variance of sampling means\n(logarithmic X and Y scales)",
-     ylab = paste0("Variance of the sampling mean (", R, " repetitions)"),
-     xlab = "Sample size (n)",
+     ylab = paste0("Variance de la moyenne"),
+     xlab = "Taille d'échantillon (n)",
      las = 1,
      panel.first = c(grid(, equilogs = FALSE))
      )
 
 
-## Plot the mean of sampling means as a function of sample size
+```
+
+La @fig-sampling-means-sd montre la relation entre la taille d'échantillon ($n$) et l'écart-type des moyennes d'échantillons ($s_{\bar{x}}$). La ligne bleur horizontale marque la moyenne de la population ($\mu$), les points oranges les moyennes des moyennes d'échantillons (`{r} R` échantillons par point). Les flèches rouges marquent un intervalle d'un écart-type des moyennes d'échantillons ($s_{\bar{x}}$) de part et d'autre de la moyenne (chaque flèche couvre donc 2 écarts-types).
+
+
+```{r}
+#| label: fig-sampling-means-sd
+#| fig-width: 7
+#| fig-height: 5
+#| fig-cap: "**Mean and standard deviation of the sample means**. Note the steadiness of the sample means (orange dots) and their conformity with the population mean (blue line). " 
+#| out-width: "80%"
+
+
+## Plot the smean and standard deviations of sampling means as a function of sample size
 plot(n_values, 
      means_m_values, 
      type = "p",
      pch = 19,
      lty = "solid",
      col = "orange",
-     main = "Impact of sample size on the distribution of sampling means",
+     cex= 1.2,
+     main = "Mean and standard deviation of the sampling means",
      ylim = c(mu - sigma, mu + sigma), 
      ylab = paste0("Mean of the sampling mean (", R, " repetitions)"),
      xlab = "Sample size (n)", 
      las = 1,
-     panel.first = c(grid(),
-                     abline(h = mu, col = "blue", lwd = 1))
+     panel.first = c(abline(h=seq(floor(mu - sigma), ceiling(mu+sigma), 0.5), col="#DDDDDD"),
+                     abline(h=seq(floor(mu - sigma), ceiling(mu+sigma), 1), col="#BBBBBB"),
+                     abline(h = mu, col = "blue", lwd = 1),
+                     abline(v=n_values, col="#DDDDDD"))
      )
 
 
@@ -355,23 +392,28 @@ arrows(x0 = n_values,
        x1 = n_values, 
        y0 = means_m_values - means_sd_values,  
        y1 = means_m_values + means_sd_values, 
-       code = 3, length = 0.07, lwd=2, 
-       col="brown") ## Mark an interval of ± 1 standard deviation around the mean
+       code = 3, 
+       length = 0.07, 
+       lwd=2, 
+       col="brown") ## Mark an interval of ± 1 standard deviation above the mean
+
+
 legend("topright",
-       legend = c("mu", "mean of the means", "standard deviation of the means"),
+       legend = c("mu", 
+                  "mean of the means", 
+                  "2 x standard deviation of the means"),
        lwd = c(1, 0, 2),
        pch=c(NA, 19, NA),
+       bg = "white",
        col = c("blue", "orange", "brown")
 )
 
-par(mfrow=c(1,1))
-
 ```
 
+Les écarts-types de moyennes d'échantillon diminuent en raison de la racine carrée de la taille d'échantillon. Ceci a une conséquence importante : si l'on désire doubler la précision de la moyenne d'échantillon, on doit multiplier par 4 la taille de l'échantillon, ce qui nécessite en pratique de quadrupler les coûts d'expérimentation ou de collecte des données. 
 
-## Distribution d'échantillonnage de la variance
 
-
+### Effet de la taille d'échantillon sur la distribution d'échantillonnage de la variance
 
 
 ## Estimer les paramètres d'une population à partir d'un échantillon
