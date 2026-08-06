@@ -30,6 +30,7 @@
 
 ```{r}
 #| label: tbl-student-bilateral
+#| tbl-cap: '**Valeurs critiques bilatérales de la distribution de Student.** La première colonne indique les degrés de liberté (d.d.l.). La table fournit les valeurs de $t$ telles que $P(\lvert T_\\nu \rvert \geq t) = \alpha$. '
 #| echo: false
 #| warning: false
 #| message: false
@@ -60,19 +61,6 @@ student_table <- rbind(
   normal_values
 )
 
-# # Affichage avec trois décimales et virgule décimale
-# student_table <- apply(
-#   student_table,
-#   c(1, 2),
-#   function(x) {
-#     sub(
-#       "\\.",
-#       ",",
-#       formatC(x, format = "f", digits = 3)
-#     )
-#   }
-# )
-
 student_table <- data.frame(
   "d.d.l." = c(as.character(ddl), "\u221e"),
   student_table,
@@ -85,37 +73,46 @@ colnames(student_table)[-1] <- c(
 )
 
 
+## Detect the current output format
+is_latex_output <- knitr::is_latex_output()
+is_html_output <- knitr::is_html_output()
 
-options(
-  digits = 4,
-  scipen = 12,
-  OutDec = "."
-)
+## Select a table format compatible with the target document
+table_format <- if (is_latex_output) {
+  "latex"
+} else if (is_html_output) {
+  "html"
+} else {
+  ## Use a Pandoc Markdown table for DOCX and other non-HTML formats
+  "pipe"
+}
 
-
-kable(
+## Build the table in the format appropriate for the current output
+student_table_output <- knitr::kable(
   student_table,
+  format = table_format,
   align = c("r", rep("r", length(alpha))),
-  caption = paste0(
-    "Valeurs de $t$ telles que ",
-    "$P(|T_\\nu| \\geq t)=\\alpha$."
-  ),
-  booktabs = TRUE,
+  booktabs = is_latex_output,
   longtable = FALSE,
-  format = if (knitr::is_latex_output()) "latex" else NULL,
   row.names = FALSE,
-  escape = FALSE, 
+  escape = FALSE,
   format.args = list(
     decimal.mark = ".",
-    big.mark = "\u202f",
+    big.mark = "\u202F",
     scientific = FALSE
-  ),
-)|>
-  kableExtra::kable_styling(
+  )
+)
+
+## Apply kableExtra styling only to formats supported by kableExtra
+if (is_html_output || is_latex_output) {
+  student_table_output <- kableExtra::kable_styling(
+    student_table_output,
     full_width = FALSE
   )
+}
 
-
+## Print the resulting table
+student_table_output
 ```
 
 
