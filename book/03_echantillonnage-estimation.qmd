@@ -67,7 +67,7 @@ Le nombre de choix possibles peut être facilement calculé au moyen du **coeffi
 
 $$C = \frac{N!}{n!\cdot(n-1)!}$$
 
-A titre d'exemple, au sein d'une population de taille $N=1\,000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à $C \nobreak= 3.4 \times 10^{41}$.
+A titre d'exemple, au sein d'une population de taille $N=1\,000$ le nombre possible d'échantillons distincts d'effectif $n=20$ s'élève à $C$ = $3.4 \times 10^{41}$.
 
 ## Distributions d'échantillonnage
 
@@ -117,7 +117,7 @@ grid() ## Add a grid
 ```
 
 
-Pour illustrer son principe, effectuons une simulation empirique en générant un jeu de données artificielles pour une population de $N \nobreak= `r N`$ individus. 
+Pour illustrer son principe, effectuons une simulation empirique en générant un jeu de données artificielles pour une population de $N$ = `r N` individus. 
 
 La @fig-population-histo montre la distribution complète de ces valeurs, pour l'ensemble de la population.
 
@@ -132,7 +132,22 @@ $$\sigma = \sqrt{\sigma} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = `r r
 
 ### Impact de la taille d'échantillon ($n$) sur la moyenne d'échantillon
 
-Nous tirons ensuite successivement un grand nombre d'échantillons ($R \nobreak= 1\,000\,000$) nous calculons la moyenne et l'écart-type de chaque échantillon, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de chacun de ces paramètres d'échantillonnage.
+```{r}
+#| label: sampling-means-sample-size-param
+
+# Plot a histogram of the generated numbers
+R <- 100000 # number of replicates
+# n_values <- c(1, 2, 4, 8, 16, 32, 64)
+n_values <- c(2, 4, 8, 16, 32, 64)
+# my_min <- min(mu - 4 * sigma, floor(min(X)))
+# my_max <- max(mu + 4 * sigma, ceiling(max(X)))
+my_min <- floor(min(X))
+my_max <- ceiling(max(X))
+
+```
+
+
+Nous tirons ensuite successivement un grand nombre d'échantillons ($R$ = `r R`) nous calculons la moyenne et l'écart-type de chaque échantillon, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de chacun de ces paramètres d'échantillonnage.
 
 ```{r}
 #| label: fig-sampling-means-sample-size
@@ -143,14 +158,6 @@ Nous tirons ensuite successivement un grand nombre d'échantillons ($R \nobreak=
 #| message: FALSE
 #| warning: FALSE
 
-# Plot a histogram of the generated numbers
-R <- 100000 # number of replicates
-# n_values <- c(1, 2, 4, 8, 16, 32, 64)
-n_values <- c(2, 4, 8, 16, 32, 64)
-# my_min <- min(mu - 4 * sigma, floor(min(X)))
-# my_max <- max(mu + 4 * sigma, ceiling(max(X)))
-my_min <- floor(min(X))
-my_max <- ceiling(max(X))
 
 ## Initiate vectors to collect the sampling means parameters
 means_m_values <- vector()     ## mean of the r sample means
@@ -280,7 +287,7 @@ knitr::kable(
 ```
 
 
-Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R \nobreak= `r R`$ échantillons prélevés indépendamment correspond toujours à la moyenne de la population ($\mu \nobreak= `r mu`$). Par contre, l'augmentation de la taille d'échantillon ($n$) a un impact remarquable sur la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) : tandis que la population a une variance de $\sigma \nobreak= `r sigma`$, la variance d'échantillon diminue de façon proportionnelle à l'augmentation de la taille d'échantillon, comme le montre aussi la @fig-sampling-means-synthesis. 
+Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$ = `r R` échantillons prélevés indépendamment correspond toujours à la moyenne de la population ($\mu$ = `r mu`). Par contre, l'augmentation de la taille d'échantillon ($n$) a un impact remarquable sur la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) : tandis que la population a une variance de $\sigma$ = `r sigma`, la variance d'échantillon diminue de façon proportionnelle à l'augmentation de la taille d'échantillon, comme le montre aussi la @fig-sampling-means-synthesis. 
 
 
 
@@ -288,7 +295,7 @@ Un premier constat est que la moyenne d'échantillon est remarquablement stable 
 #| label: fig-sampling-means-synthesis
 #| fig-width: 10
 #| fig-height: 7
-#| fig-cap:  "**Impact of the sample size on the parameters of the sampling distribution.** For each sample size ($n$),  $`r R`$ samples were drawn independently, their means were computed, from which we derived the mean, variance and standard deviation of these $`R R`$ sample means. $ "
+#| fig-cap:  "**Impact of the sample size on the parameters of the sampling distribution.** For each sample size ($n$),  $`r R`$ samples were drawn independently, their means were computed, from which we derived the mean, variance and standard deviation of these $`r R`$ sample means. $ "
 #| fig-subcap: 
 #|  - "**Variance of the sample means**. Note that the variance of the sampling means decreases by a factor 2 when the sample size is doubled. "
 #|  - "**Variance of the sample means (logarithmic scales)**. With the logarihmic scales, the relationship between $n$ and $s_{\bar{x}} appars as a straight line. "
