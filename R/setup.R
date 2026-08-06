@@ -12,14 +12,16 @@ library(knitr)
 ## Set global output options
 options(
   digits = 4,
-  scipen = 12,
+  scipen = 7,
   OutDec = "."
 )
 
 ## Format values returned by inline R expressions
 format_inline_output <- function(x) {
+  
+  ## Format numeric values according to the global R options
   if (is.numeric(x)) {
-    x <- format(
+    formatted_values <- format(
       x,
       digits = getOption("digits"),
       scientific = NA,
@@ -27,12 +29,21 @@ format_inline_output <- function(x) {
       decimal.mark = getOption("OutDec"),
       trim = TRUE
     )
+    
+    ## Separate the elements of a numeric vector with commas
+    return(paste(formatted_values, collapse = ", "))
   }
   
-  paste(x, collapse = ", ")
+  ## Preserve character strings exactly as they were generated
+  if (is.character(x) && length(x) == 1L) {
+    return(x)
+  }
+  
+  ## Collapse other non-numeric vectors without altering their elements
+  paste(as.character(x), collapse = ", ")
 }
 
-## Replace the default knitr hook for inline R expressions
+## Register the custom inline-output hook
 knitr::knit_hooks$set(
   inline = format_inline_output
 )
