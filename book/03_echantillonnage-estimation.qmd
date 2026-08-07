@@ -336,7 +336,7 @@ Cette relation est également illustrée sur la @fig-sampling-means-variance, av
 #| label: fig-sampling-means-variance
 #| fig-width: 7
 #| fig-height: 5
-#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon.** Pour chaque valeur de $n$, la variance empirique $s_\\bar{x}^2$ a été calculée à partir de $R=", R_label,"$ moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).")'
+#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon.** Pour chaque valeur de $n$, la variance empirique $s^2_{\\bar{x}}$ a été calculée à partir de $R=", R_label,"$ moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).")'
 #| fig-subcap: 
 #|  - "La variance diminue approximativement de moitié lorsque la taille d’échantillon est doublée. "
 #|  - "Sur des échelles logarithmiques, la relation apparaît comme une droite de pente proche de −1."
