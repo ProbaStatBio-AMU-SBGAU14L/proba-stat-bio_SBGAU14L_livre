@@ -82,8 +82,8 @@ La **distribution d’échantillonnage** d’une statistique décrit les valeurs
 #| label: fig-population-histo
 #| fig-width: 7
 #| fig-height: 5
-#| out-width: "60%"
-#| fig-cap: "**Distribution des valeurs de l'ensemble de la population simulée**.  Cette population sera utilisée ci-dessous pour effectuer des tirages répétés d’échantillons et étudier les distributions d’échantillonnage des statistiques calculées sur ceux-ci."
+#| out-width: "80%"
+#| fig-cap: "**Distribution des valeurs de l'ensemble de la population simulée**.  Cette population sera utilisée ci-dessous pour effectuer des tirages répétés d’échantillons et étudier les distributions d’échantillonnage des statistiques calculées sur ceux-ci. La barre verticale marque la moyenne de la population ($\\mu$), et la flèche horizontale couvre un écart type de part et d'autre de la moyenne, elle s'étend donc de $\\mu - s$ à $\\mu + s$."
 
 # Parameters
 N <- 10000 # Population size
@@ -110,11 +110,13 @@ hist(X,
                  ", sigma=", round(sigma, digits = 2)))
 
 
-abline(v=mu, lwd=2, col="brown") ## mark the mean
+abline(v=mu, lwd=2, col="darkblue") ## mark the population mean
 arrows(x0 = mu - sigma, x1 = mu + sigma, 
        y0 = N / 100,  y1 = N/100, 
-       code = 3, length = 0.1, lwd=2, 
-       col="brown") ## Mark an interval of ± 1 standard deviation around the mean
+       code = 3, 
+       length = 0.15, 
+       lwd=2, 
+       col="darkblue") ## Mark an interval of ± 1 standard deviation around the mean
 grid() ## Add a grid
 
 ```
@@ -156,12 +158,26 @@ R_label <- format(
 ```
 
 
-Nous voudrions évaluer la correspondance entre la moyenne de la population ($\mu$) et celle des échantillons tiré aléatoirement dans cette population. 
+Nous voudrions évaluer la correspondance entre la moyenne de la population ($\mu$) et celle des échantillons prélevés aléatoirement dans cette population. Nous réalisons successivement cette expérience pour différentes tailles d'échantillons : $n \in \{`{r} I(n_values_label)`\}$. 
 
-Pour cela, nous allons procéder à une expérimentation en tirant  successivement un grand nombre d'échantillons (nombre de répétitions : $R$ = `{r} R`). Nous calculons la moyenne ($\bar{x}_i$) de chaque échantillon $i$, et nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de la moyenne d'échantillon. Nous réalisons cette expérience pour différentes tailles d'échantillons : $n \in \{`{r} I(n_values_label)`\}$. 
+Pour chaque taille d’échantillon $n$, nous répétons le tirage $R$ = `{r} R` fois. Les $R$ échantillons sont tirés indépendamment les uns des autres ; à l’intérieur de chaque échantillon, $n$ individus sont sélectionnés sans remise. 
 
-Pour chaque taille d'échantillon, les résultats sont représentés sous forme d'un histogrammes (@fig-sampling-means-sample-size), sur lequel nous marquons en bleu la moyenne de la population, en orange la moyenne des `r R` moyennes d'échantillons ($\overline{\bar{x}}$), et une flèche horizontale indique l'étendue de l'écart-type. 
 
+Pour la répétition d'indice $r$, nous calculons la moyenne :
+
+$$\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \cdots, R$$
+
+Dans cette équation, $x_i^{(r)}$ désigne la valeur du $i$ème individu de la $r$!ème répétition. Nous obtenons donc au total $R$ moyennes d'échantillon. L’ensemble de ces $R$ valeurs de $x^{(r)}$ forme une approximation empirique de la distribution d’échantillonnage de la moyenne.
+
+
+Nous affichons le résultat sous forme d'un histogramme, qui nous permet d'appréhender la distribution de la moyenne d'échantillon. 
+
+
+Pour chaque taille d'échantillon $n$, la @fig-sampling-means-sample-size représente la distribution des $R$ moyennes d’échantillon. La ligne bleue indique la moyenne de la population, $\mu$, et la ligne orange pointillée la moyenne des $R$ moyennes d’échantillon – désignée par un symbole $x$ surmonté d'une double barre $\overline{\bar{x}}$) – calculée ainsi :
+
+$$\overline{\bar{x}} = \frac{1}{R} \sum_{r=1}^R \bar{x}^{(r)}$$
+
+La flèche horizontale indique la dispersion autour de la moyenne des moyennes d’échantillon : elle s’étend d’un écart-type vers la gauche et d’un écart-type vers la droite, soit un intervalle total de deux écarts-types.
 
 
 
@@ -170,7 +186,7 @@ Pour chaque taille d'échantillon, les résultats sont représentés sous forme 
 #| fig-width: 10
 #| fig-height: 8
 #| out-width: "100%"
-#| fig-cap: "Impact de la taille d'échantillon ($n$) sur la distribution d'échantillonnage de la moyenne. "
+#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne**. Pour chaque valeur de $n$, $R = ", R_label, "$ échantillons ont été tirés indépendamment dans la population simulée, puis leur moyenne a été calculée. La ligne bleue indique la moyenne de la population ($\\mu$), la ligne orange pointillée la moyenne des R moyennes d’échantillon ($\\overline{\\bar{x}}$), et la flèche brune horizontale couvre un écart-type de part et d’autre de la moyenne (deux écarts-types au total).")'
 #| message: FALSE
 #| warning: FALSE
 
@@ -229,11 +245,11 @@ for (n in n_values) {
   abline(v=means_m, lwd=2, col="orange", lty = "dashed") # Mark the mean
   
   arrow_height <- max(h$counts) / 4 # plot sd arrow at 1/4 of the histogram height
-  arrows(x0 = means_m, 
+  arrows(x0 = means_m - means_sd,
          x1 = means_m + means_sd, 
          y0 = arrow_height,  
          y1 = arrow_height, 
-         code = 2, 
+         code = 3, 
          length = 0.05 * means_sd, 
          lwd=2, 
          col="brown") ## Mark an interval of ± 1 standard deviation around the sample mean
@@ -273,33 +289,41 @@ La @tbl-sampling-means-synthesis synthétise les statistiques (moyenne, variance
 Le tableau met en évidence une relation inverse entre la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) et la taille de l'échantillon ($n$) : lorsque $n$ est doublé, cette variance est approximativement divisée par deux. 
 
 
+
 ```{r}
 #| label: tbl-sampling-means-synthesis
-#| tbl-cap: '**Impact de la taille d’échantillon ($n$) sur la moyenne ($\overline{\bar{x}}$), la variance ($s^2_{\bar{x}}$) et l’écart-type ($s_{\bar{x}}$) de la moyenne d’échantillon.**'
-
+#| tbl-cap: !expr 'paste0("**Centre et dispersion de la population et des distributions empiriques des moyennes d’échantillon**. La première ligne présente les paramètres de la population. Les lignes suivantes présentent la moyenne ($\\overline{\\bar{x}}$), la variance ($s^2_{\\bar{x}}$) et l’écart-type ($s_{\\bar{x}}$) des $R$ = ", R_label, " moyennes obtenues pour chaque taille d’échantillon.")'
 
 ## Table summarizing the results of the population, followed by the sampling means distributions with increasing sample sizes
 sampling_means_summary <- 
-  data.frame(n = c(1, n_values),
-             x_bar = c(mu, means_m_values),
-             s2 = c(sigma2, means_var_values),
-             s = c(sigma, means_sd_values))
+  data.frame(n = c("–", n_values),
+             Moyenne = c(mu, means_m_values),
+             Variance = c(sigma2, means_var_values),
+             Ecart_type = c(sigma, means_sd_values))
+## Redefine column names
+colnames(sampling_means_summary) <- c(
+   "$n$",
+   "Moyenne",
+   "Variance",
+   "Écart-type"
+ )
 
 ## Use the population and sample sizes as row labels
 rownames(sampling_means_summary) <- c("Population", n_values)
 
 ## Define mathematical column labels
-colnames(sampling_means_summary) <- c(
-  "$n$",
-  "$\\overline{\\bar{x}}$",
-  "$s_{\\bar{x}}^2$",
-  "$s_{\\bar{x}}$"
-)
+# colnames(sampling_means_summary) <- c(
+#   "$n$",
+#   "$\\overline{\\bar{x}}$",
+#   "$s_{\\bar{x}}^2$",
+#   "$s_{\\bar{x}}$"
+# )
 
 ## Print a table with the results
 knitr::kable(
-  sampling_means_summary[-1], 
+  sampling_means_summary, 
   digits = 2,
+  align = "r",
   escape=FALSE)
 
 ```
@@ -312,10 +336,10 @@ Cette relation est également illustrée sur la @fig-sampling-means-variance, av
 #| label: fig-sampling-means-variance
 #| fig-width: 7
 #| fig-height: 5
-#| fig-cap: "**Impact de la taille d'échantillon sur la variance de la moyenne d'échantillon. ** Pour chaque taille d'échantillon ($n$), on a tiré aléatoirement dans la population $R$ échantillons indépendants, dont on a calculé la moyenne. "
+#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon.** Pour chaque valeur de $n$, la variance empirique $s_\\bar{x}^2$ a été calculée à partir de $R=", R_label,"$ moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).")'
 #| fig-subcap: 
-#|  - "**Variance des moyennes d'échantillons**. Noter que la variance décroît d'un facteur deux quand la taille d'échantillon est doublée. . "
-#|  - "**Même graphique avec des échelles logarithmiques**. "
+#|  - "La variance diminue approximativement de moitié lorsque la taille d’échantillon est doublée. "
+#|  - "Sur des échelles logarithmiques, la relation apparaît comme une droite de pente proche de −1."
 #| layout-ncol: 2
 
 
@@ -364,7 +388,7 @@ La @fig-sampling-means-sd montre la relation entre la taille d'échantillon ($n$
 #| label: fig-sampling-means-sd
 #| fig-width: 7
 #| fig-height: 5
-#| fig-cap: "**Mean and standard deviation of the sample means**. Note the steadiness of the sample means (orange dots) and their conformity with the population mean (blue line). " 
+#| fig-cap: !expr 'paste0("**Centre et dispersion de la distribution d’échantillonnage de la moyenne.** La ligne bleue représente la moyenne de la population ($\\mu$), les points orange la moyenne des $R=", R_label, "$ moyennes d’échantillon, et les flèches rouges l’intervalle $\\overline{\\bar{x}} \\pm s_{\\bar{x}}$. Le centre de la distribution reste proche de $\\mu$, tandis que sa dispersion diminue lorsque $n$ augmente.")'
 #| out-width: "80%"
 
 
@@ -376,10 +400,10 @@ plot(n_values,
      lty = "solid",
      col = "orange",
      cex= 1.2,
-     main = "Mean and standard deviation of the sampling means",
+     main = paste0("Mean and standard deviation of sample means\n", prettyNum(R, big.mark = " "), " répétitions"),
      ylim = c(mu - sigma, mu + sigma), 
-     ylab = paste0("Mean of the sampling mean (", R, " repetitions)"),
      xlab = "Sample size (n)", 
+     ylab = paste0("Values"),
      las = 1,
      panel.first = c(abline(h=seq(floor(mu - sigma), ceiling(mu+sigma), 0.5), col="#DDDDDD"),
                      abline(h=seq(floor(mu - sigma), ceiling(mu+sigma), 1), col="#BBBBBB"),
@@ -399,9 +423,9 @@ arrows(x0 = n_values,
 
 
 legend("topright",
-       legend = c("mu", 
-                  "mean of the means", 
-                  "2 x standard deviation of the means"),
+       legend = c("Population mean", 
+                  "Mean of the sample means", 
+                  "Mean ± 2SD"),
        lwd = c(1, 0, 2),
        pch=c(NA, 19, NA),
        bg = "white",
