@@ -1,0 +1,541 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Probabilités et statistiques pour la biologie",
+    "section": "",
+    "text": "Preface\nCet ouvrage contient les notes détaillés du module d’enseignement “Probabilîtés et statistiques pour la biologie” (SBGAU14L), enseignée à plusieurs mentions de master en biologie d’Aix-Marseille Université (France).",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html",
+    "href": "book/01_introduction.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Cas d’étude",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#cas-détude",
+    "href": "book/01_introduction.html#cas-détude",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1.1 Expérience sur une poignée de rats\n[A ECRIRE]\n\n\n1.1.2 Données protéomiques\nSee Canale et al. (2023) for additional discussion of literate programming.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#objectifs-pédagogiques",
+    "href": "book/01_introduction.html#objectifs-pédagogiques",
+    "title": "1  Introduction",
+    "section": "1.2 Objectifs pédagogiques",
+    "text": "1.2 Objectifs pédagogiques",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#logistique-matériel-logiciels",
+    "href": "book/01_introduction.html#logistique-matériel-logiciels",
+    "title": "1  Introduction",
+    "section": "1.3 Logistique (matériel + logiciels)",
+    "text": "1.3 Logistique (matériel + logiciels)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#organisation-du-cours",
+    "href": "book/01_introduction.html#organisation-du-cours",
+    "title": "1  Introduction",
+    "section": "1.4 Organisation du cours",
+    "text": "1.4 Organisation du cours",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#contenus-couverts-par-le-cours",
+    "href": "book/01_introduction.html#contenus-couverts-par-le-cours",
+    "title": "1  Introduction",
+    "section": "1.5 Contenus couverts par le cours",
+    "text": "1.5 Contenus couverts par le cours",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#modalités-de-contrôle-des-connaissances",
+    "href": "book/01_introduction.html#modalités-de-contrôle-des-connaissances",
+    "title": "1  Introduction",
+    "section": "1.6 Modalités de contrôle des connaissances",
+    "text": "1.6 Modalités de contrôle des connaissances",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#accès-aux-supports-de-cours",
+    "href": "book/01_introduction.html#accès-aux-supports-de-cours",
+    "title": "1  Introduction",
+    "section": "1.7 Accès aux supports de cours",
+    "text": "1.7 Accès aux supports de cours\nLes supports de cours sont mis à la disposition des étudiants via Ametice (environnement numérique de travail d’Aix-Marseille Université). Certains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices.\n\nCours 2026-2027 : ametice.univ-amu.fr/course/view.php?id=159756\nCompléments (code, pdf) : github.com/jvanheld/proba-stat-bio_SBGAU14L",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#conventions-typographiques-et-sémantiques",
+    "href": "book/01_introduction.html#conventions-typographiques-et-sémantiques",
+    "title": "1  Introduction",
+    "section": "1.8 Conventions typographiques et sémantiques",
+    "text": "1.8 Conventions typographiques et sémantiques\nLe mot “statistique” a deux significations (dictionnaire Larousse) :\n\nEnsemble des méthodes permettant d’analyser l’information contenue dans diverses données chiffrées. La statistique mathématique, la statistique descriptive.\nEnsemble de données chiffrées relatives à un domaine spécifique. Des statistiques sur les exportations.\n\nLes statisticiens préfèrent utiliser le singulier pour parler de leur science (au même titre que la biologie, la physique), et réservent le pluriel pour désigner des données collectées (les valeurs directement mesurées sur un échantillon) ou calculées (par exemple la moyenne ou la variance de cet échantillon). Nous nous conformerons à cette convention.\n\n1.8.1 Nombres décimaux\nAfin de conserver une cohérence avec les logiciels statistiques utilisés dans les travaux pratiques (R) ainsi qu’avec la littérature scientifique internationale, les nombres décimaux sont notés avec un point (par exemple \\(3.1416\\)). Les groupes de trois chiffres sont séparés par une espace (par exemple \\(12\\,345\\)).\n\n\n1.8.2 Conventions de notation mathématique\n\n\n\n\n\n\n\n\nNotation\nExemples\nUtilisation dans ce livre\n\n\n\n\nLettres grecques\n\\(\\mu\\), \\(\\sigma^2\\), \\(\\sigma\\)\nParamètres d’une population ou d’une distribution : moyenne, variance et écart-type\n\n\nLettres latines majuscules\n\\(X, Y, Z\\)\nvariable aléatoire\n\n\nLettres latines minuscules\n\\(x\\), \\(y\\)\nValeurs particulières, ou réalisations, de variables aléatoires\n\n\nLettres latines minuscules indicées\n\\(x_1,\\ldots,x_n\\) ; \\(x_{ij}\\)\nObservations particulières au sein d’une liste (par exemple un échantillon) ou d’un tableau de données\n\n\nBarre supérieure\n\\(\\bar{X}\\) ; \\(\\bar{x}\\)\nMoyenne d’échantillon considérée respectivement comme une variable aléatoire ou comme une valeur observée\n\n\nAccent circonflexe\n\\(\\hat{\\theta}\\), \\(\\hat{\\mu}\\), \\(\\hat{\\sigma}^2\\)\nEstimateur ou estimation d’un paramètre de population\n\n\nE ajouré\n\\(\\mathbb{E}[X]\\)\nEspérance mathématique de la variable aléatoire \\(X\\)\n\n\n\n\n\n\n\n\n\nCanale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. “Proteomics of Immune Cells from Liver Tumors Reveals Immunotherapy Targets.” Cell Genomics 3 (6): 100331. https://doi.org/10.1016/j.xgen.2023.100331.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/02_stat-descr-explor.html",
+    "href": "book/02_stat-descr-explor.html",
+    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "section": "",
+    "text": "2.1 Cas d’étude : données protéomiques d’une étude immunologique",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+    ]
+  },
+  {
+    "objectID": "book/02_stat-descr-explor.html#réduction-des-données",
+    "href": "book/02_stat-descr-explor.html#réduction-des-données",
+    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "section": "2.2 Réduction des données",
+    "text": "2.2 Réduction des données",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+    ]
+  },
+  {
+    "objectID": "book/02_stat-descr-explor.html#filtrage-des-données-trop-incomplètes",
+    "href": "book/02_stat-descr-explor.html#filtrage-des-données-trop-incomplètes",
+    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "section": "2.3 Filtrage des données trop incomplètes",
+    "text": "2.3 Filtrage des données trop incomplètes",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+    ]
+  },
+  {
+    "objectID": "book/02_stat-descr-explor.html#standardisation",
+    "href": "book/02_stat-descr-explor.html#standardisation",
+    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "section": "2.4 Standardisation",
+    "text": "2.4 Standardisation",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html",
+    "href": "book/03_echantillonnage-estimation.html",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "",
+    "text": "3.1 Populations et échantillons\nEn statistique, on désigne par population l’ensemble des unités statistiques auxquelles on s’intéresse. Ces unités peuvent être des organismes, des patients, des prélèvements biologiques, des clones bactériens ou toute autre entité sur laquelle des observations peuvent être réalisées.\nVoici quelques exemples de populations illustratives de la recherche en biologie :\nPour chaque variable étudiée, on peut également considére la population dzs valeurs que cette variable prendrait sur l’ensemble des unités statistiques, par exemple : - le statut infecté ou non de chaque individu ; - la concentration d’hémoglobine dans le sang ; - la concentration d’un médicament dans le sang d’une souris de laboratoire.\nDans un monde idéal, on disposerait de mesures pour toutes les unités de la population, afin d’asseoir nos analyses sur des données qui reflètent la réalité dans son ensemble. Cependant, dans la majorité des cas, cette exhaustivité est impossible, pour différentes raisons. La population peut être infinie ou trop vaste, la collecte des données peut être coûteuse, ou encore la mesure nécessite une procédure invasive ou destructive\nEn pratique, on est donc amené à sélectionner un échantillon c’est-à-dire un sous-ensemble de la population. Le nombre d’unités qui le composent est dénommé effectif ou taille d’échantillon et sera noté \\(n\\) par la suite.\nUne fois l’échantillon constitué, on réalise une ou plusieurs mesures sur chacun de ses unités. On obtient ainsi un ensemble de données d’observation ou expérimentales, qui peuvent ensuite être analysées selon différentes approches. Les méthodes de statistique descriptive servent à résumer ou à explorer les données obtenues (histogrammes, diagrammes en boîte, analyses en composantes principales, classification, etc.). Les méthodes de statistique inférentielle visent ensuite à tirer des conclusions concernant la population à partir des observations effectuées sur l’échantillon, notamment en estimant des paramètres de la population ou en testant des hypothèses.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#populations-et-échantillons",
+    "href": "book/03_echantillonnage-estimation.html#populations-et-échantillons",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "",
+    "text": "les êtres humains adultes actuellement vivants ;\nla population humaine adulte de Marseille ;\nles souris de laboratoire de la souche C57BL/6, fréquemment utilisée pour les études en immunologie ;\nles clones d’Escherichia coli qu’on pourrait obtenir par culture dans des conditions données ;\nles saupes de la baie de Marseille ;\nles sangliers des Calanques.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#principe-de-léchantillonnage",
+    "href": "book/03_echantillonnage-estimation.html#principe-de-léchantillonnage",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.2 Principe de l’échantillonnage",
+    "text": "3.2 Principe de l’échantillonnage\nLa Figure 3.1 illustre le principe du prélèvement d’un échantillon d’effectif \\(n\\) dans une population de taille \\(N\\). Le rectangle aux coins arrondis représente la population, tandis que les ellipses représentent des échantillons tirés dans celle-ci.\n\n\n\n\n\n\n\n\n\n\n\n(a) Un échantillon particulier tiré dans la population.\n\n\n\n\n\n\n\n\n\n\n\n(b) Plusieurs échantillons tirés indépendamment dans une même population.\n\n\n\n\n\n\n\nFigure 3.1: Principe de l’échantillonnage.\n\n\n\nDans un tirage aléatoire simple sans remise, tous les sous-ensembles possibles de \\(n\\) unités ont la même probabilité d’être sélectionnés. Ce type de tirage vise à éviter qu’une partie de la population soit systématiquement su- ou sous-représentée dans l’échantillon. Il faut par exemple éviter de biaiser le tirage en sélectionnant des individus liés par une proximité géographique, familiale, ou par tout autre facteur susceptible d’influencer les variables étudiées.\nDans de nombreuses études biologiques ou médicales, la collecte des échantillons est néanmoins conditionnés par des contraintes pratiques. Un échantillon pourrait par exemple être constitué de l’ensemble des patients souffrant d’une pathologie donnée et qui se sont présentés dans un hôpital donné pendant une période déterminée. Il s’agit alors d’un échantillon de convenance, susceptible de différer de la population cible et d’introduire des biais de sélection.\nLe panneau de gauche (a) de la Figure 3.1 illustre le prélèvement d’un échantillon particulier au sein d’une population. Les symboles grecs désignent les paramètres de la population – la moyenne \\(\\mu\\) et l’écart-type \\(\\sigma\\) – tandis que les symboles latins désignent les statistiques calculées sur l’échantillon – sa moyenne \\(\\bar{x}\\)1 et son écart-type \\(s\\).\nLe panneau de droite (b) souligne une difficulté fondamentale : a priori, l’échantillon pourrait être constitué de n’importe quelle sous-ensemble de \\(n\\) unités parmi les \\(N\\) de la population. Chaque échantillon possède ses propres valeurs observées et conduit donc à une moyenne et un écart-type qui lui sont propres.\nLe nombre d’échantillons distincts d’effectif \\(n\\) que l’on peut extraire sans remise d’une population de taille \\(N\\) est donnée par le coefficient binomial;\n\\[C = \\binom{N}{n} = \\frac{N!}{n!(N - n)!}\\]\nA titre d’exemple, dans une population de taille \\(N=1000\\) le nombre possible d’échantillons distincts d’effectif \\(n=20\\) s’élève à\n\\[C = \\binom{1000}{20} \\frac{N!}{20! \\times 998!} \\approx 3.4 \\times 10^{41}\\]\nIl est donc impossile d’examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#distributions-déchantillonnage",
+    "href": "book/03_echantillonnage-estimation.html#distributions-déchantillonnage",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.3 Distributions d’échantillonnage",
+    "text": "3.3 Distributions d’échantillonnage\nL’échantillon dont nous disposons n’est qu’un des nombreux échantillons qui auraient pu être prélevés dans la population. Les statistiques calculées sur cet échantillon auraient donc pu prendre d’autres valeurs si le tirage avait été différent. On peut dès lors se demander à quel point les mesures prises sur cet échantillon sont-elles représentatives de l’ensemble de la population. En théorie statistique, cette question est abordée par l’étude des distributions d’échantillonnage.\nLa distribution d’échantillonnage d’une statistique décrit les valeurs que cette statistique peut prendre lorsqu’on répète le prélèvement d’échantillons de même taille, selon le même plan d’échantillonnage.\n\n\n\n\n\n\n\n\nFigure 3.2: Distribution des valeurs de l’ensemble de la population simulée. Cette population sera utilisée ci-dessous pour effectuer des tirages répétés d’échantillons et étudier les distributions d’échantillonnage des statistiques calculées sur ceux-ci. La barre verticale marque la moyenne de la population (\\(\\mu\\)), et la flèche horizontale couvre un écart type de part et d’autre de la moyenne, elle s’étend donc de \\(\\mu - s\\) à \\(\\mu + s\\).\n\n\n\n\n\nPour illustrer ce principe, nous générons une population artificielle de \\(N\\) = 10 000 individus. La Figure 3.2 représente la distribution des valeurs de la variable étudiée dans l’ensemble de cette population.\nPuisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne (\\(\\mu\\)), sa variance (\\(\\sigma^2\\), et son écart-type (\\(\\sigma\\)).\n\\[\\mu = \\frac{1}{N} \\sum_{i=1}^N x_i = 149.9\\]\n\\[\\sigma^2 = \\frac{1}{N} \\sum_{i=1}^N (x_i - \\mu)^2  = 16\\]\n\\[\\sigma = \\sqrt{\\sigma^2} = \\sqrt{\\frac{1}{N} \\sum_{i=1}^N (x_i - \\mu)^2}  = 4\\]\n\n3.3.1 Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne\nNous voudrions évaluer la correspondance entre la moyenne de la population (\\(\\mu\\)) et celle des échantillons prélevés aléatoirement dans cette population. Nous réalisons successivement cette expérience pour différentes tailles d’échantillons : \\(n \\in \\{2, 4, 8, 16, 32, 64\\}\\).\nPour chaque taille d’échantillon \\(n\\), nous répétons le tirage \\(R\\) = 100 000 fois. Les \\(R\\) échantillons sont tirés indépendamment les uns des autres ; à l’intérieur de chaque échantillon, \\(n\\) individus sont sélectionnés sans remise.\nPour la répétition d’indice \\(r\\), nous calculons la moyenne :\n\\[\\bar{x}^{(r)} = \\frac{1}{n}\\sum_{i=1}^n x_i^{(r)}, \\qquad r = 1, \\cdots, R\\]\nDans cette équation, \\(x_i^{(r)}\\) désigne la valeur du \\(i\\)ème individu de la \\(r\\)!ème répétition. Nous obtenons donc au total \\(R\\) moyennes d’échantillon. L’ensemble de ces \\(R\\) valeurs de \\(x^{(r)}\\) forme une approximation empirique de la distribution d’échantillonnage de la moyenne.\nNous affichons le résultat sous forme d’un histogramme, qui nous permet d’appréhender la distribution de la moyenne d’échantillon.\nPour chaque taille d’échantillon \\(n\\), la Figure 3.3 représente la distribution des \\(R\\) moyennes d’échantillon. La ligne bleue indique la moyenne de la population, \\(\\mu\\), et la ligne orange pointillée la moyenne des \\(R\\) moyennes d’échantillon – désignée par un symbole \\(x\\) surmonté d’une double barre \\(\\overline{\\bar{x}}\\)) – calculée ainsi :\n\\[\\overline{\\bar{x}} = \\frac{1}{R} \\sum_{r=1}^R \\bar{x}^{(r)}\\]\nLa flèche horizontale indique la dispersion autour de la moyenne des moyennes d’échantillon : elle s’étend d’un écart-type vers la gauche et d’un écart-type vers la droite, soit un intervalle total de deux écarts-types.\n\n\n\n\n\n\n\n\nFigure 3.3: Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne. Pour chaque valeur de \\(n\\), \\(R = 100 000\\) échantillons ont été tirés indépendamment dans la population simulée, puis leur moyenne a été calculée. La ligne bleue indique la moyenne de la population (\\(\\mu\\)), la ligne orange pointillée la moyenne des R moyennes d’échantillon (\\(\\overline{\\bar{x}}\\)), et la flèche brune horizontale couvre un écart-type de part et d’autre de la moyenne (deux écarts-types au total).\n\n\n\n\n\nUn premier constat est que la moyenne d’échantillon est remarquablement stable : pour toutes les tailles d’échantillon, la moyenne des \\(R\\) = 100 000 moyennes d’échantillons (\\(\\overline{\\bar{x}}\\)) correspond toujours à la moyenne de la population (\\(\\mu\\) = 149.9). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l’échantillon augmente.\nLa Table 3.1 synthétise les statistiques (moyenne, variance, écart-type) calculées sur l’ensemble des 100 000 moyennes d’échantillons, pour chacune des tailles d’échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population.\nLe tableau met en évidence une relation inverse entre la variance des moyennes d’échantillons (\\(s^2_{\\bar{x}}\\)) et la taille de l’échantillon (\\(n\\)) : lorsque \\(n\\) est doublé, cette variance est approximativement divisée par deux.\n\n\n\n\nTable 3.1: Centre et dispersion de la population et des distributions empiriques des moyennes d’échantillon. La première ligne présente les paramètres de la population. Les lignes suivantes présentent la moyenne (\\(\\overline{\\bar{x}}\\)), la variance (\\(s^2_{\\bar{x}}\\)) et l’écart-type (\\(s_{\\bar{x}}\\)) des \\(R\\) = 100 000 moyennes obtenues pour chaque taille d’échantillon.\n\n\n\n\n\n\n\n\\(n\\)\nMoyenne\nVariance\nÉcart-type\n\n\n\n\nPopulation\n–\n149.9\n16.00\n4.00\n\n\n2\n2\n149.9\n8.03\n2.83\n\n\n4\n4\n149.9\n4.00\n2.00\n\n\n8\n8\n149.9\n2.00\n1.42\n\n\n16\n16\n149.9\n1.00\n1.00\n\n\n32\n32\n149.9\n0.50\n0.71\n\n\n64\n64\n149.9\n0.25\n0.50\n\n\n\n\n\n\n\n\nCette relation est également illustrée sur la Figure 3.4, avec des échelles linéaires (a) et logarithmiques (b).\n\n\n\n\n\n\n\n\n\n\n\n(a) La variance diminue approximativement de moitié lorsque la taille d’échantillon est doublée.\n\n\n\n\n\n\n\n\n\n\n\n(b) Sur des échelles logarithmiques, la relation apparaît comme une droite de pente proche de −1.\n\n\n\n\n\n\n\nFigure 3.4: Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon. Pour chaque valeur de \\(n\\), la variance empirique \\(s^2_{\\bar{x}}\\) a été calculée à partir de \\(R=100 000\\) moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).\n\n\n\nLa Figure 3.5 montre la relation entre la taille d’échantillon (\\(n\\)) et l’écart-type des moyennes d’échantillons (\\(s_{\\bar{x}}\\)). La ligne bleur horizontale marque la moyenne de la population (\\(\\mu\\)), les points oranges les moyennes des moyennes d’échantillons (100 000 échantillons par point). Les flèches rouges marquent un intervalle d’un écart-type des moyennes d’échantillons (\\(s_{\\bar{x}}\\)) de part et d’autre de la moyenne (chaque flèche couvre donc 2 écarts-types).\n\n\n\n\n\n\n\n\nFigure 3.5: Centre et dispersion de la distribution d’échantillonnage de la moyenne. La ligne bleue représente la moyenne de la population (\\(\\mu\\)), les points orange la moyenne des \\(R=100 000\\) moyennes d’échantillon, et les flèches rouges l’intervalle \\(\\overline{\\bar{x}} \\pm s_{\\bar{x}}\\). Le centre de la distribution reste proche de \\(\\mu\\), tandis que sa dispersion diminue lorsque \\(n\\) augmente.\n\n\n\n\n\nLes écarts-types de moyennes d’échantillon diminuent en raison de la racine carrée de la taille d’échantillon. Ceci a une conséquence importante : si l’on désire doubler la précision de la moyenne d’échantillon, on doit multiplier par 4 la taille de l’échantillon, ce qui nécessite en pratique de quadrupler les coûts d’expérimentation ou de collecte des données.\n\n\n3.3.2 Effet de la taille d’échantillon sur la distribution d’échantillonnage de la variance",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#estimer-les-paramètres-dune-population-à-partir-dun-échantillon",
+    "href": "book/03_echantillonnage-estimation.html#estimer-les-paramètres-dune-population-à-partir-dun-échantillon",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.4 Estimer les paramètres d’une population à partir d’un échantillon",
+    "text": "3.4 Estimer les paramètres d’une population à partir d’un échantillon",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#espérance",
+    "href": "book/03_echantillonnage-estimation.html#espérance",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.5 Espérance",
+    "text": "3.5 Espérance",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#lerreur-standard",
+    "href": "book/03_echantillonnage-estimation.html#lerreur-standard",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.6 L’erreur standard",
+    "text": "3.6 L’erreur standard",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#intervalles-de-confiance-autour-de-la-moyenne",
+    "href": "book/03_echantillonnage-estimation.html#intervalles-de-confiance-autour-de-la-moyenne",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "3.7 Intervalles de confiance autour de la moyenne",
+    "text": "3.7 Intervalles de confiance autour de la moyenne",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/03_echantillonnage-estimation.html#footnotes",
+    "href": "book/03_echantillonnage-estimation.html#footnotes",
+    "title": "3  Des populations aux échantillons et retour : échantillonnage et estimation",
+    "section": "",
+    "text": "La barre au-dessus d’une variable dénote la moyenne des valeurs observées. ↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Des populations aux échantillons et retour : échantillonnage et estimation</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html",
+    "href": "book/04_egalite-moyennes.html",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "",
+    "text": "4.1 Principe général du test d’hypothèse\nDans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d’égalité des moyennes de deux populations. Il s’agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#choix-dun-test-de-comparaison-de-moyennes",
+    "href": "book/04_egalite-moyennes.html#choix-dun-test-de-comparaison-de-moyennes",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.2 Choix d’un test de comparaison de moyennes",
+    "text": "4.2 Choix d’un test de comparaison de moyennes\n\n\n\n\n\nChoix du test d’égalité des moyennes.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#effet-de-taille-la-statistique-t-observée-t_textobs",
+    "href": "book/04_egalite-moyennes.html#effet-de-taille-la-statistique-t-observée-t_textobs",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.3 Effet de taille : la statistique \\(t\\) observée (\\(t_{\\text{obs}}\\))",
+    "text": "4.3 Effet de taille : la statistique \\(t\\) observée (\\(t_{\\text{obs}}\\))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#la-distribution-de-student",
+    "href": "book/04_egalite-moyennes.html#la-distribution-de-student",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.4 La distribution de Student",
+    "text": "4.4 La distribution de Student",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#test-bilatéral-ou-unilatéral",
+    "href": "book/04_egalite-moyennes.html#test-bilatéral-ou-unilatéral",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.5 Test bilatéral ou unilatéral",
+    "text": "4.5 Test bilatéral ou unilatéral\n\n4.5.1 Régions d’acceptation et de rejet de l’hypothèse nulle\n\n\n\n\n\nRégions d’acceptation et de rejet de l’hypothèse nulle dans le cadre du test de Student, illustrées par une distribution avec 10 degrés de liberté. Panneaux de gauche : fonction de densité. Panneaux de droite : function de répartition (Cumularive Distribution Function, CDF). Panneaux du haut : test bilatéral ; panneaux du milieu : test unilatéral à droite ; panneaux du bas : test unilatéral à gauche. Flèches vertes : régions d’acceptation ; flèches rouges : régions de rejet.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#tests-non-paramétriques",
+    "href": "book/04_egalite-moyennes.html#tests-non-paramétriques",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.6 Tests non-paramétriques",
+    "text": "4.6 Tests non-paramétriques",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#acceptation-ou-rejet-de-lhypothèse-nulle",
+    "href": "book/04_egalite-moyennes.html#acceptation-ou-rejet-de-lhypothèse-nulle",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.7 Acceptation ou rejet de l’hypothèse nulle",
+    "text": "4.7 Acceptation ou rejet de l’hypothèse nulle",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#visualiser-des-milliers-de-tests-ma-plot-et-volcano-plot",
+    "href": "book/04_egalite-moyennes.html#visualiser-des-milliers-de-tests-ma-plot-et-volcano-plot",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.8 Visualiser des milliers de tests : MA plot et Volcano plot",
+    "text": "4.8 Visualiser des milliers de tests : MA plot et Volcano plot",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#puissance-dun-test",
+    "href": "book/04_egalite-moyennes.html#puissance-dun-test",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.9 Puissance d’un test",
+    "text": "4.9 Puissance d’un test",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/04_egalite-moyennes.html#corrections-de-test-multiple",
+    "href": "book/04_egalite-moyennes.html#corrections-de-test-multiple",
+    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "section": "4.10 Corrections de test multiple",
+    "text": "4.10 Corrections de test multiple",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+    ]
+  },
+  {
+    "objectID": "book/05_enrichissement-fonctionnel.html",
+    "href": "book/05_enrichissement-fonctionnel.html",
+    "title": "5  Enrichissement fonctionnel : test d’indépendance",
+    "section": "",
+    "text": "5.1 Rapport des cotes (Odds ratio)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Enrichissement fonctionnel : test d'indépendance</span>"
+    ]
+  },
+  {
+    "objectID": "book/05_enrichissement-fonctionnel.html#tableau-de-contingence",
+    "href": "book/05_enrichissement-fonctionnel.html#tableau-de-contingence",
+    "title": "5  Enrichissement fonctionnel : test d’indépendance",
+    "section": "5.2 Tableau de contingence",
+    "text": "5.2 Tableau de contingence",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Enrichissement fonctionnel : test d'indépendance</span>"
+    ]
+  },
+  {
+    "objectID": "book/05_enrichissement-fonctionnel.html#test-khi-carré-chi2-dindépendance",
+    "href": "book/05_enrichissement-fonctionnel.html#test-khi-carré-chi2-dindépendance",
+    "title": "5  Enrichissement fonctionnel : test d’indépendance",
+    "section": "5.3 Test khi carré (\\(\\chi^2\\)) d’indépendance",
+    "text": "5.3 Test khi carré (\\(\\chi^2\\)) d’indépendance",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Enrichissement fonctionnel : test d'indépendance</span>"
+    ]
+  },
+  {
+    "objectID": "book/05_enrichissement-fonctionnel.html#test-exact-de-fisher",
+    "href": "book/05_enrichissement-fonctionnel.html#test-exact-de-fisher",
+    "title": "5  Enrichissement fonctionnel : test d’indépendance",
+    "section": "5.4 Test exact de Fisher",
+    "text": "5.4 Test exact de Fisher",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Enrichissement fonctionnel : test d'indépendance</span>"
+    ]
+  },
+  {
+    "objectID": "book/05_enrichissement-fonctionnel.html#enrichissement-fonctionnel-des-protéines-différntiellement-représentées",
+    "href": "book/05_enrichissement-fonctionnel.html#enrichissement-fonctionnel-des-protéines-différntiellement-représentées",
+    "title": "5  Enrichissement fonctionnel : test d’indépendance",
+    "section": "5.5 Enrichissement fonctionnel des protéines différntiellement représentées",
+    "text": "5.5 Enrichissement fonctionnel des protéines différntiellement représentées",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Enrichissement fonctionnel : test d'indépendance</span>"
+    ]
+  },
+  {
+    "objectID": "book/06_ajustement.html",
+    "href": "book/06_ajustement.html",
+    "title": "6  Test d’ajustement",
+    "section": "",
+    "text": "6.1 Paramètres d’ajustement",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Test d'ajustement</span>"
+    ]
+  },
+  {
+    "objectID": "book/06_ajustement.html#evaluation-visuelle-histogrammes",
+    "href": "book/06_ajustement.html#evaluation-visuelle-histogrammes",
+    "title": "6  Test d’ajustement",
+    "section": "6.2 Evaluation visuelle : histogrammes",
+    "text": "6.2 Evaluation visuelle : histogrammes",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Test d'ajustement</span>"
+    ]
+  },
+  {
+    "objectID": "book/06_ajustement.html#test-dajustement-général-chi2",
+    "href": "book/06_ajustement.html#test-dajustement-général-chi2",
+    "title": "6  Test d’ajustement",
+    "section": "6.3 Test d’ajustement général : \\(\\chi^2\\)",
+    "text": "6.3 Test d’ajustement général : \\(\\chi^2\\)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Test d'ajustement</span>"
+    ]
+  },
+  {
+    "objectID": "book/06_ajustement.html#evaluation-visuelle-q-q-plots",
+    "href": "book/06_ajustement.html#evaluation-visuelle-q-q-plots",
+    "title": "6  Test d’ajustement",
+    "section": "6.4 Evaluation visuelle : Q-Q plots",
+    "text": "6.4 Evaluation visuelle : Q-Q plots",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Test d'ajustement</span>"
+    ]
+  },
+  {
+    "objectID": "book/06_ajustement.html#epreuve-de-normalité-test-de-shapiro-wilk",
+    "href": "book/06_ajustement.html#epreuve-de-normalité-test-de-shapiro-wilk",
+    "title": "6  Test d’ajustement",
+    "section": "6.5 Epreuve de normalité : test de Shapiro-Wilk",
+    "text": "6.5 Epreuve de normalité : test de Shapiro-Wilk",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Test d'ajustement</span>"
+    ]
+  },
+  {
+    "objectID": "book/references.html",
+    "href": "book/references.html",
+    "title": "References",
+    "section": "",
+    "text": "Canale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023.\n“Proteomics of Immune Cells from Liver Tumors Reveals\nImmunotherapy Targets.” Cell Genomics 3 (6): 100331. https://doi.org/10.1016/j.xgen.2023.100331.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html",
+    "href": "book/A1_distrib-theoriques.html",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "",
+    "text": "A.1 Poisson",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#binomiale",
+    "href": "book/A1_distrib-theoriques.html#binomiale",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.2 Binomiale",
+    "text": "A.2 Binomiale",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#hypergéométrique",
+    "href": "book/A1_distrib-theoriques.html#hypergéométrique",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.3 Hypergéométrique",
+    "text": "A.3 Hypergéométrique",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#kri-carré-chi2",
+    "href": "book/A1_distrib-theoriques.html#kri-carré-chi2",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.4 Kri carré (\\(\\chi^2\\))",
+    "text": "A.4 Kri carré (\\(\\chi^2\\))",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#normale",
+    "href": "book/A1_distrib-theoriques.html#normale",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.5 Normale",
+    "text": "A.5 Normale",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#student",
+    "href": "book/A1_distrib-theoriques.html#student",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.6 Student",
+    "text": "A.6 Student",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A1_distrib-theoriques.html#distribution-de-student",
+    "href": "book/A1_distrib-theoriques.html#distribution-de-student",
+    "title": "Appendix A — Distributions théoriques de probabilités",
+    "section": "A.7 Distribution de Student",
+    "text": "A.7 Distribution de Student\n\nA.7.1 Equations\n\n\nA.7.2 Fonction de densité\n\n\nA.7.3 Fonction de répartition (Cumulative Distribution Function, CDF)\n\n\nA.7.4 Tableau de valeurs critiques bilatérales de la distribution de Student\n\n\n\n\nTable A.1: Valeurs critiques bilatérales de la distribution de Student. La première colonne indique les degrés de liberté (d.d.l.). La table fournit les valeurs de \\(t\\) telles que \\(P(\\lvert T_\\nu \\rvert \\geq t) = \\alpha\\).\n\n\n\n\n\n\nd.d.l.\n0.90\n0.50\n0.30\n0.20\n0.10\n0.05\n0.02\n0.01\n0.001\n\n\n\n\n1\n0.1584\n1.0000\n1.963\n3.078\n6.314\n12.706\n31.820\n63.657\n636.619\n\n\n2\n0.1421\n0.8165\n1.386\n1.886\n2.920\n4.303\n6.965\n9.925\n31.599\n\n\n3\n0.1366\n0.7649\n1.250\n1.638\n2.353\n3.182\n4.541\n5.841\n12.924\n\n\n4\n0.1338\n0.7407\n1.190\n1.533\n2.132\n2.776\n3.747\n4.604\n8.610\n\n\n5\n0.1322\n0.7267\n1.156\n1.476\n2.015\n2.571\n3.365\n4.032\n6.869\n\n\n6\n0.1311\n0.7176\n1.134\n1.440\n1.943\n2.447\n3.143\n3.707\n5.959\n\n\n7\n0.1303\n0.7111\n1.119\n1.415\n1.895\n2.365\n2.998\n3.499\n5.408\n\n\n8\n0.1297\n0.7064\n1.108\n1.397\n1.859\n2.306\n2.897\n3.355\n5.041\n\n\n9\n0.1293\n0.7027\n1.100\n1.383\n1.833\n2.262\n2.821\n3.250\n4.781\n\n\n10\n0.1289\n0.6998\n1.093\n1.372\n1.812\n2.228\n2.764\n3.169\n4.587\n\n\n11\n0.1286\n0.6974\n1.088\n1.363\n1.796\n2.201\n2.718\n3.106\n4.437\n\n\n12\n0.1283\n0.6955\n1.083\n1.356\n1.782\n2.179\n2.681\n3.054\n4.318\n\n\n13\n0.1281\n0.6938\n1.079\n1.350\n1.771\n2.160\n2.650\n3.012\n4.221\n\n\n14\n0.1280\n0.6924\n1.076\n1.345\n1.761\n2.145\n2.624\n2.977\n4.141\n\n\n15\n0.1278\n0.6912\n1.073\n1.341\n1.753\n2.131\n2.603\n2.947\n4.073\n\n\n16\n0.1277\n0.6901\n1.071\n1.337\n1.746\n2.120\n2.583\n2.921\n4.015\n\n\n17\n0.1276\n0.6892\n1.069\n1.333\n1.740\n2.110\n2.567\n2.898\n3.965\n\n\n18\n0.1274\n0.6884\n1.067\n1.330\n1.734\n2.101\n2.552\n2.878\n3.922\n\n\n19\n0.1274\n0.6876\n1.065\n1.328\n1.729\n2.093\n2.539\n2.861\n3.883\n\n\n20\n0.1273\n0.6870\n1.064\n1.325\n1.725\n2.086\n2.528\n2.845\n3.849\n\n\n21\n0.1272\n0.6864\n1.063\n1.323\n1.721\n2.080\n2.518\n2.831\n3.819\n\n\n22\n0.1271\n0.6858\n1.061\n1.321\n1.717\n2.074\n2.508\n2.819\n3.792\n\n\n23\n0.1271\n0.6853\n1.060\n1.319\n1.714\n2.069\n2.500\n2.807\n3.768\n\n\n24\n0.1270\n0.6848\n1.059\n1.318\n1.711\n2.064\n2.492\n2.797\n3.745\n\n\n25\n0.1269\n0.6844\n1.058\n1.316\n1.708\n2.059\n2.485\n2.787\n3.725\n\n\n26\n0.1269\n0.6840\n1.058\n1.315\n1.706\n2.055\n2.479\n2.779\n3.707\n\n\n27\n0.1268\n0.6837\n1.057\n1.314\n1.703\n2.052\n2.473\n2.771\n3.690\n\n\n28\n0.1268\n0.6834\n1.056\n1.312\n1.701\n2.048\n2.467\n2.763\n3.674\n\n\n29\n0.1268\n0.6830\n1.055\n1.311\n1.699\n2.045\n2.462\n2.756\n3.659\n\n\n30\n0.1267\n0.6828\n1.055\n1.310\n1.697\n2.042\n2.457\n2.750\n3.646\n\n\n∞\n0.1257\n0.6745\n1.036\n1.282\n1.645\n1.960\n2.326\n2.576\n3.291",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Distributions théoriques de probabilités</span>"
+    ]
+  },
+  {
+    "objectID": "book/A2_formulas.html",
+    "href": "book/A2_formulas.html",
+    "title": "Appendix B — Formules mathématiques",
+    "section": "",
+    "text": "B.1 Tests de Student et de Welch",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Formules mathématiques</span>"
+    ]
+  },
+  {
+    "objectID": "book/A2_formulas.html#tests-de-student-et-de-welch",
+    "href": "book/A2_formulas.html#tests-de-student-et-de-welch",
+    "title": "Appendix B — Formules mathématiques",
+    "section": "",
+    "text": "Les symboles grecs (\\(\\mu\\), \\(\\sigma\\)) correspondent aux statistiques de population, les symboles romains (\\(\\bar{x}\\), \\(s\\)) aux statistiques d’échantillon.\nL’accent circonflexe (\\(\\hat{ }\\)) indique les estimateurs de paramètres de population calculés à partir de paramètres d’échantillons.\n\n\n\n\n\n\n\n\nSymboles et formules\nDescription\n\n\n\n\n\\(\\mu_{1},  \\mu_{2}\\)\nMoyennes respectives des populations 1 et 2.\n\n\n\n\n\n\n\\(\\sigma_{1}, \\sigma_{2}\\)\nEcarts-types respectifs des populations 1 and 2.\n\n\n\n\n\n\n\\(N_1\\), \\(N_2\\)\nTailles (nombre d’individus) des populations 1 et 2.\n\n\n\n\n\n\n\\(n_1\\), \\(n_2\\)\nEffectifs (nombre d’individus) des échantillons prélevés sur les populations 1 et 2.\n\n\n\n\n\n\n\\(\\hat{\\mu}_1 =\\bar{x}_{1} ~=~ \\frac{1}{n_1}\\displaystyle\\sum_{i=1}^{n_1} x_{1i} \\; ; \\;  \\hat{\\mu}_2 ~=~ \\bar{x}_{2} ~=~  \\frac{1}{n_2}\\displaystyle\\sum_{i=1}^{n_2} x_{2i}\\)\nMoyennes d’échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives\n\n\n\n\n\n\n\\(\\delta ~=~ \\mu_{2} ~-~ \\mu_{1}\\)\nDifférence entre les moyennes des populations.\n\n\n\n\n\n\n\\(d ~=~ \\hat{\\delta} ~=~ \\hat{\\mu}_2 ~-~ \\hat{\\mu}_1  ~=~ \\bar{x}_2 ~-~ \\bar{x}_1\\)\n\\(d\\) = Taille d’effet: dans un test de comparaison de moyennes, il s’agit de la différence\n\n\nentre les moyennes d’échantillons, utilisée comme estimateur de \\(\\delta\\).\n\n\n\n\n\n\n\n\\(s^2_{1}, s^2_{2}\\)\nVariances mesurées sur les échantillons.\n\n\n\n\n\n\n\\(\\hat{\\sigma}^2_1 ~=~ \\frac{n_1}{n_1-1} s^2_{1} ~=~ \\frac{1}{n_1-1}\\displaystyle\\sum_{i=1}^{n_1} (x_{1i} ~-~ \\bar{x}_1)^2 \\quad\\) \\(\\hat{\\sigma}^2_2 ~=~ \\frac{n_2}{n_2-1} s^2_{2} ~=~ \\frac{1}{n_2-1}\\displaystyle\\sum_{i=1}^{n_2} (x_{2i} ~-~ \\bar{x}_2)^2\\)\nEstimateurs corrigés (non biaisés) de la variance des populations respectives\n\n\n\n\n\n\n\\(\\hat{\\sigma}_1 ~=~ \\sqrt{\\hat{\\sigma}^2_1} \\; ; \\; \\hat{\\sigma}_2 ~=~ \\sqrt{\\hat{\\sigma}^2_2}\\)\nEstimateurs corrigés (non biaisés) de l’écart-type des populations respectives\n\n\n\n\n\n\n\\(\\hat{\\sigma}_p ~=~ \\sqrt{\\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}}\\)\nEcart-type groupé (pooled standard deviation), utilisé comme estimateur de l’écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d’homoscédasticité).\n\n\n\n\n\n\n\\(\\hat{\\sigma}_\\delta ~=~ \\hat{\\sigma}_p \\sqrt{\\left(\\frac{1}{n_1}+ \\frac{1}{n_2}\\right)}\\)\nErreur standard sur la différence entre moyennes, en supposant que les populations ont la même variance (test de Student).\n\n\n\n\n\n\n\\(t_{\\text{obs}} ~=~ \\frac{\\hat{\\mu}_{1} ~-~ \\hat{\\mu}_{2}}{\\hat{\\sigma}_{\\mu_1 ~-~ \\mu_2}} ~=~ \\frac{\\hat{\\mu}_{1} ~-~ \\hat{\\mu}_{2}}{\\sqrt{\\frac {\\hat{\\sigma}^2_{1}}{n_1} + \\frac{\\hat{\\sigma}^2_{2}}{n_2}}}\\)\nstatistique \\(t\\) observée, formule basée sur les estimateurs\n\n\n\n\n\n\n\\(t_{S} ~=~ \\frac{\\hat{\\delta}}{\\hat{\\sigma}_\\delta} ~=~  \\frac{\\bar{x}_{1} ~-~ \\bar{x}_{2}}{\\sqrt{\\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \\left(\\frac{1}{n_1}+ \\frac{1}{n_2}\\right)}}\\)\nstatistique \\(t\\) de Student\n\n\n\n\n\n\n\\(t_{W}=\\frac{\\bar{x}_{1} ~-~ \\bar{x}_{2}}{\\sqrt{\\frac {s^2_{1}}{n_1 ~-~ 1} + \\frac{s^2_{2}}{n_2 ~-~ 1}}}\\)\nstatistique \\(t\\) de Welch\n\n\n\n\n\n\n\\(\\nu_S ~=~ n_1 + n_2 -2\\)\nDegrees of freedom for the \\(t\\) distribution in a Student test\n\n\n\n\n\n\n\\(\\nu_W ~=~ \\frac{\\left( \\frac{\\hat{s}_1^2}{n_1} + \\frac{\\hat{s}_2^2}{n_2}\\right)^2}{\\frac{1}{n_1-1}  \\left( \\frac{\\hat{s}_1^2}{n_1} \\right)^2 + \\frac{1}{n_2-1} \\left( \\frac{\\hat{s}_2^2}{n_2} \\right)^2}\\)\nWelch degrees of freedom, computed from the corrected estimators of population variances \\(\\hat{s_1}^2\\) and \\(\\hat{s_2}^2\\)\n\n\n\n\n\n\n\\(\\nu_W ~=~ \\frac{\\left( \\frac{s_1^2}{n_1-1} + \\frac{s_2^2}{n_2-1}\\right)^2}{\\frac{s_1^4}{(n_1-1)^3} + \\frac{s_2^4}{(n_2-1)^3}}\\)\nWelch degrees of freedom, computed from the sample variances \\(s_1^2\\) and \\(s_2^2\\)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Formules mathématiques</span>"
+    ]
+  }
+]
