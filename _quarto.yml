@@ -8,6 +8,9 @@ project:
   #   - figures/generated/**
   #   - figures/manual_exports/**
 
+execute:
+  freeze: auto
+
 book:
   title: "Probabilités et statistiques pour la biologie"
   author: 
@@ -49,7 +52,6 @@ format:
     theme: 
       - cerulean
     highlight-style: zenburn
-    self_contained: yes
     code-tools: true
     code-fold: true
     code-summary: "Afficher le code"
