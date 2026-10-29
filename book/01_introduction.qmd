@@ -33,7 +33,14 @@ log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
 
 ## Modalités de contrôle des connaissances
 
-## Accès aux supports: Ametice + github
+## Accès aux supports de cours
+
+Les supports de cours sont mis à la disposition des étudiants via Ametice (environnement numérique de travail d'Aix-Marseille Université). 
+Certains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices. 
+
+- Cours 2026-2027 : [ametice.univ-amu.fr/course/view.php?id=159756](https://ametice.univ-amu.fr/course/view.php?id=159756)
+- Compléments (code, pdf) : [github.com/jvanheld/proba-stat-bio_SBGAU14L](https://github.com/jvanheld/proba-stat-bio_SBGAU14L)
+
 
 
 ## Conventions typographiques et sémantiques
