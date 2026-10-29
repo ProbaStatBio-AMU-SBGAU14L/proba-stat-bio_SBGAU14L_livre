@@ -44,3 +44,5 @@ index.log
 index.tex
 index.toc
 rendered
+/rendered/
+/.quarto/
