@@ -4,34 +4,82 @@
 
 # Introduction
 
-## Cas d'étude
+Ce cours s'adresse à différentes mentions de la 1ère année du Master en biologie d'Aix-Marseille Université : 
 
-### Expérience sur une poignée de rats
+- Immunologie
+- Biochimie structurale et génomique (BSG)
+- Bioinformatique
 
-[A ECRIRE]
+Il fournit un rappel des concepts de base de probabilités et de statistique, et présente des méthodes d'analyse adaptées aux données actuels de la biologie, avec un focus sur les données dites "omiques" (génomiques, transcriptomiques, protéomiques, métabolomiques). 
 
-### Données protéomiques
+Le cas d'étude principal est issu d'un article de protéomique appliqué à l'immunologie, ce qui réduit le recouvrement avec les types de données omiques – génomique, transcriptomique – abordés dans d'autres cours. 
 
-See @canale_proteomics_2023 for additional discussion of literate programming.
 
-```{r read_data}
-proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
-log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
-#dim(log2_LFQ)
-#names(log2_LFQ)
-#head(row.names(log2_LFQ))
-# View(log2_LFQ)
-```
 
 ## Objectifs pédagogiques
 
-## Logistique (matériel + logiciels)
+### Connaissances
+
+- Principes du raisonnement statistique (modélisation statistique)
+- Fondements théoriques sous-jacents à l’analyse des données : échantillonnage, estimation, lois de probabilités, formulation des hypothèses, corrections de tests multiples...
+
+
+### Compétences
+
+- Appréhender des données correspondant aux pratiques actuelles de la biologie (données tabulaires, résultats de technologies “omiques”)
+
+- Formuler des questions scientifiques concernant ces données
+
+- Choisir les approches d’analyse statistique appropriées pour répondre à ces questions (visualisation, découverte réduction des données, tests d’hypothèses, …) 
+
+- Concevoir un schéma d’analyse et le mettre en oeuvre 
+    - sur papier (exercices “sur table”)
+    - à l’ordinateur, en utilisant le langage R
+    
+- Interpréter les résultats en terme de signification statistique et biologique
+
+
+
+## Matières couvertes
+
+1. Apprivoiser ses données: statistiques descriptives et exploratoires
+2. Des populations aux échantillons et retour : échantillonnage et estimation
+3. Tests de comparaison de moyennes
+4. Tests d'ajustement
+5. Tests d’indépendance
+6. Statistiques de classement
+
 
 ## Organisation du cours
 
-## Contenus couverts par le cours
+Cette unité d'enseignement comporte 5 séances de 2h cours magistraux (CM) et 10 séances de 2h de travaux pratiques, qui incluent des exercices "sur table" (sur papier) et de l'analyse de données sur ordinateur, au moyen du logiciel de statistique R. 
+
+
+## Logistique (matériel + logiciels)
+
+Le cours inclut des travaux pratiques sur les ordinateurs personnels des étudiants, ou sur des ordinateurs prêtés par la Faculté. 
+
+Avant la première séance, nous demandons aux étudiants d’installer sur leur ordinateur les logiciels R et RStudio. 
+
+**Installation de R** (langage spécialisé pour l’analyse statistique)
+
+- Connectez-vous à [cran.rstudio.com](https://cran.rstudio.com)
+- Installez la version 4.6.2 de votre système opérateur (Mac, Windows, Linux)
+
+
+**Installation de RStudio** (environnement spécialisé pour l’utilisation du langage R)
+
+- Distribution : [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop)
+
+
 
 ## Modalités de contrôle des connaissances
+
+Le contrôle des connaissances évaluation se base sur un examen écrit "sur table", qui inclura
+
+- des questions théoriques (définition de concepts)
+- des exercices qui peuvent être résolus sans nécessiter ni ordinateur ni machine à calculer
+- quelques questions simples d'interprétation d'un petit bloc de code R
 
 ## Accès aux supports de cours
 
@@ -40,7 +88,6 @@ Certains contenus sont disponibles sur un entrepôt github, en particulier le co
 
 - Cours 2026-2027 : [ametice.univ-amu.fr/course/view.php?id=159756](https://ametice.univ-amu.fr/course/view.php?id=159756)
 - Compléments (code, pdf) : [github.com/jvanheld/proba-stat-bio_SBGAU14L](https://github.com/jvanheld/proba-stat-bio_SBGAU14L)
-
 
 
 ## Conventions typographiques et sémantiques
@@ -68,3 +115,24 @@ Afin de conserver une cohérence avec les logiciels statistiques utilisés dans 
 | Barre supérieure | $\bar{X}$ ; $\bar{x}$ | Moyenne d’échantillon considérée respectivement comme une variable aléatoire ou comme une valeur observée |
 | Accent circonflexe | $\hat{\theta}$, $\hat{\mu}$, $\hat{\sigma}^2$ | Estimateur ou estimation d’un paramètre de population |
 | E ajouré | $\mathbb{E}[X]$ | Espérance mathématique de la variable aléatoire $X$ |
+
+
+
+## Cas d'étude
+
+### Expérience sur une poignée de rats
+
+[A ECRIRE]
+
+### Données protéomiques
+
+See @canale_proteomics_2023 for additional discussion of literate programming.
+
+```{r read_data}
+proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
+log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
+#dim(log2_LFQ)
+#names(log2_LFQ)
+#head(row.names(log2_LFQ))
+# View(log2_LFQ)
+```
