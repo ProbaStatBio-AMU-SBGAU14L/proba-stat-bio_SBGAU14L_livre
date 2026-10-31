@@ -1,0 +1,17 @@
+{
+  "hash": "1753860570b3987f00551994efa16cc0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes\n\nDans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.\n\n## Principe général du test d'hypothèse\n\n## Choix d’un test de comparaison de moyennes\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![**Choix du test d'égalité des moyennes**. ](../figures/generated/mean_test_choice_flowchart.png){fig-align='center' width=100%}\n:::\n:::\n\n\n\n\n## Effet de taille : la statistique $t$ observée ($t_{\\text{obs}}$)\n\n\n## La distribution de Student\n\n## Test bilatéral ou unilatéral\n\n### Régions d'acceptation et de rejet de l'hypothèse nulle\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![**Régions d'acceptation et de rejet de l'hypothèse nulle dans le cadre du test de Student**, illustrées par une distribution avec 10 degrés de liberté. Panneaux de gauche : fonction de densité. Panneaux de droite : function de répartition (Cumularive Distribution Function, CDF). Panneaux du haut : test bilatéral ; panneaux du milieu : test unilatéral à droite ; panneaux du bas : test unilatéral à gauche. Flèches vertes : régions d'acceptation ; flèches rouges : régions de rejet. ](04_egalite-moyennes_files/figure-html/student_distrib_fig-1.png){fig-align='center' width=100%}\n:::\n:::\n\n\n## Tests non-paramétriques\n\n## Acceptation ou rejet de l'hypothèse nulle\n\n## Visualiser des milliers de tests : MA plot et Volcano plot\n\n## Puissance d'un test\n\n## Corrections de test multiple\n",
+    "supporting": [
+      "04_egalite-moyennes_files/figure-html"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

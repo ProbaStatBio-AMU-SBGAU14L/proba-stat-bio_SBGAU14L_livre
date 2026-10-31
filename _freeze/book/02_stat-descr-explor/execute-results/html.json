@@ -1,0 +1,15 @@
+{
+  "hash": "932ecfaba257fb1655bd12345ee41ffa",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Apprivoiser vos données : statistiques descriptives et exploratoires\n\n## Cas d'étude : données protéomiques d'une étude immunologique\n\n## Réduction des données\n\n## Filtrage des données trop incomplètes\n\n## Standardisation\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

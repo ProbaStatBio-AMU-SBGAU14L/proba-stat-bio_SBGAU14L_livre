@@ -1,0 +1,17 @@
+{
+  "hash": "9c848a4008c1506c168dc667edf801fb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Introduction\n\n## Cas d'étude\n\n### Expérience sur une poignée de rats\n\n[A ECRIRE]\n\n### Données protéomiques\n\nSee @canale_proteomics_2023 for additional discussion of literate programming.\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n## Objectifs pédagogiques\n\n## Logistique (matériel + logiciels)\n\n## Organisation du cours\n\n## Contenus couverts par le cours\n\n## Modalités de contrôle des connaissances\n\n## Accès aux supports de cours\n\nLes supports de cours sont mis à la disposition des étudiants via Ametice (environnement numérique de travail d'Aix-Marseille Université). \nCertains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices. \n\n- Cours 2026-2027 : [ametice.univ-amu.fr/course/view.php?id=159756](https://ametice.univ-amu.fr/course/view.php?id=159756)\n- Compléments (code, pdf) : [github.com/jvanheld/proba-stat-bio_SBGAU14L](https://github.com/jvanheld/proba-stat-bio_SBGAU14L)\n\n\n\n## Conventions typographiques et sémantiques\n\nLe mot \"statistique\" a deux significations (dictionnaire Larousse) : \n\n1. Ensemble des méthodes permettant d'analyser l'information contenue dans diverses données chiffrées. *La statistique mathématique, la statistique descriptive.*\n2. Ensemble de données chiffrées relatives à un domaine spécifique. *Des statistiques sur les exportations.*\n\nLes statisticiens préfèrent utiliser le singulier pour parler de leur science (au même titre que la biologie, la physique), et réservent le pluriel pour désigner des données collectées (les valeurs directement mesurées sur un échantillon) ou calculées (par exemple la moyenne ou la variance de cet échantillon). Nous nous conformerons à cette convention. \n\n\n### Nombres décimaux\n\nAfin de conserver une cohérence avec les logiciels statistiques utilisés dans les travaux pratiques (R) ainsi qu'avec la littérature scientifique internationale, les nombres décimaux sont notés avec un point (par exemple $3.1416$). Les groupes de trois chiffres sont séparés par une espace (par exemple $12\\,345$).\n\n### Conventions de notation mathématique\n\n| Notation | Exemples | Utilisation dans ce livre |\n|:---------|:---------:|:--------------------------|\n| Lettres grecques | $\\mu$, $\\sigma^2$, $\\sigma$ | Paramètres d’une population ou d’une distribution : moyenne, variance et écart-type |\n| Lettres latines majuscules | $X, Y, Z$ | variable aléatoire |\n| Lettres latines minuscules | $x$, $y$ | Valeurs particulières, ou réalisations, de variables aléatoires |\n| Lettres latines minuscules indicées | $x_1,\\ldots,x_n$ ; $x_{ij}$ | Observations particulières au sein d'une liste (par exemple un échantillon) ou d'un tableau de données |\n| Barre supérieure | $\\bar{X}$ ; $\\bar{x}$ | Moyenne d’échantillon considérée respectivement comme une variable aléatoire ou comme une valeur observée |\n| Accent circonflexe | $\\hat{\\theta}$, $\\hat{\\mu}$, $\\hat{\\sigma}^2$ | Estimateur ou estimation d’un paramètre de population |\n| E ajouré | $\\mathbb{E}[X]$ | Espérance mathématique de la variable aléatoire $X$ |\n",
+    "supporting": [
+      "01_introduction_files/figure-html"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

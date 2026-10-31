@@ -1,0 +1,15 @@
+{
+  "hash": "954392b6fa5550fb9a1b59a4570f852a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# Test d'ajustement\n\n## Paramètres d'ajustement\n\n## Evaluation visuelle : histogrammes\n\n## Test d'ajustement général : $\\chi^2$\n\n## Evaluation visuelle : Q-Q plots\n\n## Epreuve de normalité : test de Shapiro-Wilk\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

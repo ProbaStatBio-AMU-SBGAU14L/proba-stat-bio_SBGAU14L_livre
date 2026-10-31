@@ -1,0 +1,15 @@
+{
+  "hash": "5d7e79c8eb8cf2e38a4a9bd2f10f9759",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Enrichissement fonctionnel : test d'indépendance\n\n## Rapport des cotes (Odds ratio)\n\n## Tableau de contingence\n\n## Test khi carré ($\\chi^2$) d'indépendance\n\n## Test exact de Fisher\n\n## Enrichissement fonctionnel des protéines différntiellement représentées\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
