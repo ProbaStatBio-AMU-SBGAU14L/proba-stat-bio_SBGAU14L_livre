@@ -40,19 +40,20 @@ Le cas d'étude principal est issu d'un article de protéomique appliqué à l'i
 
 
 
-## Matières couvertes
-
-1. Apprivoiser ses données: statistiques descriptives et exploratoires
-2. Des populations aux échantillons et retour : échantillonnage et estimation
-3. Tests de comparaison de moyennes
-4. Tests d'ajustement
-5. Tests d’indépendance
-6. Statistiques de classement
-
 
 ## Organisation du cours
 
 Cette unité d'enseignement comporte 5 séances de 2h cours magistraux (CM) et 10 séances de 2h de travaux pratiques, qui incluent des exercices "sur table" (sur papier) et de l'analyse de données sur ordinateur, au moyen du logiciel de statistique R. 
+
+## Plan du cours
+
+1. Introduction
+2. Apprivoiser ses données: statistiques descriptives et exploratoires
+3. Des populations aux échantillons et retour : échantillonnage et estimation
+4. Tests de comparaison de moyennes
+5. Tests d'ajustement
+6. Tests d’indépendance et enrichissement fonctionnel
+7. Statistiques de classement
 
 
 ## Logistique (matériel + logiciels)
