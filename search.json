@@ -30,21 +30,21 @@
     ]
   },
   {
-    "objectID": "book/01_introduction.html#matières-couvertes",
-    "href": "book/01_introduction.html#matières-couvertes",
+    "objectID": "book/01_introduction.html#organisation-du-cours",
+    "href": "book/01_introduction.html#organisation-du-cours",
     "title": "1  Introduction",
-    "section": "1.2 Matières couvertes",
-    "text": "1.2 Matières couvertes\n\nApprivoiser ses données: statistiques descriptives et exploratoires\nDes populations aux échantillons et retour : échantillonnage et estimation\nTests de comparaison de moyennes\nTests d’ajustement\nTests d’indépendance\nStatistiques de classement",
+    "section": "1.2 Organisation du cours",
+    "text": "1.2 Organisation du cours\nCette unité d’enseignement comporte 5 séances de 2h cours magistraux (CM) et 10 séances de 2h de travaux pratiques, qui incluent des exercices “sur table” (sur papier) et de l’analyse de données sur ordinateur, au moyen du logiciel de statistique R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "book/01_introduction.html#organisation-du-cours",
-    "href": "book/01_introduction.html#organisation-du-cours",
+    "objectID": "book/01_introduction.html#plan-du-cours",
+    "href": "book/01_introduction.html#plan-du-cours",
     "title": "1  Introduction",
-    "section": "1.3 Organisation du cours",
-    "text": "1.3 Organisation du cours\nCette unité d’enseignement comporte 5 séances de 2h cours magistraux (CM) et 10 séances de 2h de travaux pratiques, qui incluent des exercices “sur table” (sur papier) et de l’analyse de données sur ordinateur, au moyen du logiciel de statistique R.",
+    "section": "1.3 Plan du cours",
+    "text": "1.3 Plan du cours\n\nIntroduction\nApprivoiser ses données: statistiques descriptives et exploratoires\nDes populations aux échantillons et retour : échantillonnage et estimation\nTests de comparaison de moyennes\nTests d’ajustement\nTests d’indépendance et enrichissement fonctionnel\nStatistiques de classement",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -102,41 +102,41 @@
   {
     "objectID": "book/02_stat-descr-explor.html",
     "href": "book/02_stat-descr-explor.html",
-    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "title": "2  Apprivoiser ses données : statistiques descriptives et exploratoires",
     "section": "",
     "text": "2.1 Cas d’étude : données protéomiques d’une étude immunologique",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser ses données : statistiques descriptives et exploratoires</span>"
     ]
   },
   {
     "objectID": "book/02_stat-descr-explor.html#réduction-des-données",
     "href": "book/02_stat-descr-explor.html#réduction-des-données",
-    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "title": "2  Apprivoiser ses données : statistiques descriptives et exploratoires",
     "section": "2.2 Réduction des données",
     "text": "2.2 Réduction des données",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser ses données : statistiques descriptives et exploratoires</span>"
     ]
   },
   {
     "objectID": "book/02_stat-descr-explor.html#filtrage-des-données-trop-incomplètes",
     "href": "book/02_stat-descr-explor.html#filtrage-des-données-trop-incomplètes",
-    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "title": "2  Apprivoiser ses données : statistiques descriptives et exploratoires",
     "section": "2.3 Filtrage des données trop incomplètes",
     "text": "2.3 Filtrage des données trop incomplètes",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser ses données : statistiques descriptives et exploratoires</span>"
     ]
   },
   {
     "objectID": "book/02_stat-descr-explor.html#standardisation",
     "href": "book/02_stat-descr-explor.html#standardisation",
-    "title": "2  Apprivoiser vos données : statistiques descriptives et exploratoires",
+    "title": "2  Apprivoiser ses données : statistiques descriptives et exploratoires",
     "section": "2.4 Standardisation",
     "text": "2.4 Standardisation",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser vos données : statistiques descriptives et exploratoires</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser ses données : statistiques descriptives et exploratoires</span>"
     ]
   },
   {
@@ -232,101 +232,101 @@
   {
     "objectID": "book/04_egalite-moyennes.html",
     "href": "book/04_egalite-moyennes.html",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "",
-    "text": "4.1 Principe général du test d’hypothèse\nDans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d’égalité des moyennes de deux populations. Il s’agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.",
+    "text": "4.1 Principe général du test d’hypothèse\nDans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d’égalité des moyennes de deux populations. Il s’agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.\nNous appliquons ce test à l’analyse différentielle de données protéomiques, afin de détecter les protéines présentant une différence significative d’abondance entre deux traitements dans les données de Canale et al. (2023). Ceci nous amènera à élargir l’analyse pour tester non pas une seule, mais des milliers d’hypothèses, puisqu’on testera l’égalité des moyennes pour chacune des protéines de cette expérience de protéomique.\nNous tenterons d’aborder cette extension de l’analyse en nous appuyant sur des représentations graphiques, qui mettront en évidence l’intérêt et la complémentarité de différentes statistiques (taille d’effet, P-valeur) pour appréhender à la fois la significativité statistique et la pertinence expérimentale de milliers de résultats.\nNous établirons systématiquement le lien entre les concepts théoriques, leur formulation mathématique, et l’intuition acquise au moyen de ces représentations graphiques.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#choix-dun-test-de-comparaison-de-moyennes",
     "href": "book/04_egalite-moyennes.html#choix-dun-test-de-comparaison-de-moyennes",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.2 Choix d’un test de comparaison de moyennes",
     "text": "4.2 Choix d’un test de comparaison de moyennes\n\n\n\n\n\nChoix du test d’égalité des moyennes.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#effet-de-taille-la-statistique-t-observée-t_textobs",
     "href": "book/04_egalite-moyennes.html#effet-de-taille-la-statistique-t-observée-t_textobs",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.3 Effet de taille : la statistique \\(t\\) observée (\\(t_{\\text{obs}}\\))",
     "text": "4.3 Effet de taille : la statistique \\(t\\) observée (\\(t_{\\text{obs}}\\))",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#la-distribution-de-student",
     "href": "book/04_egalite-moyennes.html#la-distribution-de-student",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.4 La distribution de Student",
     "text": "4.4 La distribution de Student",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#test-bilatéral-ou-unilatéral",
     "href": "book/04_egalite-moyennes.html#test-bilatéral-ou-unilatéral",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.5 Test bilatéral ou unilatéral",
     "text": "4.5 Test bilatéral ou unilatéral\n\n4.5.1 Régions d’acceptation et de rejet de l’hypothèse nulle\n\n\n\n\n\nRégions d’acceptation et de rejet de l’hypothèse nulle dans le cadre du test de Student, illustrées par une distribution avec 10 degrés de liberté. Panneaux de gauche : fonction de densité. Panneaux de droite : function de répartition (Cumularive Distribution Function, CDF). Panneaux du haut : test bilatéral ; panneaux du milieu : test unilatéral à droite ; panneaux du bas : test unilatéral à gauche. Flèches vertes : régions d’acceptation ; flèches rouges : régions de rejet.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#tests-non-paramétriques",
     "href": "book/04_egalite-moyennes.html#tests-non-paramétriques",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.6 Tests non-paramétriques",
     "text": "4.6 Tests non-paramétriques",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#acceptation-ou-rejet-de-lhypothèse-nulle",
     "href": "book/04_egalite-moyennes.html#acceptation-ou-rejet-de-lhypothèse-nulle",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.7 Acceptation ou rejet de l’hypothèse nulle",
     "text": "4.7 Acceptation ou rejet de l’hypothèse nulle",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#visualiser-des-milliers-de-tests-ma-plot-et-volcano-plot",
     "href": "book/04_egalite-moyennes.html#visualiser-des-milliers-de-tests-ma-plot-et-volcano-plot",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.8 Visualiser des milliers de tests : MA plot et Volcano plot",
     "text": "4.8 Visualiser des milliers de tests : MA plot et Volcano plot",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#puissance-dun-test",
     "href": "book/04_egalite-moyennes.html#puissance-dun-test",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.9 Puissance d’un test",
     "text": "4.9 Puissance d’un test",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
     "objectID": "book/04_egalite-moyennes.html#corrections-de-test-multiple",
     "href": "book/04_egalite-moyennes.html#corrections-de-test-multiple",
-    "title": "4  Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes",
+    "title": "4  Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines",
     "section": "4.10 Corrections de test multiple",
-    "text": "4.10 Corrections de test multiple",
+    "text": "4.10 Corrections de test multiple\n\n\n\n\n\n\nCanale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. “Proteomics of Immune Cells from Liver Tumors Reveals Immunotherapy Targets.” Cell Genomics 3 (6): 100331. https://doi.org/10.1016/j.xgen.2023.100331.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span>"
     ]
   },
   {
