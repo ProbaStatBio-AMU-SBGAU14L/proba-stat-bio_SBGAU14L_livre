@@ -48,11 +48,11 @@ knitr:
     message: false
     comment: ""
 
-
 format:
   html:
-    theme: 
+    theme:
       - cerulean
+      - styles.scss
     highlight-style: zenburn
     code-tools: true
     code-fold: true
