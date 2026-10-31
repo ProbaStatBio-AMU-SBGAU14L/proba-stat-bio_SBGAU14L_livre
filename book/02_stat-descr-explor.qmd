@@ -2,7 +2,7 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Apprivoiser vos données : statistiques descriptives et exploratoires
+# Apprivoiser ses données : statistiques descriptives et exploratoires
 
 ## Cas d'étude : données protéomiques d'une étude immunologique
 
