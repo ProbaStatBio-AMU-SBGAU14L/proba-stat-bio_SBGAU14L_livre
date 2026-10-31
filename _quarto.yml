@@ -64,8 +64,8 @@ format:
     toc_float: true
     # fontsize: 10pt
     linestretch: 1.2
-    mainfont: "Calibri"
-    sansfont: "Calibri"
+    mainfont: "Calibri, Arial, Helvetica, sans-serif"
+    sansfont: "Calibri, Arial, Helvetica, sans-serif"
     mathfont: "Latin Modern Math"
     # mathfont: "Libertinus Math"
     # mathfont: "STIX Two Math"
