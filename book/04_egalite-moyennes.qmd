@@ -3,9 +3,15 @@
 ```
 
 
-# Analyse différentielle de l’abondance des protéines : tests d’égalité des moyennes
+# Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines
 
-Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique.
+Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique. 
+
+Nous appliquons ce test à l'analyse différentielle de données protéomiques, afin de détecter les protéines présentant une différence significative d'abondance entre deux traitements dans les données de @canale_proteomics_2023. Ceci nous amènera à élargir l'analyse pour tester non pas une seule, mais des milliers d'hypothèses, puisqu'on testera l'égalité des moyennes pour chacune des protéines de cette expérience de protéomique. 
+
+Nous tenterons d'aborder cette extension de l'analyse en nous appuyant sur des représentations graphiques, qui mettront en évidence l'intérêt et la complémentarité de différentes statistiques (taille d'effet, P-valeur) pour appréhender à la fois la significativité statistique et la pertinence expérimentale de milliers de résultats. 
+
+Nous établirons systématiquement le lien entre les concepts théoriques, leur formulation mathématique, et l'intuition acquise au moyen de ces représentations graphiques. 
 
 ## Principe général du test d'hypothèse
 
