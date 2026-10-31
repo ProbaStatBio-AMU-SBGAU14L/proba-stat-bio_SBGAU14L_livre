@@ -4,7 +4,24 @@
 
 # Apprivoiser ses données : statistiques descriptives et exploratoires
 
+Dans ce chapitre, nous dressons un bref rappel des approches statistiques permettant d'appréhender la composition générale ou certaines caractéristiques pertinentes d'un jeu de données. 
+
 ## Cas d'étude : données protéomiques d'une étude immunologique
+
+```{r}
+#| label: fig-canale-2023-graphical-abstract
+#| out-width: "100%"
+#| fig-cap: "**Abstract schématique de Canale et al. (2023)**   "
+#| echo: false
+
+source(
+  "R/include_figures.R",
+  local = knitr::knit_global()
+)
+
+include_manual_figure(c("canale-2023_graphical-abstract"))
+```
+
 
 ## Réduction des données
 
