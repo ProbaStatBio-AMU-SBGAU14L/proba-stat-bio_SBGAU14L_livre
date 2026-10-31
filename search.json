@@ -14,17 +14,7 @@
     "href": "book/01_introduction.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1 Cas d’étude",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "book/01_introduction.html#cas-détude",
-    "href": "book/01_introduction.html#cas-détude",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "1.1.1 Expérience sur une poignée de rats\n[A ECRIRE]\n\n\n1.1.2 Données protéomiques\nSee Canale et al. (2023) for additional discussion of literate programming.",
+    "text": "1.1 Objectifs pédagogiques\nCe cours s’adresse à différentes mentions de la 1ère année du Master en biologie d’Aix-Marseille Université :\nIl fournit un rappel des concepts de base de probabilités et de statistique, et présente des méthodes d’analyse adaptées aux données actuels de la biologie, avec un focus sur les données dites “omiques” (génomiques, transcriptomiques, protéomiques, métabolomiques).\nLe cas d’étude principal est issu d’un article de protéomique appliqué à l’immunologie, ce qui réduit le recouvrement avec les types de données omiques – génomique, transcriptomique – abordés dans d’autres cours.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -33,18 +23,18 @@
     "objectID": "book/01_introduction.html#objectifs-pédagogiques",
     "href": "book/01_introduction.html#objectifs-pédagogiques",
     "title": "1  Introduction",
-    "section": "1.2 Objectifs pédagogiques",
-    "text": "1.2 Objectifs pédagogiques",
+    "section": "",
+    "text": "1.1.1 Connaissances\n\nPrincipes du raisonnement statistique (modélisation statistique)\nFondements théoriques sous-jacents à l’analyse des données : échantillonnage, estimation, lois de probabilités, formulation des hypothèses, corrections de tests multiples…\n\n\n\n1.1.2 Compétences\n\nAppréhender des données correspondant aux pratiques actuelles de la biologie (données tabulaires, résultats de technologies “omiques”)\nFormuler des questions scientifiques concernant ces données\nChoisir les approches d’analyse statistique appropriées pour répondre à ces questions (visualisation, découverte réduction des données, tests d’hypothèses, …)\nConcevoir un schéma d’analyse et le mettre en oeuvre\n\nsur papier (exercices “sur table”)\nà l’ordinateur, en utilisant le langage R\n\nInterpréter les résultats en terme de signification statistique et biologique",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "book/01_introduction.html#logistique-matériel-logiciels",
-    "href": "book/01_introduction.html#logistique-matériel-logiciels",
+    "objectID": "book/01_introduction.html#matières-couvertes",
+    "href": "book/01_introduction.html#matières-couvertes",
     "title": "1  Introduction",
-    "section": "1.3 Logistique (matériel + logiciels)",
-    "text": "1.3 Logistique (matériel + logiciels)",
+    "section": "1.2 Matières couvertes",
+    "text": "1.2 Matières couvertes\n\nApprivoiser ses données: statistiques descriptives et exploratoires\nDes populations aux échantillons et retour : échantillonnage et estimation\nTests de comparaison de moyennes\nTests d’ajustement\nTests d’indépendance\nStatistiques de classement",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -53,18 +43,18 @@
     "objectID": "book/01_introduction.html#organisation-du-cours",
     "href": "book/01_introduction.html#organisation-du-cours",
     "title": "1  Introduction",
-    "section": "1.4 Organisation du cours",
-    "text": "1.4 Organisation du cours",
+    "section": "1.3 Organisation du cours",
+    "text": "1.3 Organisation du cours\nCette unité d’enseignement comporte 5 séances de 2h cours magistraux (CM) et 10 séances de 2h de travaux pratiques, qui incluent des exercices “sur table” (sur papier) et de l’analyse de données sur ordinateur, au moyen du logiciel de statistique R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "book/01_introduction.html#contenus-couverts-par-le-cours",
-    "href": "book/01_introduction.html#contenus-couverts-par-le-cours",
+    "objectID": "book/01_introduction.html#logistique-matériel-logiciels",
+    "href": "book/01_introduction.html#logistique-matériel-logiciels",
     "title": "1  Introduction",
-    "section": "1.5 Contenus couverts par le cours",
-    "text": "1.5 Contenus couverts par le cours",
+    "section": "1.4 Logistique (matériel + logiciels)",
+    "text": "1.4 Logistique (matériel + logiciels)\nLe cours inclut des travaux pratiques sur les ordinateurs personnels des étudiants, ou sur des ordinateurs prêtés par la Faculté.\nAvant la première séance, nous demandons aux étudiants d’installer sur leur ordinateur les logiciels R et RStudio.\nInstallation de R (langage spécialisé pour l’analyse statistique)\n\nConnectez-vous à cran.rstudio.com\nInstallez la version 4.6.2 de votre système opérateur (Mac, Windows, Linux)\n\nInstallation de RStudio (environnement spécialisé pour l’utilisation du langage R)\n\nDistribution : posit.co/download/rstudio-desktop",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -73,8 +63,8 @@
     "objectID": "book/01_introduction.html#modalités-de-contrôle-des-connaissances",
     "href": "book/01_introduction.html#modalités-de-contrôle-des-connaissances",
     "title": "1  Introduction",
-    "section": "1.6 Modalités de contrôle des connaissances",
-    "text": "1.6 Modalités de contrôle des connaissances",
+    "section": "1.5 Modalités de contrôle des connaissances",
+    "text": "1.5 Modalités de contrôle des connaissances\nLe contrôle des connaissances évaluation se base sur un examen écrit “sur table”, qui inclura\n\ndes questions théoriques (définition de concepts)\ndes exercices qui peuvent être résolus sans nécessiter ni ordinateur ni machine à calculer\nquelques questions simples d’interprétation d’un petit bloc de code R",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -83,8 +73,8 @@
     "objectID": "book/01_introduction.html#accès-aux-supports-de-cours",
     "href": "book/01_introduction.html#accès-aux-supports-de-cours",
     "title": "1  Introduction",
-    "section": "1.7 Accès aux supports de cours",
-    "text": "1.7 Accès aux supports de cours\nLes supports de cours sont mis à la disposition des étudiants via Ametice (environnement numérique de travail d’Aix-Marseille Université). Certains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices.\n\nCours 2026-2027 : ametice.univ-amu.fr/course/view.php?id=159756\nCompléments (code, pdf) : github.com/jvanheld/proba-stat-bio_SBGAU14L",
+    "section": "1.6 Accès aux supports de cours",
+    "text": "1.6 Accès aux supports de cours\nLes supports de cours sont mis à la disposition des étudiants via Ametice (environnement numérique de travail d’Aix-Marseille Université). Certains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices.\n\nCours 2026-2027 : ametice.univ-amu.fr/course/view.php?id=159756\nCompléments (code, pdf) : github.com/jvanheld/proba-stat-bio_SBGAU14L",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -93,8 +83,18 @@
     "objectID": "book/01_introduction.html#conventions-typographiques-et-sémantiques",
     "href": "book/01_introduction.html#conventions-typographiques-et-sémantiques",
     "title": "1  Introduction",
-    "section": "1.8 Conventions typographiques et sémantiques",
-    "text": "1.8 Conventions typographiques et sémantiques\nLe mot “statistique” a deux significations (dictionnaire Larousse) :\n\nEnsemble des méthodes permettant d’analyser l’information contenue dans diverses données chiffrées. La statistique mathématique, la statistique descriptive.\nEnsemble de données chiffrées relatives à un domaine spécifique. Des statistiques sur les exportations.\n\nLes statisticiens préfèrent utiliser le singulier pour parler de leur science (au même titre que la biologie, la physique), et réservent le pluriel pour désigner des données collectées (les valeurs directement mesurées sur un échantillon) ou calculées (par exemple la moyenne ou la variance de cet échantillon). Nous nous conformerons à cette convention.\n\n1.8.1 Nombres décimaux\nAfin de conserver une cohérence avec les logiciels statistiques utilisés dans les travaux pratiques (R) ainsi qu’avec la littérature scientifique internationale, les nombres décimaux sont notés avec un point (par exemple \\(3.1416\\)). Les groupes de trois chiffres sont séparés par une espace (par exemple \\(12\\,345\\)).\n\n\n1.8.2 Conventions de notation mathématique\n\n\n\n\n\n\n\n\nNotation\nExemples\nUtilisation dans ce livre\n\n\n\n\nLettres grecques\n\\(\\mu\\), \\(\\sigma^2\\), \\(\\sigma\\)\nParamètres d’une population ou d’une distribution : moyenne, variance et écart-type\n\n\nLettres latines majuscules\n\\(X, Y, Z\\)\nvariable aléatoire\n\n\nLettres latines minuscules\n\\(x\\), \\(y\\)\nValeurs particulières, ou réalisations, de variables aléatoires\n\n\nLettres latines minuscules indicées\n\\(x_1,\\ldots,x_n\\) ; \\(x_{ij}\\)\nObservations particulières au sein d’une liste (par exemple un échantillon) ou d’un tableau de données\n\n\nBarre supérieure\n\\(\\bar{X}\\) ; \\(\\bar{x}\\)\nMoyenne d’échantillon considérée respectivement comme une variable aléatoire ou comme une valeur observée\n\n\nAccent circonflexe\n\\(\\hat{\\theta}\\), \\(\\hat{\\mu}\\), \\(\\hat{\\sigma}^2\\)\nEstimateur ou estimation d’un paramètre de population\n\n\nE ajouré\n\\(\\mathbb{E}[X]\\)\nEspérance mathématique de la variable aléatoire \\(X\\)\n\n\n\n\n\n\n\n\n\nCanale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. “Proteomics of Immune Cells from Liver Tumors Reveals Immunotherapy Targets.” Cell Genomics 3 (6): 100331. https://doi.org/10.1016/j.xgen.2023.100331.",
+    "section": "1.7 Conventions typographiques et sémantiques",
+    "text": "1.7 Conventions typographiques et sémantiques\nLe mot “statistique” a deux significations (dictionnaire Larousse) :\n\nEnsemble des méthodes permettant d’analyser l’information contenue dans diverses données chiffrées. La statistique mathématique, la statistique descriptive.\nEnsemble de données chiffrées relatives à un domaine spécifique. Des statistiques sur les exportations.\n\nLes statisticiens préfèrent utiliser le singulier pour parler de leur science (au même titre que la biologie, la physique), et réservent le pluriel pour désigner des données collectées (les valeurs directement mesurées sur un échantillon) ou calculées (par exemple la moyenne ou la variance de cet échantillon). Nous nous conformerons à cette convention.\n\n1.7.1 Nombres décimaux\nAfin de conserver une cohérence avec les logiciels statistiques utilisés dans les travaux pratiques (R) ainsi qu’avec la littérature scientifique internationale, les nombres décimaux sont notés avec un point (par exemple \\(3.1416\\)). Les groupes de trois chiffres sont séparés par une espace (par exemple \\(12\\,345\\)).\n\n\n1.7.2 Conventions de notation mathématique\n\n\n\n\n\n\n\n\nNotation\nExemples\nUtilisation dans ce livre\n\n\n\n\nLettres grecques\n\\(\\mu\\), \\(\\sigma^2\\), \\(\\sigma\\)\nParamètres d’une population ou d’une distribution : moyenne, variance et écart-type\n\n\nLettres latines majuscules\n\\(X, Y, Z\\)\nvariable aléatoire\n\n\nLettres latines minuscules\n\\(x\\), \\(y\\)\nValeurs particulières, ou réalisations, de variables aléatoires\n\n\nLettres latines minuscules indicées\n\\(x_1,\\ldots,x_n\\) ; \\(x_{ij}\\)\nObservations particulières au sein d’une liste (par exemple un échantillon) ou d’un tableau de données\n\n\nBarre supérieure\n\\(\\bar{X}\\) ; \\(\\bar{x}\\)\nMoyenne d’échantillon considérée respectivement comme une variable aléatoire ou comme une valeur observée\n\n\nAccent circonflexe\n\\(\\hat{\\theta}\\), \\(\\hat{\\mu}\\), \\(\\hat{\\sigma}^2\\)\nEstimateur ou estimation d’un paramètre de population\n\n\nE ajouré\n\\(\\mathbb{E}[X]\\)\nEspérance mathématique de la variable aléatoire \\(X\\)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "book/01_introduction.html#cas-détude",
+    "href": "book/01_introduction.html#cas-détude",
+    "title": "1  Introduction",
+    "section": "1.8 Cas d’étude",
+    "text": "1.8 Cas d’étude\n\n1.8.1 Expérience sur une poignée de rats\n[A ECRIRE]\n\n\n1.8.2 Données protéomiques\nSee Canale et al. (2023) for additional discussion of literate programming.\n\n\n\n\n\n\nCanale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. “Proteomics of Immune Cells from Liver Tumors Reveals Immunotherapy Targets.” Cell Genomics 3 (6): 100331. https://doi.org/10.1016/j.xgen.2023.100331.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
