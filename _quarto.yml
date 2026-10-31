@@ -14,8 +14,10 @@ execute:
 book:
   title: "Probabilités et statistiques pour la biologie"
   author: 
-    - "[Andreas Zanzoni](https://orcid.org/0000-0002-4818-6161)"
-    - "[Jacques van Helden](https://orcid.org/0000-0002-8799-8584)"
+    - name: Andreas Zanzoni
+      orcid: 0000-0002-4818-6161
+    - name: Jacques van Helden
+      orcid: 0000-0002-8799-8584
   date: today
   date-format: "YYYY-MM-DD"
   chapters:
