@@ -12,4 +12,4 @@
 
 ## Test exact de Fisher
 
-## Enrichissement fonctionnel des protéines différntiellement représentées
+## Enrichissement fonctionnel des protéines différentiellement représentées
