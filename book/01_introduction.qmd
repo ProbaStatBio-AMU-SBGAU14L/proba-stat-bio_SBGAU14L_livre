@@ -2,7 +2,7 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Introduction
+# Introduction {#sec-introduction}
 
 Ce cours s'adresse à différentes mentions de la 1ère année du Master en biologie d'Aix-Marseille Université : 
 
@@ -88,7 +88,7 @@ Les supports de cours sont mis à la disposition des étudiants via Ametice (env
 Certains contenus sont disponibles sur un entrepôt github, en particulier le code R des exercices. 
 
 - Cours 2026-2027 : [ametice.univ-amu.fr/course/view.php?id=159756](https://ametice.univ-amu.fr/course/view.php?id=159756)
-- Compléments (code, pdf) : [github.com/jvanheld/proba-stat-bio_SBGAU14L](https://github.com/jvanheld/proba-stat-bio_SBGAU14L)
+- Compléments (code, pdf) : [probastatbio-amu-sbgau14l.github.io/proba-stat-bio_SBGAU14L/](https://probastatbio-amu-sbgau14l.github.io/proba-stat-bio_SBGAU14L/)
 
 
 ## Conventions typographiques et sémantiques
@@ -119,21 +119,3 @@ Afin de conserver une cohérence avec les logiciels statistiques utilisés dans 
 
 
 
-## Cas d'étude
-
-### Expérience sur une poignée de rats
-
-[A ECRIRE]
-
-### Données protéomiques
-
-See @canale_proteomics_2023 for additional discussion of literate programming.
-
-```{r read_data}
-proteome_table <- "data/canale_2023/canale_2023_protein_log2-LFQ.tsv"
-log2_LFQ <- read.table(proteome_table, row.names = 1, header = TRUE)
-#dim(log2_LFQ)
-#names(log2_LFQ)
-#head(row.names(log2_LFQ))
-# View(log2_LFQ)
-```
