@@ -1,8 +1,8 @@
 {
-  "hash": "932ecfaba257fb1655bd12345ee41ffa",
+  "hash": "3c64667e9064e7de7771a436f673cb00",
   "result": {
     "engine": "knitr",
-    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Apprivoiser vos données : statistiques descriptives et exploratoires\n\n## Cas d'étude : données protéomiques d'une étude immunologique\n\n## Réduction des données\n\n## Filtrage des données trop incomplètes\n\n## Standardisation\n\n",
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Apprivoiser ses données : statistiques descriptives et exploratoires\n\nDans ce chapitre, nous dressons un bref rappel des approches statistiques permettant d'appréhender la composition générale ou certaines caractéristiques pertinentes d'un jeu de données. \n\n## Cas d'étude : données protéomiques d'une étude immunologique\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![**Abstract schématique de Canale et al. (2023)**   ](../figures/manual_exports/canale-2023_graphical-abstract.png){#fig-canale-2023-graphical-abstract fig-align='center' width=100%}\n:::\n:::\n\n\n\n## Réduction des données\n\n## Filtrage des données trop incomplètes\n\n## Standardisation\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
