@@ -1,11 +1,9 @@
 {
-  "hash": "9390f3db245c456c497f953f6310f7af",
+  "hash": "e7472eb0527aeb1c933f086f031a13df",
   "result": {
     "engine": "knitr",
-    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Enrichissement fonctionnel : test d'indépendance\n\n## Rapport des cotes (Odds ratio)\n\n## Tableau de contingence\n\n## Test khi carré ($\\chi^2$) d'indépendance\n\n## Test exact de Fisher\n\n## Enrichissement fonctionnel des protéines différentiellement représentées\n",
-    "supporting": [
-      "05_enrichissement-fonctionnel_files"
-    ],
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n# Enrichissement fonctionnel : test d'indépendance {#sec-functional-enrichment}\n\n## Rapport des cotes (Odds ratio)\n\n## Tableau de contingence\n\n## Test khi carré ($\\chi^2$) d'indépendance\n\n## Test exact de Fisher\n\n## Enrichissement fonctionnel des protéines différentiellement représentées\n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
