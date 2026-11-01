@@ -2,11 +2,13 @@ project:
   type: book
   execute-dir: project
   output-dir: rendered
-
   # resources:
   #   - figures/**
   #   - figures/generated/**
   #   - figures/manual_exports/**
+
+lang: fr
+
 
 execute:
   freeze: auto
