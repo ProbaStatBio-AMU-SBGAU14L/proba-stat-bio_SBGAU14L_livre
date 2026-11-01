@@ -3,7 +3,7 @@ source("R/setup.R", local = knitr::knit_global())
 ```
 
 
-# Des populations aux échantillons et retour : échantillonnage et estimation
+# Des populations aux échantillons et retour : échantillonnage et estimation {#sec-sampling-estimation}
 
 ## Populations et échantillons
 

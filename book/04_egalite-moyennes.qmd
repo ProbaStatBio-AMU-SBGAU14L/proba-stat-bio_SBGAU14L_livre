@@ -3,7 +3,7 @@
 ```
 
 
-# Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines
+# Tests d’égalité des moyennes -- Analyse différentielle de l’abondance des protéines # Égalité des moyennes {#sec-mean-equality-test}
 
 Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique. 
 

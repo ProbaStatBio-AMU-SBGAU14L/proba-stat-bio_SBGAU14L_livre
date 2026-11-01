@@ -3,7 +3,7 @@
 ```
 
 
-# Test d'ajustement
+# Test d'ajustement {#sec-fitting}
 
 ## Paramètres d'ajustement
 

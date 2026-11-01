@@ -2,7 +2,7 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Enrichissement fonctionnel : test d'indépendance
+# Enrichissement fonctionnel : test d'indépendance {#sec-functional-enrichment}
 
 ## Rapport des cotes (Odds ratio)
 

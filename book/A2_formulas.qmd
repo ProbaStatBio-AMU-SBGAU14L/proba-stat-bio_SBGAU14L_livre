@@ -2,7 +2,7 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Formules mathématiques
+# Formules mathématiques {#sec-math-formula}
 
 ## Tests de Student et de Welch
 

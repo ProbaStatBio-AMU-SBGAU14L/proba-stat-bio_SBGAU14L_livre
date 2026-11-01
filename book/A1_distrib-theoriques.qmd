@@ -2,7 +2,7 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Distributions théoriques de probabilités
+# Distributions théoriques de probabilités {#sec-theor-distrib}
 
 ## Poisson
 
