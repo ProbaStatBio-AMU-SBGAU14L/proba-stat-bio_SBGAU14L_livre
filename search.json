@@ -114,7 +114,7 @@
     "href": "book/02_stat-descr-explor.html#réduction-des-données",
     "title": "2  Apprivoiser ses données : statistique descriptive et exploratoire",
     "section": "2.2 Réduction des données",
-    "text": "2.2 Réduction des données",
+    "text": "2.2 Réduction des données\nLa réduction de données consiste à utiliser quelques paramètres dérivés de l’ensemble des données afin de pouvoir appréhender certaines de leurs propriétés générales.\nNous indiquons ci-dessous les principales propriétés et les différents paramètres couramment utilisés. Les traductions anglaises de ces termes sont en italique.\n\n\n\n\n\n\n\nPropriété\nParamètres\n\n\n\n\nTendance centrale\nmoyenne (mean, \\(\\bar{x}\\)), médiane (median, \\(\\tilde{x}\\))\n\n\nDispersion\nvariance (variance, \\(s^2\\)), écart-type (standard deviation, \\(s\\)), écart interquartiles (inter-quartile range, \\(\\text{IQR}\\))\n\n\nDissymétrie (skew)\n\n\n\nAcuité, voussure (peakedness)\n\n\n\n\nCertains paramètres sont basés sur les moments, d’autres sur les quantiles.\n\n2.2.1 Paramètres de tendance centrale\n\n\n2.2.2 Paramètres de disperson\n\n\n2.2.3 Paramètre de dissymétrie\n\n\n2.2.4 Paramètres d’acuité (voussure)",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apprivoiser ses données : statistique descriptive et exploratoire</span>"
     ]
