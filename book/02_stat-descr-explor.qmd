@@ -64,6 +64,33 @@ Les données brutes de @canale_proteomics_2023 sont disponibles dans la base de 
 
 ## Réduction des données
 
+La réduction de données consiste à utiliser quelques paramètres dérivés de l'ensemble des données afin de pouvoir appréhender certaines de leurs propriétés générales. 
+
+Nous indiquons ci-dessous les principales propriétés et les différents paramètres couramment utilisés. Les traductions anglaises de ces termes sont en italique. 
+
+| Propriété | Paramètres | 
+|-------------------------|-----------------------------------|
+| Tendance centrale | moyenne (*mean*, $\bar{x}$), médiane (*median*, $\tilde{x}$) |
+| Dispersion  | variance (*variance*, $s^2$), écart-type (*standard deviation*, $s$), écart interquartiles (*inter-quartile range*, $\text{IQR}$) |
+| Dissymétrie (*skew*) | |
+| Acuité, voussure (*peakedness*) | |
+
+Certains paramètres sont basés sur les moments, d’autres sur les quantiles. 
+
+
+### Paramètres de tendance centrale
+
+
+
+### Paramètres de disperson
+
+
+### Paramètre de dissymétrie
+
+
+### Paramètres d'acuité (voussure)
+
+
 ## Filtrage des données trop incomplètes
 
 ## Standardisation
