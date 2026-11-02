@@ -7,12 +7,17 @@
 Ce cours s'adresse à différentes mentions de la 1ère année du Master en biologie d'Aix-Marseille Université : 
 
 - Immunologie
-- Biochimie structurale et génomique (BSG)
+- Biologie structurale et génomique (BSG)
 - Bioinformatique
 
 Il fournit un rappel des concepts de base de probabilités et de statistique, et présente des méthodes d'analyse adaptées aux données actuels de la biologie, avec un focus sur les données dites "omiques" (génomiques, transcriptomiques, protéomiques, métabolomiques). 
 
-Le cas d'étude principal est issu d'un article de protéomique appliqué à l'immunologie, ce qui réduit le recouvrement avec les types de données omiques – génomique, transcriptomique – abordés dans d'autres cours. 
+Le cas d'étude principal est issu d'un article de protéomique appliqué à l'immunologie, ce qui réduit le recouvrement avec les types de données omiques – génomique, transcriptomique – abordés dans d'autres cours, en fonction des mentions concernées. 
+
+En particulier, pour les masters BSG et Bioinfo, 
+
+- BAOD [à compléter]
+- SAOD [à compléter]
 
 
 
