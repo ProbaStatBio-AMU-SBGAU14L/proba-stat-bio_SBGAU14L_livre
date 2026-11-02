@@ -1,11 +1,9 @@
 {
-  "hash": "0ede70661e6fa910c69033b9b71fe27e",
+  "hash": "f374392595e2b052be5b090f21e96723",
   "result": {
     "engine": "knitr",
-    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n\n# Preface {.unnumbered}\n\n\nCet ouvrage contient les notes détaillés du module d'enseignement **\"Probabilîtés et statistiques pour la biologie\"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France).\n\n",
-    "supporting": [
-      "index_files"
-    ],
+    "markdown": "\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# Preface {.unnumbered}\n\n\nCet ouvrage contient les notes détaillés du module d'enseignement **\"Probabilîtés et statistiques pour la biologie\"** (SBGAU14L), enseignée à plusieurs mentions de master en biologie d'Aix-Marseille Université (France).\n\n",
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
