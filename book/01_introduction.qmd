@@ -34,10 +34,10 @@ Le cas d'étude principal est issu d'un article de protéomique appliqué à l'i
 
 - Concevoir un schéma d’analyse et le mettre en oeuvre 
     - sur papier (exercices “sur table”)
-    - à l’ordinateur, en utilisant le langage R
+    - à l’ordinateur, en utilisant un tableur
+    - à l'ordinateur, en utilisant le langage de statistique R
     
 - Interpréter les résultats en terme de signification statistique et biologique
-
 
 
 
@@ -92,6 +92,8 @@ Certains contenus sont disponibles sur un entrepôt github, en particulier le co
 
 
 ## Conventions typographiques et sémantiques
+
+### Statistique et statistiques
 
 Le mot "statistique" a deux significations (dictionnaire Larousse) : 
 
