@@ -2,9 +2,9 @@
  source("R/setup.R", local = knitr::knit_global())
 ```
 
-# Apprivoiser ses données : statistiques descriptives et exploratoires {#sec-stat-descr-explor}
+# Apprivoiser ses données : statistique descriptive et exploratoire {#sec-stat-descr-explor}
 
-Dans ce chapitre, nous dressons un bref rappel des approches statistiques permettant d'appréhender la composition générale ou certaines caractéristiques pertinentes d'un jeu de données. 
+Dans ce chapitre, nous dressons un bref rappel des approches statistiques permettant d'appréhender la composition générale ou certaines caractéristiques pertinentes d'un jeu de données, en nous basant sur les méthodes de statistique decriptive et exploiratoire. 
 
 
 
