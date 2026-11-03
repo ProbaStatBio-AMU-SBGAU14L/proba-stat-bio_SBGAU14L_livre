@@ -90,6 +90,16 @@
     ]
   },
   {
+    "objectID": "book/01_introduction.html#abréviations",
+    "href": "book/01_introduction.html#abréviations",
+    "title": "1  Introduction",
+    "section": "1.8 Abréviations",
+    "text": "1.8 Abréviations\n\n\n\n\n\n\n\n\nAbréviation\nTerme\nDescription\n\n\n\n\nFC\nFold-change\nRapport entre les valeurs quantitatives observées dans deux conditions différentes.\n\n\nIQR\nécart inter-quartiles, interquartile range\nDifférence entre le troisième et le premier quartile (\\(\\text{IQR} = Q_3 - Q_1\\)). Paramètre de dispersion robuste aux valeurs aberrantes.\n\n\nLFQ\nLabel-Free Quantification\ntechnique très couramment utilisée en protéomique pour quantifier l’abondance des protéines",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
     "objectID": "book/02_stat-descr-explor.html",
     "href": "book/02_stat-descr-explor.html",
     "title": "2  Apprivoiser ses données : statistique descriptive et exploratoire",
