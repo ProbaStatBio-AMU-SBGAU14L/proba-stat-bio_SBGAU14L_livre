@@ -119,5 +119,11 @@ Afin de conserver une cohérence avec les logiciels statistiques utilisés dans 
 | Accent circonflexe | $\hat{\theta}$, $\hat{\mu}$, $\hat{\sigma}^2$ | Estimateur ou estimation d’un paramètre de population |
 | E ajouré | $\mathbb{E}[X]$ | Espérance mathématique de la variable aléatoire $X$ |
 
+## Abréviations
 
+| Abréviation | Terme | Description |
+|-------------|----------------------|--------------------------------------|
+| FC | Fold-change | Rapport entre les valeurs quantitatives observées dans deux conditions différentes.  |
+| IQR | écart inter-quartiles, *interquartile range* | Différence entre le troisième et le premier quartile ($\text{IQR} = Q_3 - Q_1$). Paramètre de dispersion robuste aux valeurs aberrantes. |
+| LFQ | Label-Free Quantification | technique très couramment utilisée en protéomique pour quantifier l'abondance des protéines |
 
