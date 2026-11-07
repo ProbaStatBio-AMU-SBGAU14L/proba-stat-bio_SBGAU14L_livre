@@ -1,0 +1,157 @@
+---
+number: false
+---
+
+
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+
+# TP1 -- Tests d’égalité des moyennes {.unnumbered}
+
+
+## Intro
+
+### Objectifs du TP
+
+- Mettre en oeuvre un test de comparaison de moyennes sur base d’un exemple simple (exercice sur papier avec une calculatrice ou un tableur)
+- Interpréter les résultats du point de vue statistique
+- Interpréter les résultats du point de vue biologique
+
+### Connaissances mobilisées
+
+- Paramètres d’échantillons (moyenne, variance, écart-type d’échantillons)
+- Estimation des paramètres de population
+- Test d’hypothèse (hypothèse à tester, hypothèses de travail)
+- Distribution de probabilité de Student
+
+### Compétences
+
+- Formuler l’hypothèse à tester (hypothèse nulle, hypothèse alternative)
+- En se basant sur le logigramme fourni au cours, choisir un test approprié en tenant compte de la nature des données, et justifier ce choix en évaluant la validité des hypothèse de travail
+- Mise en oeuvre du test
+    - En utilisant une calculatrice ou un tableur, calculer la statistique du test
+    - En utilisant un tableau des valeurs critiques, évaluer le risque de première erreur
+- Interprétation des résultats du test
+    - Interprétation statistique : formuler la décision et évaluer le risque associé
+    - Interprétation biologique
+
+
+## Enoncé
+
+On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline avant (contrôle) et après le traitement (test). Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
+
+Voici les données. 
+
+| Echantillon | Avant | Après |
+|:---:|:-----------:|:----------:|
+| 1 | 6 | 7 |
+| 2 | 9 | 11 |
+| 3 | 10 | NA |
+| 4 | 11 | 12 |
+| 5 | 13 | 13 |
+| 6 | 14 | 15 |
+
+Ci-dessous, nous vous posons une série de questions qui vous amèneront pas à pas à :
+
+- calculer des statistiques descriptives de l’échantillon
+- estimer les paramètres de la population
+- concevoir, mettre en oeuvre et interpréter un test d’hypothèse concernant l’effet de ce traitement
+- mesurer l’impact du choix de la méthode de comparaison de moyenne sur le résultat du test
+
+
+## Questions
+
+Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?
+
+Q2. Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : 
+
+- Somme
+- Somme des carrés
+- Moyenne
+- Variance
+- Ecart-type
+
+Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. 
+Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. 
+
+
+Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :
+
+- Moyenne
+- Variance
+- Écart-type
+
+Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. 
+Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. 
+
+Q4. Dans le logigramme ci-contre, identifiez le chemin à suivre pour choisir le test approprié. Justifiez vos choix à chaque étape du trajet. 
+
+Q5. Formulez l’hypothèse nulle, l’hypothèse alternative et les hypothèses de travail. 
+
+Q6. Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. 
+
+Q7. Utilisez la table de la distribution fournie pour identifier le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de premier type $\alpha = 0.05$
+
+Q8. Interprétez le résultat
+
+## Solutions
+
+
+### Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?
+
+#### Population biologique étudiée
+
+L'ensemble des souris de la souche considérée qu’on pourrait utiliser pour cette expérience. 
+La taille de cette population ($N$) est difficile à établir, elle dépend de la capacité totale des animaleries susceptibles de produire des souris de cette souche. En tout cas il s’agit d’une population potentiellement très large. 
+
+
+#### Populations statistiques considérées
+
+Nous nous intéressons à deux distributions de valeurs :
+
+- Les taux d’immunoglobulines avant traitement.
+- Les taux d’immunoglobulines après traitement.
+
+Chacune de ces distributions de valeurs est une population, au sens statistique du terme. 
+
+#### Échantillons observés
+
+L'expérience porte sur 6 souris, mesurées avant et après traitement.
+
+- Avant traitement : $n_1 = 6$ mesures disponibles.
+- Après traitement : $n_2 = 5$ mesures disponibles (une mesure manquante).
+
+
+#### Appariement des observations
+
+Les observations sont appariées puisque les mesures avant et après traitement proviennent des mêmes souris. Pour étudier l'effet du traitement, nous allons donc analyser les différences individuelles entre les mesures après et avant traitement. Nous disposons de 5 paires complètes, permettant de calculer 5 différences.
+
+
+## Logigramme pour le choix du test de comparaison de moyennes
+
+
+```{r}
+#| label: choice_mean_compa_test
+#| fig-cap: "**Choix du test d'égalité des moyennes**. "
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 12
+#| fig-height: 8
+#| out-width: "100%"
+
+
+## Script implémenté par ChatGPT pour reproduire une diapo (manuelle) du cours
+source("R/mean-compa-choice_flowchart.R", local = knitr::knit_global())
+
+include_mean_test_choice(
+  folder = "figures/generated",
+  filename = "mean_test_choice_flowchart",
+   regenerate = TRUE
+)
+
+
+```
+
