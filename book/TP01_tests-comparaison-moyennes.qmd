@@ -276,8 +276,9 @@ kable(ig_col_stat, digits = 2, caption = "Estimation des paramètes des populati
 ```
 
 
+### Q4. Choix du test
 
-## Logigramme pour le choix du test de comparaison de moyennes {.tp-section}
+*Dans le logigramme ci-contre, identifiez le chemin à suivre pour choisir le test approprié. Justifiez vos choix à chaque étape du trajet. *
 
 
 ```{r}
@@ -302,4 +303,45 @@ include_mean_test_choice(
 
 
 ```
+
+
+**Astuce : ** il existe plusieurs réponses possibles concernant le chemin à suivre dans le logigramme et le test finalement retenu. Ce qui compte ici est de mener un raisonnement cohérent, appuyé sur la nature des données. 
+
+- **Les populations sont-elles normales ?** Invérifiable sur base de données car le test de normalité (Shapiro) est inefficace avec de si petits échantillons (nous le verrons dans les cours suivants). 
+
+
+- **Choix (1), raisonnement biologique :** 
+
+    - Justification : le taux individuel d’IG dépend de facteurs multiples, ayant un effet plus ou moins additif, ce qui fait qu’il tendrait vers la normalité → on postule la normalité et on choisit un test paramétrique. 
+
+    - Les échantillons sont appariés, on applique donc un **test de Student pour échantillons appariés**.
+
+
+- **Choix (2) : option prudente, sans postuler la normalité**. 
+
+    - La question  suivante porte sur la taille des échantillons. Elle est faible (6 et 5 observations). On s'oriente donc vers un **test non paramétrique**. 
+
+    - Les échantillons sont appariés, on applique donc le **test des rangs signés de Wilcoxon**
+
+
+Nous allons développer ci-après le test paramétrique (Student apparié). Dans un deuxième temps nous appliquerons les autres tests et comparerons les résultats. 
+
+
+### Q5. Formulation des hypothèses
+
+*Formulez l’hypothèse nulle, l’hypothèse alternative et les hypothèses de travail. *
+
+
+
+### Q6. Calcul de la statistique du test
+
+*Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. *
+
+### Q7. Calcul de la P-valeur
+
+*Utilisez la table de la distribution fournie pour identifier le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de premier type $\alpha = 0.05$*
+
+### Q8. Interprétation du résultat
+
+
 
