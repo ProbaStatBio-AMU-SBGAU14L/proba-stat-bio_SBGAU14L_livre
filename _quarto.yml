@@ -34,7 +34,7 @@ book:
     - part: "Exercices"
       chapters:
         - book/TP01_tests-comparaison-moyennes.qmd
-    
+
   appendices:
     - book/A1_distrib-theoriques.qmd
     - book/A2_formulas.qmd

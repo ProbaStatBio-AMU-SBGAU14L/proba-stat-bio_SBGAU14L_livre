@@ -5,3 +5,22 @@
 $font-family-sans-serif: "Source Sans 3", Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;
 $headings-font-family: $font-family-sans-serif;
+
+/* Couleurs spécifiques aux travaux pratiques */
+
+body.tp-page {
+
+  /* Titres principaux et secondaires */
+  #quarto-document-content h1,
+  #quarto-document-content h2,
+  #quarto-document-content h3,
+  #quarto-document-content h4 {
+    color: #39734b !important;
+  }
+
+  /* Texte courant : couleur normale */
+  #quarto-document-content p,
+  #quarto-document-content li {
+    color: inherit;
+  }
+}

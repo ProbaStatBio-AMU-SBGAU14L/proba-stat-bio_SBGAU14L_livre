@@ -1,6 +1,3 @@
----
-number: false
----
 
 
 ```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
@@ -38,20 +35,23 @@ number: false
     - Interprétation biologique
 
 
-## Enoncé
+## Enoncé {.tp-section}
 
-On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline avant (contrôle) et après le traitement (test). Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
+On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
 
 Voici les données. 
 
-| Echantillon | Avant | Après |
-|:---:|:-----------:|:----------:|
-| 1 | 6 | 7 |
-| 2 | 9 | 11 |
-| 3 | 10 | NA |
-| 4 | 11 | 12 |
-| 5 | 13 | 13 |
-| 6 | 14 | 15 |
+```{r data}
+
+ig_data = data.frame(before = c(6, 9, 10, 11, 13, 14),
+                     after = c(7, 11, NA, 12, 13, 15))
+
+ig_data$diff = ig_data$after - ig_data$before
+
+
+kable(ig_data, caption = "**Taux d'immunoglobuline mesuré chez 6 souris, avant et après le traitement**", row.names = TRUE)
+```
+
 
 Ci-dessous, nous vous posons une série de questions qui vous amèneront pas à pas à :
 
@@ -61,7 +61,7 @@ Ci-dessous, nous vous posons une série de questions qui vous amèneront pas à 
 - mesurer l’impact du choix de la méthode de comparaison de moyenne sur le résultat du test
 
 
-## Questions
+## Questions {.tp-section}
 
 Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?
 
@@ -96,10 +96,12 @@ Q7. Utilisez la table de la distribution fournie pour identifier le seuil de rej
 
 Q8. Interprétez le résultat
 
-## Solutions
+## Solutions {.tp-section}
 
 
-### Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?
+### Q1. Populations et échantillons
+
+*Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?*
 
 #### Population biologique étudiée
 
@@ -128,8 +130,64 @@ L'expérience porte sur 6 souris, mesurées avant et après traitement.
 
 Les observations sont appariées puisque les mesures avant et après traitement proviennent des mêmes souris. Pour étudier l'effet du traitement, nous allons donc analyser les différences individuelles entre les mesures après et avant traitement. Nous disposons de 5 paires complètes, permettant de calculer 5 différences.
 
+### Q2. Paramètres d'échantillon
 
-## Logigramme pour le choix du test de comparaison de moyennes
+*Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : *
+
+- *Somme*
+- *Somme des carrés*
+- *Moyenne*
+- *Variance*
+- *Ecart-type*
+
+*Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. *
+*Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. *
+
+
+### Formules
+
+$$\text{sum} = \sum_{i=1}^n x_i$$
+$$\text{ssq} = \sum_{i=1}^n x^2$$
+$$\text{sample mean}: \bar{x} = \frac{1}{n} \sum_{i=1}^n x$$
+$$\text{sample var}: s = \frac{1}{n} \sum_{i=1}^n x^2 - \bar{x}^2$$
+
+
+
+### Résultats
+
+```{r stat}
+## Compute marginal statistics
+ig_col_stat = data.frame(n = apply(!is.na(ig_data), 2, sum),
+                         sum = apply(ig_data, 2, sum, na.rm=TRUE),
+                         sumsquares = apply(ig_data^2, 2, sum, na.rm=TRUE)
+                         )
+ig_col_stat$sample_mean = ig_col_stat$sum / ig_col_stat$n
+ig_col_stat$sample_var = ig_col_stat$sumsquares / ig_col_stat$n -  ig_col_stat$sample_mean^2
+ig_col_stat$sample_sd = sqrt(ig_col_stat$sample_var)
+
+# ig_col_stat$pop_var_est = ig_col_stat$sample_var * ig_col_stat$n / (ig_col_stat$n -1)
+# ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
+
+
+```
+
+Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. 
+
+$$\sum_{i=1}^{n} x^{\text{avant}}_i = 6 + 9 + 10 + 11 + 13 + 14 = `r ig_col_stat["before", "sum"]`$$
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x^{\text{avant}}_i = `r ig_col_stat["before", "sum"]` / `r ig_col_stat["before", "n"]`  = `r ig_col_stat["before", "sample_mean"]`$$
+
+$$s^2 = \frac{1}{n} \sum_{i=1}^{n} (x^{\text{before}}_i)^2 - \bar{x}^2= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`$$
+$$s = \sqrt{s^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
+Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
+
+```{r print_sample_stat}
+
+kable(ig_col_stat, digits = 2, caption = "Sample statistics")
+
+```
+
+
+## Logigramme pour le choix du test de comparaison de moyennes {.tp-section}
 
 
 ```{r}
