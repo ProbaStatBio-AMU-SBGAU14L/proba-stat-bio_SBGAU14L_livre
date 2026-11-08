@@ -29,6 +29,66 @@
 ### Tableau de valeurs critiques bilatérales de la distribution de Student
 
 ```{r}
+#! label: fig-student-bilateral-small
+#! fig-cap: 
+#| label: student_distrib_fig
+#| fig-cap: "**Régions d'acceptation et de rejet de l'hypothèse nulle dans le cadre du test de Student**, illustrées par une distribution avec 10 degrés de liberté. La courbe noire représente la fonction de densité de la distribution de Student à 10 degrés de liberté. Les zones colorées indiquent la zone de rejet de l'hypothèse nulle avec $\alpha=0.05$.  "
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 3.2
+#| fig-height: 1.5
+#| out-width: "10%"
+#| fig-align: right
+#| fig-pos: "H"
+
+## Parameters
+alpha <- 0.05
+df <- 10
+t_threshold <- abs(qt(p = alpha, df = df))
+x <- seq(from=-4, to=4, by=0.01)
+dens <- dt(x, df = df) ## Density
+cdf <- pt(x, df = 10, lower.tail = TRUE) ## Cumulative density function
+
+
+## Two-tailed test, density
+plot(x, 
+     dens, 
+     main = NULL, #paste0("Density, bilateral test"),
+     xlab = NA, # "t",
+     ylab = NA, # "d(t)",
+     ylim = c(0, max(dens)*1.3),
+     type='l', 
+     col = "black",
+     lwd=2, 
+     las = 1)
+
+grid()
+x_up = seq(from=t_threshold, to = 4.0, by=0.01)
+x_mid = seq(from=-t_threshold, to = t_threshold, by=0.01)
+x_down = seq(from=-4.0, to = -t_threshold, by=0.01)
+lines(x_up, dt(x_up, df = df), type = "h", col = "#FFBBBB")
+# lines(x_mid, dt(x_mid, df = df), type = "h", col = "#BBFFBB")
+lines(x_down, dt(x_down, df = df), type = "h", col = "#FFBBBB")
+#abline(v=0, col="#BBBBBB")
+#abline(v = c(-t_threshold, t_threshold),   col = "red")
+#arrows(x0=-4, x1 = -t_threshold, y0 = max(dens)*1.2, y1 = max(dens)*1.2, col = "red", length = 0.1, code = 2, lwd = 2)
+#arrows(x0=t_threshold, x1 = 4, y0 = max(dens)*1.2, y1 = max(dens)*1.2, col = "red", length = 0.1, code = 1, lwd=2)
+# arrows(x0=-t_threshold, x1 = t_threshold, y0 = max(dens)*1.2, y1 = max(dens)*1.2,  col = "#00BB00", length = 0.1, code = 3, lwd=2)
+
+
+## Two-tailed test, density
+lines(x, 
+     dens, 
+     type='l', 
+     col = "black",
+     lwd=2)
+
+
+```
+
+
+```{r}
 #| label: tbl-student-bilateral
 #| tbl-cap: '**Valeurs critiques bilatérales de la distribution de Student.** La première colonne indique les degrés de liberté (d.d.l.). La table fournit les valeurs de $t$ telles que $P(\lvert T_\\nu \rvert \geq t) = \alpha$. '
 #| echo: false
@@ -114,6 +174,5 @@ if (is_html_output || is_latex_output) {
 ## Print the resulting table
 student_table_output
 ```
-
 
 
