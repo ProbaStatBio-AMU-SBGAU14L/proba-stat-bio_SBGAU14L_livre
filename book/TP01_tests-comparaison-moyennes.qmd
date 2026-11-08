@@ -165,26 +165,70 @@ ig_col_stat$sample_mean = ig_col_stat$sum / ig_col_stat$n
 ig_col_stat$sample_var = ig_col_stat$sumsquares / ig_col_stat$n -  ig_col_stat$sample_mean^2
 ig_col_stat$sample_sd = sqrt(ig_col_stat$sample_var)
 
-# ig_col_stat$pop_var_est = ig_col_stat$sample_var * ig_col_stat$n / (ig_col_stat$n -1)
-# ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
 
 
 ```
 
-Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. 
+Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
 
-$$\sum_{i=1}^{n} x^{\text{avant}}_i = 6 + 9 + 10 + 11 + 13 + 14 = `r ig_col_stat["before", "sum"]`$$
-$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x^{\text{avant}}_i = `r ig_col_stat["before", "sum"]` / `r ig_col_stat["before", "n"]`  = `r ig_col_stat["before", "sample_mean"]`$$
 
-$$s^2 = \frac{1}{n} \sum_{i=1}^{n} (x^{\text{before}}_i)^2 - \bar{x}^2= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`$$
+$$\sum_{i=1}^{n} x_i = 6 + 9 + 10 + 11 + 13 + 14 = `r ig_col_stat["before", "sum"]`$$
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i = `r ig_col_stat["before", "sum"]` / `r ig_col_stat["before", "n"]`  = `r ig_col_stat["before", "sample_mean"]`$$
+
+$$
+\begin{aligned}
+s^2 &= \frac{1}{n} \sum_{i=1}^{n} (x_i- \bar{x})^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i)^2 - \bar{x}^2 \\
+    &= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
+ \end{aligned}
+$$
 $$s = \sqrt{s^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
-Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
 
-```{r print_sample_stat}
+```{r print_sample_param}
 
-kable(ig_col_stat, digits = 2, caption = "Sample statistics")
+kable(ig_col_stat, digits = 2, caption = "Sample parameters")
 
 ```
+
+
+### Q3. Estimation des paramètres des populations
+
+*Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :*
+
+- *Moyenne*
+- *Variance*
+- *Écart-type*
+
+*Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. *
+*Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. *
+
+
+
+```{r pop_param_estimation}
+
+ig_col_stat$pop_var_est = ig_col_stat$sample_var * ig_col_stat$n / (ig_col_stat$n -1)
+ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
+
+```
+
+Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
+
+
+$$\hat{\mu} = \bar{x} = `r ig_col_stat["before", "sample_mean"]`$$
+
+$$
+\begin{aligned}
+\hat{\sigma^2} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_i- \bar{x})^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i)^2 - \bar{x}^2 \\
+    &= (36 + 81 + 100 + 121 + 169 + 196)/5 - 10.5^2 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
+ \end{aligned}
+$$
+$$\hat{\sigma} = \sqrt{\hat{\sigma^2}} = \sqrt{`r round(ig_col_stat["before", "pop_var_est"], 2)`} = `r round(ig_col_stat["before", "pop_sd_est"], 2)`$$
+
+```{r print_pop_param}
+
+kable(ig_col_stat, digits = 2, caption = "Estimation of population parameters")
+
+```
+
 
 
 ## Logigramme pour le choix du test de comparaison de moyennes {.tp-section}
