@@ -355,15 +355,17 @@ $$
  &=  \mu_t - \mu_c
 \end{aligned}
 $$
+
 #### Hypothèse alternative
 
 L'énoncé ne fournit aucune indication concernant une éventuelle directinnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. 
 
-$$H_A: \mu_t \neq \mu_c$$
+$$H_1: \mu_t \neq \mu_c$$
 
 ou de façon équivalente
 
-$$H_A: \delta \neq 0$$
+$$H_1: \delta \neq 0$$
+
 #### Hypothèses de travail
 
 Nous avons choisi le test de Student apparié. Les hypothèses de travail sous-jacentes sont que les différences individuelles entre mesures avant et après suivent une distribution normale. 
@@ -391,9 +393,19 @@ où
 
 *Utilisez la table de la distribution fournie pour identifier le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de premier type $\alpha = 0.05$*
 
+La première étape est de déterminer les degrés de liberté. Nous disposons de $n_d = 5$ mesures, ce qui nous donne $\nu = n_d - 1 = 4$ degrés de liberté. 
 
+Nous effectuons un test bilatéral, le risque de $0.05$ doit donc être réparti entre les queues gauche et droite de la distribution de Student. Nous cherchons donc la valeur de $t_{\text{theor}}$ dans la colonne $1 - \alpha/2 = 0.975$
+
+Dans la table de Student (@tbl-student-bilateral) nous localisons la ligne correspondant à $\nu=4$  degrés de lberté, et sur cette ligne nous cherchons la valeur critique correspondant à $\alpha=0/05$ (en-têtes de colonnes).  
+
+Ceci nous donne une valeur critique $t_\text{theor}=2.776$. 
 
 ### Q8. Interprétation du résultat
 
+Au fil des sections précédentes, nous avons a calculé la statistique du test $t_{\text{obs}} = `r t_stat`. 
+Nous observons qu'elle est supérieure à la caleur critique  $t_\text{theor}=2.776$. 
+Nous rejetons donc l'hypothèse nulle.  
 
+Du point de vue biologique, notre expérience montre un effet significatif du traitement sur le taux d'immunoglobuline des souris. La différence étant positive, nous pouvons conclure que ce traitement augmente le taux d'immunoglobulines chez les souris. 
 
