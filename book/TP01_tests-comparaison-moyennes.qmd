@@ -172,10 +172,10 @@ Nous utilisons les indices suivants
 
 La variable $x_{c,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. 
 
-$$\bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
-$$\bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
+$$\bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n_c} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n_t} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
-$$\bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
+$$\bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n_d} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
 
 #### Variances d'échantillons
 
@@ -184,7 +184,7 @@ A partir d'ici nous ne montrons le détail de calcul que pour l'échantillon ava
 
 $$
 \begin{aligned}
-s^2_c &= \frac{1}{n_c} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_c^2 \\
+s^2_c &= \frac{1}{n_c} \sum_{i=1}^{n_c} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_{c,i})^2 - \bar{x}_c^2 \\
     &= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
  \end{aligned}
 $$
@@ -228,24 +228,46 @@ Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-b
 - après traitement (test, indice $t$)
 - différence (diff, indice $d$)
 
-$$\hat{\mu}_c = \bar{x}_c$$
-$$\hat{\mu}_t = \bar{x}_t$$
-$$\hat{\mu}_d = \bar{x}_d$$
+**Note :** l'accent circonflexe au-dessus d'un symbole mathématique indique qu'il s'agit d'un ***estimateur*** de la variable de population considérée : $\hat{\mu}$ signifie "estimateur de $\mu$".  
 
-#### Variances de populations
-
-Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
+$$\hat{\mu}_c = \bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n_c} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\hat{\mu}_t = \bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n_t} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
 
-$$\hat{\mu} = \bar{x} = `r ig_col_stat["before", "sample_mean"]`$$
+$$\hat{\mu}_d = \bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n_d} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
+
+
+#### Estimation des variances des populations
+
+
 
 $$
 \begin{aligned}
-\hat{\sigma^2} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_i- \bar{x})^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i)^2 - \bar{x}^2 \\
-    &= (36 + 81 + 100 + 121 + 169 + 196)/5 - 10.5^2 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
+\hat{\sigma^2_c} &= \frac{1}{n_c - 1} \sum_{i=1}^{n_c} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c - 1} \left( \sum_{i=1}^{n_c} (x_{c,i})^2 - n_c \bar{x}_c^2 \right) \\
+    &= (36 + 81 + 100 + 121 + 169 + 196 - 6 \cdot 10.5^2) / 5 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
  \end{aligned}
 $$
-$$\hat{\sigma} = \sqrt{\hat{\sigma^2}} = \sqrt{`r round(ig_col_stat["before", "pop_var_est"], 2)`} = `r round(ig_col_stat["before", "pop_sd_est"], 2)`$$
+$$
+\begin{aligned}
+\hat{\sigma^2_t} &= \frac{1}{n_t - 1} \sum_{i=1}^{n_t} (x_{t,i}- \bar{x}_t)^2 = \frac{1}{n_t - 1} \left( \sum_{i=1}^{n_t} (x_{t,i})^2 - n_t \bar{x}_t^2 \right) \\
+    &= (49 + 121 + 144 + 169 + 225 - 5 \cdot 11.6^2) / 4 = `r round(ig_col_stat["after", "pop_var_est"], 2)`
+ \end{aligned}
+$$
+
+$$
+\begin{aligned}
+\hat{\sigma^2_d} &= \frac{1}{n_d - 1} \sum_{i=1}^{n_d} (x_{d,i}- \bar{x}_d)^2 = \frac{1}{n_d - 1} \left( \sum_{i=1}^{n_d} (x_{d,i})^2 - n_d \bar{x}_d^2 \right) \\
+    &= (1 + 4 + 1 + 0 + 1 - 5 \cdot 1^2) / 4 = `r round(ig_col_stat["diff", "pop_var_est"], 2)`
+ \end{aligned}
+$$
+
+#### Estimation des écarts-types des populations
+
+$$\hat{\sigma}_c = \sqrt{\hat{\sigma^2}_c} = \sqrt{`r round(ig_col_stat["before", "pop_var_est"], 2)`} = `r round(ig_col_stat["before", "pop_sd_est"], 2)`$$
+
+$$\hat{\sigma}_t = \sqrt{\hat{\sigma^2}_t} = \sqrt{`r round(ig_col_stat["after", "pop_var_est"], 2)`} = `r round(ig_col_stat["after", "pop_sd_est"], 2)`$$
+$$\hat{\sigma}_d = \sqrt{\hat{\sigma^2}_d} = \sqrt{`r round(ig_col_stat["diff", "pop_var_est"], 2)`} = `r round(ig_col_stat["diff", "pop_sd_est"], 2)`$$
+
 
 ```{r print_pop_param}
 
