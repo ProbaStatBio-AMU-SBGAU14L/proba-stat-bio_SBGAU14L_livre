@@ -31,7 +31,7 @@
     - En utilisant une calculatrice ou un tableur, calculer la statistique du test
     - En utilisant un tableau des valeurs critiques, évaluer le risque de première erreur
 - Interprétation des résultats du test
-    - Interprétation statistique : formuler la décision et évaluer le risque associé
+    - Interprétation statistique : formuler la décision et évaluer le risque associé
     - Interprétation biologique
 
 
@@ -63,9 +63,9 @@ Ci-dessous, nous vous posons une série de questions qui vous amèneront pas à 
 
 ## Questions {.tp-section}
 
-Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?
+Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons ?
 
-Q2. Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : 
+Q2. Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : 
 
 - Somme
 - Somme des carrés
@@ -77,7 +77,7 @@ Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les 
 Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. 
 
 
-Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :
+Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :
 
 - Moyenne
 - Variance
@@ -90,7 +90,7 @@ Q4. Dans le logigramme ci-contre, identifiez le chemin à suivre pour choisir le
 
 Q5. Formulez l’hypothèse nulle, l’hypothèse alternative et les hypothèses de travail. 
 
-Q6. Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. 
+Q6. Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. 
 
 Q7. Utilisez la table de la distribution fournie pour identifier le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de premier type $\alpha = 0.05$
 
@@ -101,7 +101,7 @@ Q8. Interprétez le résultat
 
 ### Q1. Populations et échantillons
 
-*Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons  ?*
+*Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons ?*
 
 #### Population biologique étudiée
 
@@ -111,7 +111,7 @@ La taille de cette population ($N$) est difficile à établir, elle dépend de l
 
 #### Populations statistiques considérées
 
-Nous nous intéressons à deux distributions de valeurs :
+Nous nous intéressons à deux distributions de valeurs :
 
 - Les taux d’immunoglobulines avant traitement.
 - Les taux d’immunoglobulines après traitement.
@@ -124,8 +124,8 @@ Pour rappel, le termme échantillon peut prêter à confusion puisqu'il est util
 
 L'expérience porte sur 6 souris, mesurées avant et après traitement.
 
-- Avant traitement : $n_1 = 6$ mesures disponibles.
-- Après traitement : $n_2 = 5$ mesures disponibles (une mesure manquante).
+- Avant traitement : $n_1 = 6$ mesures disponibles.
+- Après traitement : $n_2 = 5$ mesures disponibles (une mesure manquante).
 
 
 #### Appariement des observations
@@ -134,7 +134,7 @@ Les observations sont appariées puisque les mesures avant et après traitement 
 
 ### Q2. Paramètres d'échantillon
 
-*Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : *
+*Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : *
 
 - *Somme*
 - *Somme des carrés*
@@ -195,7 +195,7 @@ $$s_c = \sqrt{s_c^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} 
 
 ```{r print_sample_param}
 
-kable(ig_col_stat, digits = 2, caption = "Paramètres d'échantillons")
+kable(ig_col_stat, digits = 4, caption = "Paramètres d'échantillons")
 
 ```
 
@@ -203,7 +203,7 @@ Pour rappel, la variance d'échantillon telle que calculée ci-dessus sous-estim
 
 ### Q3. Estimation des paramètres des populations
 
-*Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :*
+*Q3. A partir des données de l’échantillon, estimez les paramètres de la population suivants :*
 
 - *Moyenne*
 - *Variance*
@@ -222,7 +222,7 @@ ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
 
 #### Moyennes de populations
 
-Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-biaisé de la moyenne de population ($\mu$). Ceci s'applique aux trois populations considérées : 
+Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-biaisé de la moyenne de population ($\mu$). Ceci s'applique aux trois populations considérées : 
 
 - avant traitement (contrôle, indice $c$)
 - après traitement (test, indice $t$)
@@ -271,7 +271,7 @@ $$\hat{\sigma}_d = \sqrt{\hat{\sigma^2}_d} = \sqrt{`r round(ig_col_stat["diff", 
 
 ```{r print_pop_param}
 
-kable(ig_col_stat, digits = 2, caption = "Estimation des paramètes des populations")
+kable(ig_col_stat, digits = 4, caption = "Estimation des paramètes des populations")
 
 ```
 
@@ -332,10 +332,60 @@ Nous allons développer ci-après le test paramétrique (Student apparié). Dans
 *Formulez l’hypothèse nulle, l’hypothèse alternative et les hypothèses de travail. *
 
 
+#### Hypothèse nulle
+
+
+L'hypothèse nulle est que le taux moyen d'immunoglobuline est égal entre les mesures avant et après le traitement. 
+
+$$H_0: \mu_t = \mu_c$$
+
+où $\mu_c$ et $\mu_t$ sont les moyennes populationnelles du taux d'IG avant et après traitement, respectivement ($c$ pour "contrôle", $t$ pour les souris "traitées"). 
+
+Plus précisément, comme les échantillons sont appariés, on teste la nullité de la moyenne des différences entre les mesures avant et après traitement *chez le même individu*.
+
+$$H_0: \delta = 0$$
+où $\delta$ est la moyenne des différences individuelles entre mesures d'IG avant et après traitement. 
+
+En pratique, 
+
+$$
+\begin{aligned}
+\delta &= \frac{1}{n_d} \sum_{i=1}^{n_d} d_i \\
+& = \sum_{i=1}^{n_d} (x_{t,i} - x_{c,i}) \\
+ &= \sum_{i=1}^{n_t} x_{t,i} - \sum_{i=1}^{n_c} x_{c,i} \\
+ &=  \mu_t - \mu_c
+\end{aligned}
+$$
+#### Hypothèse alternative
+
+L'énoncé ne fournit aucune indication concernant une éventuelle directinnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. 
+
+$$H_A: \mu_t \neq \mu_c$$
+
+ou de façon équivalente
+
+$$H_A: \delta \neq 0$$
+#### Hypothèses de travail
+
+Nous avons choisi le test de Student apparié. Les hypothèses de travail sous-jacentes sont que les différences individuelles entre mesures avant et après suivent une distribution normale. 
 
 ### Q6. Calcul de la statistique du test
 
-*Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. *
+*Comment calculez-vous la statistique de test ? Indiquez la formule avec les symboles, puis la formule avec les valeurs numériques. *
+
+```{r t_stat}
+t_stat = ig_col_stat["diff", "sample_mean"] / ig_col_stat["diff", "sample_sd"] * sqrt(ig_col_stat["diff", "n"] - 1)
+```
+
+
+
+$$t_d = \frac{\hat{\delta}}{\hat{\sigma_\bar{d}}} = \frac{\bar{d}}{s_d/\sqrt{n_d - 1}} = \frac{1.0}{0.6325/\sqrt{4}} = 3.162$$
+
+où 
+
+- $\bar{d}$ est la moyenne des différences entre échantillons appariés (mesures après moins mesure avant traitement)
+- $s_d$ est l'écart-type (non corrigé) des différences
+- $n_d$ est le nombre de souris pour lesquelles on dispose des mesures avant et après traitement
 
 ### Q7. Calcul de la P-valeur
 
