@@ -1,5 +1,4 @@
 
-
 ```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
  source("R/setup.R", local = knitr::knit_global())
 ```
@@ -386,6 +385,7 @@ où
 - $\bar{d}$ est la moyenne des différences entre échantillons appariés (mesures après moins mesure avant traitement)
 - $s_d$ est l'écart-type (non corrigé) des différences
 - $n_d$ est le nombre de souris pour lesquelles on dispose des mesures avant et après traitement
+
 
 ### Q7. Seuil de rejet
 
