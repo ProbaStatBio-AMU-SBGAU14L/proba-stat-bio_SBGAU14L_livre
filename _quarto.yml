@@ -103,8 +103,8 @@ format:
     # mathfont: "Libertinus Math"
     # mathfont: "STIX Two Math"
     monofont: "Menlo"
-    include-in-header:
-      - book/cerulean-header.tex
+    # include-in-header:
+    #   - book/cerulean-header.tex
 
 editor: source
 

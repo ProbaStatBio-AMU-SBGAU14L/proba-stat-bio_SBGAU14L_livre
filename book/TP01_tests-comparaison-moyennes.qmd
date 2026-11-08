@@ -120,6 +120,8 @@ Chacune de ces distributions de valeurs est une population, au sens statistique 
 
 #### Échantillons observés
 
+Pour rappel, le termme échantillon peut prêter à confusion puisqu'il est utilisé par les biologistes pour désigner soit un prélèvement de matériel biologique, et pour les statisticiens comme un sous-ensemble d'éléments tirés aléatoirement dans une population. La confusion est d'autant plus grande que la cardinalité diffère entre ces deux acceptions du mot : pour cette expérience-ci, on dispose de 6 **échantillons biologiques** avant traitement, et de 5 échantillons biologiques après traitement, mais dans l'analyse qui va suivre on considérera qu'on a 2 **échantillons statistiques**, l'un avant traitement, et l'autre après traitement.
+
 L'expérience porte sur 6 souris, mesurées avant et après traitement.
 
 - Avant traitement : $n_1 = 6$ mesures disponibles.
@@ -144,16 +146,6 @@ Les observations sont appariées puisque les mesures avant et après traitement 
 *Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. *
 
 
-### Formules
-
-$$\text{sum} = \sum_{i=1}^n x_i$$
-$$\text{ssq} = \sum_{i=1}^n x^2$$
-$$\text{sample mean}: \bar{x} = \frac{1}{n} \sum_{i=1}^n x$$
-$$\text{sample var}: s = \frac{1}{n} \sum_{i=1}^n x^2 - \bar{x}^2$$
-
-
-
-### Résultats
 
 ```{r stat}
 ## Compute marginal statistics
@@ -169,26 +161,45 @@ ig_col_stat$sample_sd = sqrt(ig_col_stat$sample_var)
 
 ```
 
-Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
 
+#### Moyennes d'échantillons
 
-$$\sum_{i=1}^{n} x_i = 6 + 9 + 10 + 11 + 13 + 14 = `r ig_col_stat["before", "sum"]`$$
-$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i = `r ig_col_stat["before", "sum"]` / `r ig_col_stat["before", "n"]`  = `r ig_col_stat["before", "sample_mean"]`$$
+Nous utilisons les indices suivants
+
+- $c$: avant traitement ("contrôle")
+- $t$: après traitement ("test")
+- $d$: différence
+
+La variable $x_{c,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. 
+
+$$\bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
+
+$$\bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
+
+#### Variances d'échantillons
+
+A partir d'ici nous ne montrons le détail de calcul que pour l'échantillon avant traitement (indice $c$ pour "contrôle"). Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
+
 
 $$
 \begin{aligned}
-s^2 &= \frac{1}{n} \sum_{i=1}^{n} (x_i- \bar{x})^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i)^2 - \bar{x}^2 \\
+s^2_c &= \frac{1}{n_c} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_c^2 \\
     &= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
  \end{aligned}
 $$
-$$s = \sqrt{s^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
+
+#### Ecarts-types d'échantillons
+
+$$s_c = \sqrt{s_c^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
 
 ```{r print_sample_param}
 
-kable(ig_col_stat, digits = 2, caption = "Sample parameters")
+kable(ig_col_stat, digits = 2, caption = "Paramètres d'échantillons")
 
 ```
 
+Pour rappel, la variance d'échantillon telle que calculée ci-dessus sous-estime la variance de la population, car elle mesure les carrés des distance par rapport à la moyenne de l'échantillon ($\bar{x}$) et non celle de la population ($\mu$). La question suivante porte donc sur la correction à apporter afin d'obtenir des estimateurs non-biaisés de la variance et de l'écart-type des populations.  
 
 ### Q3. Estimation des paramètres des populations
 
@@ -202,13 +213,26 @@ kable(ig_col_stat, digits = 2, caption = "Sample parameters")
 *Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. *
 
 
-
 ```{r pop_param_estimation}
 
 ig_col_stat$pop_var_est = ig_col_stat$sample_var * ig_col_stat$n / (ig_col_stat$n -1)
 ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
 
 ```
+
+#### Moyennes de populations
+
+Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-biaisé de la moyenne de population ($\mu$). Ceci s'applique aux trois populations considérées : 
+
+- avant traitement (contrôle, indice $c$)
+- après traitement (test, indice $t$)
+- différence (diff, indice $d$)
+
+$$\hat{\mu}_c = \bar{x}_c$$
+$$\hat{\mu}_t = \bar{x}_t$$
+$$\hat{\mu}_d = \bar{x}_d$$
+
+#### Variances de populations
 
 Nous montrons ici le détail pour le calcul des statistiques d'échantillons avant traitement. Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
 
@@ -225,7 +249,7 @@ $$\hat{\sigma} = \sqrt{\hat{\sigma^2}} = \sqrt{`r round(ig_col_stat["before", "p
 
 ```{r print_pop_param}
 
-kable(ig_col_stat, digits = 2, caption = "Estimation of population parameters")
+kable(ig_col_stat, digits = 2, caption = "Estimation des paramètes des populations")
 
 ```
 
