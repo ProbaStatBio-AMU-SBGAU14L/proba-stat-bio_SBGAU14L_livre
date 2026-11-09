@@ -205,7 +205,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../book/04_egalite-moyennes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tests d’égalité des moyennes – Analyse différentielle de l’abondance des protéines</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tests de comparaison des moyennes – Analyse différentielle de l’abondance des protéines</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -495,8 +495,8 @@ window.Quarto = {
 <li><span class="math inline">\(t\)</span>: après traitement</li>
 <li><span class="math inline">\(d\)</span>: différence</li>
 </ul>
-<p>La variable <span class="math inline">\(x_{c,i}\)</span> représente la valeur observée avant traitement pour le <span class="math inline">\(i^{ème}\)</span> échantillon avant traitement.</p>
-<p><span class="math display">\[\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = 10.6\]</span> <span class="math display">\[\bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = 11.6\]</span></p>
+<p>La variable <span class="math inline">\(x_{a,i}\)</span> représente la valeur observée avant traitement pour le <span class="math inline">\(i^{ème}\)</span> échantillon avant traitement.</p>
+<p><span class="math display">\[\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = 10.6\]</span> <span class="math display">\[\bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = 11.6\]</span></p>
 <p><span class="math display">\[\bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = 1\]</span></p>
 </section>
 <section id="variances-déchantillons" class="level4">
@@ -504,7 +504,7 @@ window.Quarto = {
 <p>A partir d’ici nous ne montrons le détail de calcul que pour l’échantillon avant traitement (indice <span class="math inline">\(a\)</span>). Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence.</p>
 <p><span class="math display">\[
 \begin{aligned}
-s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_a^2 \\
+s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{a,i})^2 - \bar{x}_a^2 \\
     &amp;= (36 + 81 + 121 + 169 + 196)/5 - 10.6^2 = 8.24
 \end{aligned}
 \]</span></p>
@@ -580,14 +580,14 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <li>différence (diff, indice <span class="math inline">\(d\)</span>)</li>
 </ul>
 <p><strong>Note&nbsp;:</strong> l’accent circonflexe au-dessus d’un symbole mathématique indique qu’il s’agit d’un <strong><em>estimateur</em></strong> de la variable de population considérée&nbsp;: <span class="math inline">\(\hat{\mu}\)</span> signifie “estimateur de <span class="math inline">\(\mu\)</span>”.</p>
-<p><span class="math display">\[\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = 10.6\]</span> <span class="math display">\[\hat{\mu}_t = \bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = 11.6\]</span></p>
+<p><span class="math display">\[\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = 10.6\]</span> <span class="math display">\[\hat{\mu}_t = \bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = 11.6\]</span></p>
 <p><span class="math display">\[\hat{\mu}_d = \bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = 1\]</span></p>
 </section>
 <section id="estimation-des-variances-des-populations" class="level4">
 <h4 class="anchored" data-anchor-id="estimation-des-variances-des-populations">Estimation des variances des populations</h4>
 <p><span class="math display">\[
 \begin{aligned}
-\hat{\sigma^2_a} &amp;= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{c,i})^2 - n \bar{x}_a^2 \right) \\
+\hat{\sigma^2_a} &amp;= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{a,i})^2 - n \bar{x}_a^2 \right) \\
     &amp;= (36 + 81 + 121 + 169 + 196 - 5 \cdot 10.6^2) / 4 = 10.3
 \end{aligned}
 \]</span> <span class="math display">\[
@@ -717,11 +717,11 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <p>Plus précisément, comme les échantillons sont appariés, on teste la nullité de la moyenne des différences entre les mesures avant et après traitement <em>chez le même individu</em>.</p>
 <p><span class="math display">\[H_0: \delta = 0\]</span> où <span class="math inline">\(\delta\)</span> est la moyenne populationnelle des différences individuelles entre mesures d’IG avant et après traitement.</p>
 <p>En pratique, la moyenne des différences égale la différence entre les moyennes avant et après traitement.</p>
-<p><span class="math display">\[\delta = \mu_{t} - \mu_{c}\]</span> où <span class="math inline">\(\mu_t\)</span> et <span class="math inline">\(\mu_a\)</span> sont respectivement les moyennes populationnelles des taux d’IG après et avant traitement.</p>
+<p><span class="math display">\[\delta = \mu_{t} - \mu_{a}\]</span> où <span class="math inline">\(\mu_t\)</span> et <span class="math inline">\(\mu_a\)</span> sont respectivement les moyennes populationnelles des taux d’IG après et avant traitement.</p>
 </section>
 <section id="hypothèse-alternative" class="level4">
 <h4 class="anchored" data-anchor-id="hypothèse-alternative">Hypothèse alternative</h4>
-<p>L’énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un et bilatéral, et l’hpypothèse alternative pourra donc être formulée ainsi.</p>
+<p>L’énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un test bilatéral, dont l’hypothèse alternative est formulée comme suit.</p>
 <p><span class="math display">\[H_1: \mu_t \neq \mu_a\]</span></p>
 <p>ou de façon équivalente</p>
 <p><span class="math display">\[H_1: \delta \neq 0\]</span></p>
@@ -1483,9 +1483,9 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$t$: après traitement</span>
 <span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$d$: différence</span>
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>La variable $x_{c,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. </span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>La variable $x_{a,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. </span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>$$\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = <span class="in">`r ig_col_stat["before", "sample_mean"]`</span>$$</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>$$\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = <span class="in">`r ig_col_stat["before", "sample_mean"]`</span>$$</span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>$$\bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = <span class="in">`r ig_col_stat["after", "sample_mean"]`</span>$$</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>$$\bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = <span class="in">`r ig_col_stat["diff", "sample_mean"]`</span>$$</span>
@@ -1497,7 +1497,7 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_a^2 <span class="sc">\\</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{a,i})^2 - \bar{x}_a^2 <span class="sc">\\</span></span>
 <span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    &amp;= (36 + 81 + 121 + 169 + 196)/5 - 10.6^2 = <span class="in">`r round(ig_col_stat["before", "sample_var"], 2)`</span></span>
 <span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a> \end{aligned}</span>
 <span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -1543,7 +1543,7 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>**Note&nbsp;:** l'accent circonflexe au-dessus d'un symbole mathématique indique qu'il s'agit d'un ***estimateur*** de la variable de population considérée&nbsp;: $\hat{\mu}$ signifie "estimateur de $\mu$".  </span>
 <span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>$$\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = <span class="in">`r ig_col_stat["before", "sample_mean"]`</span>$$</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>$$\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = <span class="in">`r ig_col_stat["before", "sample_mean"]`</span>$$</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>$$\hat{\mu}_t = \bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = <span class="in">`r ig_col_stat["after", "sample_mean"]`</span>$$</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
@@ -1556,7 +1556,7 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>\hat{\sigma^2_a} &amp;= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{c,i})^2 - n \bar{x}_a^2 \right) <span class="sc">\\</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>\hat{\sigma^2_a} &amp;= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{a,i})^2 - n \bar{x}_a^2 \right) <span class="sc">\\</span></span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    &amp;= (36 + 81 + 121 + 169 + 196 - 5 \cdot 10.6^2) / 4 = <span class="in">`r round(ig_col_stat["before", "pop_var_est"], 2)`</span></span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a> \end{aligned}</span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -1667,14 +1667,14 @@ s^2_a &amp;= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \su
 <span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>En pratique, la moyenne des différences égale la différence entre les moyennes avant et après traitement. </span>
 <span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>$$\delta = \mu_{t} - \mu_{c}$$</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>$$\delta = \mu_{t} - \mu_{a}$$</span>
 <span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>où $\mu_t$ et $\mu_a$ sont respectivement les moyennes populationnelles des taux d'IG après et avant traitement. </span>
 <span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Hypothèse alternative</span></span>
 <span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>L'énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. </span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>L'énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un test bilatéral, dont  l'hypothèse alternative est formulée comme suit. </span>
 <span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>$$H_1: \mu_t \neq \mu_a$$</span>
 <span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
