@@ -7,7 +7,7 @@
 # TP1 -- Tests d’égalité des moyennes {.unnumbered}
 
 
-## Intro
+## Introduction
 
 ### Objectifs du TP
 
@@ -34,7 +34,7 @@
     - Interprétation biologique
 
 
-## Enoncé {.tp-section}
+## Énoncé {.tp-section}
 
 On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
 
@@ -42,13 +42,13 @@ Voici les données.
 
 ```{r data}
 
-ig_data = data.frame(before = c(6, 9, 10, 11, 13, 14),
+ig_data_raw = data.frame(before = c(6, 9, 10, 11, 13, 14),
                      after = c(7, 11, NA, 12, 13, 15))
 
-ig_data$diff = ig_data$after - ig_data$before
+ig_data_raw$diff = ig_data_raw$after - ig_data_raw$before
 
 
-kable(ig_data, caption = "**Taux d'immunoglobuline mesuré chez 6 souris, avant et après le traitement**", row.names = TRUE)
+kable(ig_data_raw, caption = "**Taux d'immunoglobuline mesuré chez 6 souris, avant et après le traitement**", row.names = TRUE)
 ```
 
 
@@ -64,13 +64,13 @@ Ci-dessous, nous vous posons une série de questions qui vous amèneront pas à 
 
 Q1. Dans cette configuration, en termes de statistiques, en quoi consistent les populations et les échantillons ?
 
-Q2. Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : 
+Q2. Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences, après avoir éliminé les données incomplètes : 
 
 - Somme
 - Somme des carrés
 - Moyenne
 - Variance
-- Ecart-type
+- Écart-type
 
 Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. 
 Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. 
@@ -104,42 +104,49 @@ Q8. Interprétez le résultat
 
 #### Population biologique étudiée
 
-L'ensemble des souris de la souche considérée qu’on pourrait utiliser pour cette expérience. 
+L'ensemble des souris qu’on pourrait utiliser de façon équivalente pour cette expérience (même souche, même sexe, conditions d'élevage$\cdot$). 
 La taille de cette population ($N$) est difficile à établir, elle dépend de la capacité totale des animaleries susceptibles de produire des souris de cette souche. En tout cas il s’agit d’une population potentiellement très large. 
 
 
-#### Populations statistiques considérées
+#### Variables aléatoires
 
-Nous nous intéressons à deux distributions de valeurs :
+Nous mesurons deux valeurs
 
-- Les taux d’immunoglobulines avant traitement.
-- Les taux d’immunoglobulines après traitement.
+- Les taux d’immunoglobulines avant traitement, représentées par une variable aléatoire $X_a$
+- Les taux d’immunoglobulines après traitement, , représentées par une variable aléatoire $X_t$
+
+Nous pouvons également calculer, pour chaque individu, la différence entre valeur avant et après traitement, représentée par une variable aléatoire $D$. 
 
 Chacune de ces distributions de valeurs est une population, au sens statistique du terme. 
 
 #### Échantillons observés
 
-Pour rappel, le termme échantillon peut prêter à confusion puisqu'il est utilisé par les biologistes pour désigner soit un prélèvement de matériel biologique, et pour les statisticiens comme un sous-ensemble d'éléments tirés aléatoirement dans une population. La confusion est d'autant plus grande que la cardinalité diffère entre ces deux acceptions du mot : pour cette expérience-ci, on dispose de 6 **échantillons biologiques** avant traitement, et de 5 échantillons biologiques après traitement, mais dans l'analyse qui va suivre on considérera qu'on a 2 **échantillons statistiques**, l'un avant traitement, et l'autre après traitement.
+Pour rappel, le terme échantillon peut prêter à confusion puisqu'il est utilisé par les biologistes pour désigner soit un prélèvement de matériel biologique, et pour les statisticiens comme un sous-ensemble d'éléments tirés aléatoirement dans une population. La confusion est d'autant plus grande que la cardinalité diffère entre ces deux acceptions du mot : pour cette expérience-ci, on dispose de 6 **échantillons biologiques** avant traitement, et de 5 échantillons biologiques après traitement, mais dans l'analyse qui va suivre on considérera qu'on a 2 **échantillons statistiques**, l'un avant traitement, et l'autre après traitement.
 
 L'expérience porte sur 6 souris, mesurées avant et après traitement.
 
-- Avant traitement : $n_1 = 6$ mesures disponibles.
-- Après traitement : $n_2 = 5$ mesures disponibles (une mesure manquante).
+- Avant traitement : $6$ mesures disponibles.
+- Après traitement : $5$ mesures disponibles (une mesure manquante).
+- Nous ne disposons donc que de 5 paires d'observations complètes, sur lesquelles nous pouvons calculer une différence
+
 
 
 #### Appariement des observations
 
 Les observations sont appariées puisque les mesures avant et après traitement proviennent des mêmes souris. Pour étudier l'effet du traitement, nous allons donc analyser les différences individuelles entre les mesures après et avant traitement. Nous disposons de 5 paires complètes, permettant de calculer 5 différences.
 
+Pour la suite de cette analyse, nous ne prendrons en considération que les souris pour lesquelles on dispose des deux observations. 
+Nous utiliserons ci-après le symbole $n$ pour désigner le nombre d'observations complètes ($n=5$).
+
 ### Q2. Paramètres d'échantillon
 
-*Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences : *
+*Calculez les paramètres d’échantillon suivants pour les mesures avant et après traitement, et pour les différences, en ne prenant en compte que les individus **pour lesquels on dispose de données complètes** : *
 
 - *Somme*
 - *Somme des carrés*
 - *Moyenne*
 - *Variance*
-- *Ecart-type*
+- *Écart-type*
 
 *Indiquez les formules avec les symboles, remplacez ensuite ces symboles par les valeurs numériques correspondantes, et calculez le résultat. *
 *Note: à l’examen, vous ne devrez pas calculer la valeur numérique du résultat. *
@@ -147,10 +154,15 @@ Les observations sont appariées puisque les mesures avant et après traitement 
 
 
 ```{r stat}
+## Filter out incomplete data
+
+ig_data = na.omit(ig_data_raw)
+
 ## Compute marginal statistics
+
 ig_col_stat = data.frame(n = apply(!is.na(ig_data), 2, sum),
-                         sum = apply(ig_data, 2, sum, na.rm=TRUE),
-                         sumsquares = apply(ig_data^2, 2, sum, na.rm=TRUE)
+                         sum = apply(ig_data, 2, sum),
+                         sumsquares = apply(ig_data^2, 2, sum)
                          )
 ig_col_stat$sample_mean = ig_col_stat$sum / ig_col_stat$n
 ig_col_stat$sample_var = ig_col_stat$sumsquares / ig_col_stat$n -  ig_col_stat$sample_mean^2
@@ -165,32 +177,32 @@ ig_col_stat$sample_sd = sqrt(ig_col_stat$sample_var)
 
 Nous utilisons les indices suivants
 
-- $c$: avant traitement ("contrôle")
-- $t$: après traitement ("test")
+- $a$: avant traitement
+- $t$: après traitement
 - $d$: différence
 
 La variable $x_{c,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. 
 
-$$\bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n_c} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
-$$\bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n_t} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
+$$\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
-$$\bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n_d} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
+$$\bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
 
 #### Variances d'échantillons
 
-A partir d'ici nous ne montrons le détail de calcul que pour l'échantillon avant traitement (indice $c$ pour "contrôle"). Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
+A partir d'ici nous ne montrons le détail de calcul que pour l'échantillon avant traitement (indice $a$). Les formules de calcul peuvent facilement être transposées aux résultats après traitement, ou à la différence. 
 
 
 $$
 \begin{aligned}
-s^2_c &= \frac{1}{n_c} \sum_{i=1}^{n_c} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c} \sum_{i=1}^{n_c} (x_{c,i})^2 - \bar{x}_c^2 \\
-    &= (36 + 81 + 100 + 121 + 169 + 196)/6 - 10.5^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
+s^2_a &= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_a^2 \\
+    &= (36 + 81 + 121 + 169 + 196)/5 - 10.6^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
  \end{aligned}
 $$
 
-#### Ecarts-types d'échantillons
+#### Écarts-types d'échantillons
 
-$$s_c = \sqrt{s_c^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
+$$s_a = \sqrt{s_a^2} = \sqrt{`r round(ig_col_stat["before", "sample_var"], 2)`} = `r round(ig_col_stat["before", "sample_sd"], 2)`$$
 
 ```{r print_sample_param}
 
@@ -223,17 +235,17 @@ ig_col_stat$pop_sd_est = sqrt(ig_col_stat$pop_var_est)
 
 Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-biaisé de la moyenne de population ($\mu$). Ceci s'applique aux trois populations considérées : 
 
-- avant traitement (contrôle, indice $c$)
-- après traitement (test, indice $t$)
+- avant traitement (indice $a$)
+- après traitement (indice $t$)
 - différence (diff, indice $d$)
 
 **Note :** l'accent circonflexe au-dessus d'un symbole mathématique indique qu'il s'agit d'un ***estimateur*** de la variable de population considérée : $\hat{\mu}$ signifie "estimateur de $\mu$".  
 
-$$\hat{\mu}_c = \bar{x}_c = \frac{1}{n_c}\sum_{i=1}^{n_c} x_{c,i} = (6 + 9 + 10 + 11 + 13 + 14) / 6 = `r ig_col_stat["before", "sample_mean"]`$$
-$$\hat{\mu}_t = \bar{x}_t = \frac{1}{n_t} \sum_{i=1}^{n_t} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
+$$\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\hat{\mu}_t = \bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
 
-$$\hat{\mu}_d = \bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n_d} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
+$$\hat{\mu}_d = \bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
 
 
 #### Estimation des variances des populations
@@ -242,27 +254,27 @@ $$\hat{\mu}_d = \bar{x}_d = \frac{1}{n_d}\sum_{i=1}^{n_d} x_{d,i} = (1 + 2 + 1 +
 
 $$
 \begin{aligned}
-\hat{\sigma^2_c} &= \frac{1}{n_c - 1} \sum_{i=1}^{n_c} (x_{c,i}- \bar{x}_c)^2 = \frac{1}{n_c - 1} \left( \sum_{i=1}^{n_c} (x_{c,i})^2 - n_c \bar{x}_c^2 \right) \\
-    &= (36 + 81 + 100 + 121 + 169 + 196 - 6 \cdot 10.5^2) / 5 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
+\hat{\sigma^2_a} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{c,i})^2 - n \bar{x}_a^2 \right) \\
+    &= (36 + 81 + 121 + 169 + 196 - 5 \cdot 10.6^2) / 4 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
  \end{aligned}
 $$
 $$
 \begin{aligned}
-\hat{\sigma^2_t} &= \frac{1}{n_t - 1} \sum_{i=1}^{n_t} (x_{t,i}- \bar{x}_t)^2 = \frac{1}{n_t - 1} \left( \sum_{i=1}^{n_t} (x_{t,i})^2 - n_t \bar{x}_t^2 \right) \\
+\hat{\sigma^2_t} &= \frac{1}{{n} - 1} \sum_{i=1}^{n} (x_{t,i}- \bar{x}_t)^2 = \frac{1}{{n} - 1} \left( \sum_{i=1}^{n} (x_{t,i})^2 - {n} \bar{x}_t^2 \right) \\
     &= (49 + 121 + 144 + 169 + 225 - 5 \cdot 11.6^2) / 4 = `r round(ig_col_stat["after", "pop_var_est"], 2)`
  \end{aligned}
 $$
 
 $$
 \begin{aligned}
-\hat{\sigma^2_d} &= \frac{1}{n_d - 1} \sum_{i=1}^{n_d} (x_{d,i}- \bar{x}_d)^2 = \frac{1}{n_d - 1} \left( \sum_{i=1}^{n_d} (x_{d,i})^2 - n_d \bar{x}_d^2 \right) \\
+\hat{\sigma^2_d} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{d,i}- \bar{x}_d)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{d,i})^2 - n \bar{x}_d^2 \right) \\
     &= (1 + 4 + 1 + 0 + 1 - 5 \cdot 1^2) / 4 = `r round(ig_col_stat["diff", "pop_var_est"], 2)`
  \end{aligned}
 $$
 
 #### Estimation des écarts-types des populations
 
-$$\hat{\sigma}_c = \sqrt{\hat{\sigma^2}_c} = \sqrt{`r round(ig_col_stat["before", "pop_var_est"], 2)`} = `r round(ig_col_stat["before", "pop_sd_est"], 2)`$$
+$$\hat{\sigma}_a = \sqrt{\hat{\sigma^2}_a} = \sqrt{`r round(ig_col_stat["before", "pop_var_est"], 2)`} = `r round(ig_col_stat["before", "pop_sd_est"], 2)`$$
 
 $$\hat{\sigma}_t = \sqrt{\hat{\sigma^2}_t} = \sqrt{`r round(ig_col_stat["after", "pop_var_est"], 2)`} = `r round(ig_col_stat["after", "pop_sd_est"], 2)`$$
 $$\hat{\sigma}_d = \sqrt{\hat{\sigma^2}_d} = \sqrt{`r round(ig_col_stat["diff", "pop_var_est"], 2)`} = `r round(ig_col_stat["diff", "pop_sd_est"], 2)`$$
@@ -306,17 +318,23 @@ include_mean_test_choice(
 
 **Astuce : ** il existe plusieurs réponses possibles concernant le chemin à suivre dans le logigramme et le test finalement retenu. Ce qui compte ici est de mener un raisonnement cohérent, appuyé sur la nature des données. 
 
-- **Les populations sont-elles normales ?** Invérifiable sur base de données car le test de normalité (Shapiro) est inefficace avec de si petits échantillons (nous le verrons dans les cours suivants). 
+
+- Les échantillons sont appariés, on applique donc un **test de Student pour échantillons appariés**. Nous allons donc restreindre l'analyse aux échantillons complets, c'est-à-dire ceux pour lesquels on dispose à la fois de la valeur avant et après le traitement. Nous disposons donc de 5 paires de mesures. L'analyse portera sur les différences individuelles entre valeurs après et avant traitement. 
+
+
+- **Les populations sont-elles normales ?** Sur base des données à notre disposition nous ne sommes pas en mesure de vérifier la normalité car le test de normalité (Shapiro) est inefficace avec de si petits échantillons (nous le verrons dans les cours suivants). 
 
 
 - **Choix (1), raisonnement biologique :** 
 
-    - Justification : le taux individuel d’IG dépend de facteurs multiples, ayant un effet plus ou moins additif, ce qui fait qu’il tendrait vers la normalité → on postule la normalité et on choisit un test paramétrique. 
+    - Justification : le taux individuel d’IG dépend de facteurs multiples, ayant un effet plus ou moins additif, ce qui fait qu’il tendrait vers la normalité. Si les valeurs avant et après traitement suivent des distributions normales, la différence entre elles suit également une distribution normale. Sur base de ce raisonnement, on pourrait postuler la normalité et s'orienter vers un **test paramétrique**. 
 
-    - Les échantillons sont appariés, on applique donc un **test de Student pour échantillons appariés**.
+    - Les échantillons sont appariés, on applique donc le **test de Student pour échantillons appariés**
 
 
 - **Choix (2) : option prudente, sans postuler la normalité**. 
+
+    - L'alternative prudente est de ne pas postuler la normalité. 
 
     - La question  suivante porte sur la taille des échantillons. Elle est faible (6 et 5 observations). On s'oriente donc vers un **test non paramétrique**. 
 
@@ -336,31 +354,27 @@ Nous allons développer ci-après le test paramétrique (Student apparié). Dans
 
 L'hypothèse nulle est que le taux moyen d'immunoglobuline est égal entre les mesures avant et après le traitement. 
 
-$$H_0: \mu_t = \mu_c$$
+$$H_0: \mu_t = \mu_a$$
 
-où $\mu_c$ et $\mu_t$ sont les moyennes populationnelles du taux d'IG avant et après traitement, respectivement ($c$ pour "contrôle", $t$ pour les souris "traitées"). 
+où $\mu_a$ et $\mu_t$ sont les moyennes populationnelles du taux d'IG avant et après traitement, respectivement ($a$ pour "avant" traitement, $t$ pour les souris "traitées"). 
 
 Plus précisément, comme les échantillons sont appariés, on teste la nullité de la moyenne des différences entre les mesures avant et après traitement *chez le même individu*.
 
 $$H_0: \delta = 0$$
-où $\delta$ est la moyenne des différences individuelles entre mesures d'IG avant et après traitement. 
+où $\delta$ est la moyenne populationnelle des différences individuelles entre mesures d'IG avant et après traitement. 
 
-En pratique, 
+En pratique, la moyenne des différences égale la différence entre les moyennes avant et après traitement. 
 
-$$
-\begin{aligned}
-\delta &= \frac{1}{n_d} \sum_{i=1}^{n_d} d_i \\
-& = \sum_{i=1}^{n_d} (x_{t,i} - x_{c,i}) \\
- &= \sum_{i=1}^{n_t} x_{t,i} - \sum_{i=1}^{n_c} x_{c,i} \\
- &=  \mu_t - \mu_c
-\end{aligned}
-$$
+$$\delta = \mu_{t} - \mu_{c}$$
+où $\mu_t$ et $\mu_a$ sont respectivement les moyennes populationnelles des taux d'IG après et avant traitement. 
+
+
 
 #### Hypothèse alternative
 
-L'énoncé ne fournit aucune indication concernant une éventuelle directinnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. 
+L'énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. 
 
-$$H_1: \mu_t \neq \mu_c$$
+$$H_1: \mu_t \neq \mu_a$$
 
 ou de façon équivalente
 
@@ -380,32 +394,33 @@ t_stat = ig_col_stat["diff", "sample_mean"] / ig_col_stat["diff", "sample_sd"] *
 
 
 
-$$t_d = \frac{\hat{\delta}}{\hat{\sigma_\bar{d}}} = \frac{\bar{d}}{s_d/\sqrt{n_d - 1}} = \frac{1.0}{0.6325/\sqrt{4}} = 3.162$$
+$$t_d = \frac{\hat{\delta}}{\hat{\sigma}_{\bar{d}}} = \frac{\bar{d}}{s_d/\sqrt{n - 1}} = \frac{1.0}{0.6325/\sqrt{4}} = 3.162$$
 
 où 
 
 - $\bar{d}$ est la moyenne des différences entre échantillons appariés (mesures après moins mesure avant traitement)
 - $s_d$ est l'écart-type (non corrigé) des différences
-- $n_d$ est le nombre de souris pour lesquelles on dispose des mesures avant et après traitement
+- $n$ est le nombre de souris pour lesquelles on dispose des mesures avant et après traitement
 
 
 ### Q7. Seuil de rejet
 
-*Utilisez la table de la distribution fournie pour identifier le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de premier type $\alpha = 0.05$*
+*Utilisez la table de la distribution fournie pour déterminer le seuil de rejet de l’hypothèse nulle, avec un risque d’erreur de première espèce $\alpha = 0.05$*
 
-La première étape est de déterminer les degrés de liberté. Nous disposons de $n_d = 5$ mesures, ce qui nous donne $\nu = n_d - 1 = 4$ degrés de liberté. 
+La première étape est de déterminer les degrés de liberté. Nous disposons de $n = 5$ mesures, ce qui nous donne $\nu = n - 1 = 4$ degrés de liberté. 
 
 Nous effectuons un test bilatéral, le risque de $0.05$ doit donc être réparti entre les queues gauche et droite de la distribution de Student. Nous cherchons donc la valeur de $t_{\text{theor}}$ dans la colonne $1 - \alpha/2 = 0.975$
 
-Dans la table de Student (@tbl-student-bilateral) nous localisons la ligne correspondant à $\nu=4$  degrés de lberté, et sur cette ligne nous cherchons la valeur critique correspondant à $\alpha=0/05$ (en-têtes de colonnes).  
+Dans la table de Student (@tbl-student-bilateral) nous localisons la ligne correspondant à $\nu=4$  degrés de liberté (d.d.l.), et sur cette ligne nous cherchons la valeur critique correspondant à $\alpha=0/05$ (en-têtes de colonnes).  
 
 Ceci nous donne une valeur critique $t_\text{theor}=2.776$. 
 
 ### Q8. Interprétation du résultat
 
-Au fil des sections précédentes, nous avons a calculé la statistique du test $t_{\text{obs}} = `r t_stat`. 
-Nous observons qu'elle est supérieure à la caleur critique  $t_\text{theor}=2.776$. 
+Au fil des sections précédentes, nous avons a calculé la statistique du test $t_{\text{obs}} = `r t_stat`$. 
+Nous observons qu'elle est supérieure à la valeur critique  $t_\text{theor}=2.776$. 
 Nous rejetons donc l'hypothèse nulle.  
 
-Du point de vue biologique, notre expérience montre un effet significatif du traitement sur le taux d'immunoglobuline des souris. La différence étant positive, nous pouvons conclure que ce traitement augmente le taux d'immunoglobulines chez les souris. 
+Chez les cinq souris pour lesquelles les deux mesures sont disponibles, le taux d'immunoglobulines augmente en moyenne de 1 unité après traitement. Le test de Student apparié indique que cette différence est statistiquement significative au seuil de 5 % ($t_{\text{obs}=3.162$,  $t_\text{theor}=2.776$ avec $\text{ddl=4}$), sous l'hypothèse de normalité des différences. Ce résultat suggère un effet du traitement, mais n'est pas conclusif à lui seul, car il faudrait avoir effectué parallèlement un contrôle avec un groupe témoin, non-traité, dont on aurait pris les mesures aux mêmes moments et dans les mêmes conditions. 
+
 
