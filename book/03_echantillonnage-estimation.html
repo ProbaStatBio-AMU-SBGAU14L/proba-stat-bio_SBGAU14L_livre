@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c50fc2874fcac956595ffed77daae241.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f5440a678e7364f99990e8066329b603.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7ab61617036f309ecc368b098946315a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -229,9 +229,23 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Annexes</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Exercices</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
       <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../book/TP01_tests-comparaison-moyennes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP1 – Tests d’égalité des moyennes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Annexes</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../book/A1_distrib-theoriques.html" class="sidebar-item-text sidebar-link">
@@ -377,9 +391,9 @@ Figure&nbsp;3.2: <strong>Distribution des valeurs de l’ensemble de la populati
 </div>
 <p>Pour illustrer ce principe, nous générons une population artificielle de <span class="math inline">\(N\)</span>&nbsp;=&nbsp;10 000 individus. La <a href="#fig-population-histo" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> représente la distribution des valeurs de la variable étudiée dans l’ensemble de cette population.</p>
 <p>Puisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne (<span class="math inline">\(\mu\)</span>), sa variance (<span class="math inline">\(\sigma^2\)</span>, et son écart-type (<span class="math inline">\(\sigma\)</span>).</p>
-<p><span class="math display">\[\mu = \frac{1}{N}&nbsp;\sum_{i=1}^N x_i = 149.9\]</span></p>
-<p><span class="math display">\[\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = 16.29\]</span></p>
-<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = 4.04\]</span></p>
+<p><span class="math display">\[\mu = \frac{1}{N}&nbsp;\sum_{i=1}^N x_i = 150\]</span></p>
+<p><span class="math display">\[\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = 16.5\]</span></p>
+<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = 4.06\]</span></p>
 <section id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne"><span class="header-section-number">3.3.1</span> Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne</h3>
 <p>Nous voudrions évaluer la correspondance entre la moyenne de la population (<span class="math inline">\(\mu\)</span>) et celle des échantillons prélevés aléatoirement dans cette population. Nous réalisons successivement cette expérience pour différentes tailles d’échantillons&nbsp;: <span class="math inline">\(n \in \{2, 4, 8, 16, 32, 64\}\)</span>.</p>
@@ -405,7 +419,7 @@ Figure&nbsp;3.3: <strong>Effet de la taille d’échantillon sur la distribution
 </div>
 </div>
 </div>
-<p>Un premier constat est que la moyenne d’échantillon est remarquablement stable : pour toutes les tailles d’échantillon, la moyenne des <span class="math inline">\(R\)</span>&nbsp;=&nbsp;100 000 moyennes d’échantillons (<span class="math inline">\(\overline{\bar{x}}\)</span>) correspond toujours à la moyenne de la population (<span class="math inline">\(\mu\)</span>&nbsp;=&nbsp;149.9). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l’échantillon augmente.</p>
+<p>Un premier constat est que la moyenne d’échantillon est remarquablement stable : pour toutes les tailles d’échantillon, la moyenne des <span class="math inline">\(R\)</span>&nbsp;=&nbsp;100 000 moyennes d’échantillons (<span class="math inline">\(\overline{\bar{x}}\)</span>) correspond toujours à la moyenne de la population (<span class="math inline">\(\mu\)</span>&nbsp;=&nbsp;150). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l’échantillon augmente.</p>
 <p>La <a href="#tbl-sampling-means-synthesis" class="quarto-xref">Table&nbsp;<span>3.1</span></a> synthétise les statistiques (moyenne, variance, écart-type) calculées sur l’ensemble des 100 000 moyennes d’échantillons, pour chacune des tailles d’échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population.</p>
 <p>Le tableau met en évidence une relation inverse entre la variance des moyennes d’échantillons (<span class="math inline">\(s^2_{\bar{x}}\)</span>) et la taille de l’échantillon (<span class="math inline">\(n\)</span>)&nbsp;: lorsque <span class="math inline">\(n\)</span> est doublé, cette variance est approximativement divisée par deux.</p>
 <div class="cell" data-layout-align="center">
@@ -430,51 +444,51 @@ Table&nbsp;3.1: <strong>Centre et dispersion de la population et des distributio
 <tr class="odd">
 <td style="text-align: left;">Population</td>
 <td style="text-align: right;">–</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">16.29</td>
-<td style="text-align: right;">4.04</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">16.50</td>
+<td style="text-align: right;">4.06</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">8.12</td>
-<td style="text-align: right;">2.85</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">8.16</td>
+<td style="text-align: right;">2.86</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">4</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">4.07</td>
-<td style="text-align: right;">2.02</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">4.12</td>
+<td style="text-align: right;">2.03</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">8</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">149.9</td>
+<td style="text-align: right;">150</td>
 <td style="text-align: right;">2.05</td>
 <td style="text-align: right;">1.43</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">16</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">1.03</td>
+<td style="text-align: right;">1.01</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">32</td>
 <td style="text-align: right;">32</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">0.51</td>
-<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">0.72</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">64</td>
 <td style="text-align: right;">64</td>
-<td style="text-align: right;">149.9</td>
-<td style="text-align: right;">0.25</td>
-<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">0.51</td>
 </tr>
 </tbody>
 </table>
