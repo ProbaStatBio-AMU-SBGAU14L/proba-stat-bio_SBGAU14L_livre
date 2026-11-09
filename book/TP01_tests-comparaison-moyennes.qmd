@@ -181,9 +181,9 @@ Nous utilisons les indices suivants
 - $t$: après traitement
 - $d$: différence
 
-La variable $x_{c,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. 
+La variable $x_{a,i}$ représente la valeur observée avant traitement pour le $i^{ème}$ échantillon avant traitement. 
 
-$$\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
 $$\bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
 $$\bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 + 1)/5 = `r ig_col_stat["diff", "sample_mean"]`$$
@@ -195,7 +195,7 @@ A partir d'ici nous ne montrons le détail de calcul que pour l'échantillon ava
 
 $$
 \begin{aligned}
-s^2_a &= \frac{1}{n} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{c,i})^2 - \bar{x}_a^2 \\
+s^2_a &= \frac{1}{n} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n} \sum_{i=1}^{n} (x_{a,i})^2 - \bar{x}_a^2 \\
     &= (36 + 81 + 121 + 169 + 196)/5 - 10.6^2 = `r round(ig_col_stat["before", "sample_var"], 2)`
  \end{aligned}
 $$
@@ -241,7 +241,7 @@ Comme vu au cours, la moyenne d'échantillon ($\bar{x}$) est un estimateur non-b
 
 **Note :** l'accent circonflexe au-dessus d'un symbole mathématique indique qu'il s'agit d'un ***estimateur*** de la variable de population considérée : $\hat{\mu}$ signifie "estimateur de $\mu$".  
 
-$$\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{c,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
+$$\hat{\mu}_a = \bar{x}_a = \frac{1}{n}\sum_{i=1}^{n} x_{a,i} = (6 + 9 + 11 + 13 + 14) / 5 = `r ig_col_stat["before", "sample_mean"]`$$
 $$\hat{\mu}_t = \bar{x}_t = \frac{1}{n} \sum_{i=1}^{n} x_{t,i} = (7 + 11 + 12 + 13 + 15)/5 = `r ig_col_stat["after", "sample_mean"]`$$
 
 
@@ -254,7 +254,7 @@ $$\hat{\mu}_d = \bar{x}_d = \frac{1}{n}\sum_{i=1}^{n} x_{d,i} = (1 + 2 + 1 + 0 +
 
 $$
 \begin{aligned}
-\hat{\sigma^2_a} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{c,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{c,i})^2 - n \bar{x}_a^2 \right) \\
+\hat{\sigma^2_a} &= \frac{1}{n - 1} \sum_{i=1}^{n} (x_{a,i}- \bar{x}_a)^2 = \frac{1}{n - 1} \left( \sum_{i=1}^{n} (x_{a,i})^2 - n \bar{x}_a^2 \right) \\
     &= (36 + 81 + 121 + 169 + 196 - 5 \cdot 10.6^2) / 4 = `r round(ig_col_stat["before", "pop_var_est"], 2)`
  \end{aligned}
 $$
@@ -365,14 +365,14 @@ où $\delta$ est la moyenne populationnelle des différences individuelles entre
 
 En pratique, la moyenne des différences égale la différence entre les moyennes avant et après traitement. 
 
-$$\delta = \mu_{t} - \mu_{c}$$
+$$\delta = \mu_{t} - \mu_{a}$$
 où $\mu_t$ et $\mu_a$ sont respectivement les moyennes populationnelles des taux d'IG après et avant traitement. 
 
 
 
 #### Hypothèse alternative
 
-L'énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un et bilatéral, et l'hpypothèse alternative pourra donc être formulée ainsi. 
+L'énoncé ne fournit aucune indication concernant une éventuelle directionnalité du test. Nous appliquerons donc un test bilatéral, dont  l'hypothèse alternative est formulée comme suit. 
 
 $$H_1: \mu_t \neq \mu_a$$
 
