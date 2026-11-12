@@ -277,10 +277,14 @@ window.Quarto = {
   <li><a href="#effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne" id="toc-effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne" class="nav-link" data-scroll-target="#effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne"><span class="header-section-number">3.3.1</span> Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne</a></li>
   <li><a href="#effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-variance" id="toc-effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-variance" class="nav-link" data-scroll-target="#effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-variance"><span class="header-section-number">3.3.2</span> Effet de la taille d’échantillon sur la distribution d’échantillonnage de la variance</a></li>
   </ul></li>
-  <li><a href="#estimer-les-paramètres-dune-population-à-partir-dun-échantillon" id="toc-estimer-les-paramètres-dune-population-à-partir-dun-échantillon" class="nav-link" data-scroll-target="#estimer-les-paramètres-dune-population-à-partir-dun-échantillon"><span class="header-section-number">3.4</span> Estimer les paramètres d’une population à partir d’un échantillon</a></li>
-  <li><a href="#espérance" id="toc-espérance" class="nav-link" data-scroll-target="#espérance"><span class="header-section-number">3.5</span> Espérance</a></li>
-  <li><a href="#lerreur-standard" id="toc-lerreur-standard" class="nav-link" data-scroll-target="#lerreur-standard"><span class="header-section-number">3.6</span> L’erreur standard</a></li>
-  <li><a href="#intervalles-de-confiance-autour-de-la-moyenne" id="toc-intervalles-de-confiance-autour-de-la-moyenne" class="nav-link" data-scroll-target="#intervalles-de-confiance-autour-de-la-moyenne"><span class="header-section-number">3.7</span> Intervalles de confiance autour de la moyenne</a></li>
+  <li><a href="#estimation-des-paramètres-dune-population-à-partir-dun-échantillon" id="toc-estimation-des-paramètres-dune-population-à-partir-dun-échantillon" class="nav-link" data-scroll-target="#estimation-des-paramètres-dune-population-à-partir-dun-échantillon"><span class="header-section-number">3.4</span> Estimation des paramètres d’une population à partir d’un échantillon</a>
+  <ul class="collapse">
+  <li><a href="#estimation-de-la-moyenne-de-la-population" id="toc-estimation-de-la-moyenne-de-la-population" class="nav-link" data-scroll-target="#estimation-de-la-moyenne-de-la-population"><span class="header-section-number">3.4.1</span> Estimation de la moyenne de la population</a></li>
+  <li><a href="#estimation-non-biaisée-de-la-variance-de-la-population" id="toc-estimation-non-biaisée-de-la-variance-de-la-population" class="nav-link" data-scroll-target="#estimation-non-biaisée-de-la-variance-de-la-population"><span class="header-section-number">3.4.2</span> Estimation non biaisée de la variance de la population</a></li>
+  <li><a href="#estimation-de-lerreur-standard-de-la-moyenne" id="toc-estimation-de-lerreur-standard-de-la-moyenne" class="nav-link" data-scroll-target="#estimation-de-lerreur-standard-de-la-moyenne"><span class="header-section-number">3.4.3</span> Estimation de l’erreur standard de la moyenne</a></li>
+  </ul></li>
+  <li><a href="#interprétation-de-lerreur-standard" id="toc-interprétation-de-lerreur-standard" class="nav-link" data-scroll-target="#interprétation-de-lerreur-standard"><span class="header-section-number">3.5</span> Interprétation de l’erreur standard</a></li>
+  <li><a href="#intervalles-de-confiance-autour-de-la-moyenne" id="toc-intervalles-de-confiance-autour-de-la-moyenne" class="nav-link" data-scroll-target="#intervalles-de-confiance-autour-de-la-moyenne"><span class="header-section-number">3.6</span> Intervalles de confiance autour de la moyenne</a></li>
   </ul>
 </nav>
     </div>
@@ -318,7 +322,7 @@ window.Quarto = {
 <li>les saupes de la baie de Marseille&nbsp;;</li>
 <li>les sangliers des Calanques.</li>
 </ul>
-<p>Pour chaque variable étudiée, on peut également considére la <strong>population dzs valeurs</strong> que cette variable prendrait sur l’ensemble des unités statistiques, par exemple&nbsp;: - le statut infecté ou non de chaque individu&nbsp;; - la concentration d’hémoglobine dans le sang&nbsp;; - la concentration d’un médicament dans le sang d’une souris de laboratoire.</p>
+<p>Pour chaque variable étudiée, on peut également considérer la <strong>population des valeurs</strong> que cette variable prendrait sur l’ensemble des unités statistiques, par exemple&nbsp;: - le statut infecté ou non de chaque individu&nbsp;; - la concentration d’hémoglobine dans le sang&nbsp;; - la concentration d’un médicament dans le sang d’une souris de laboratoire.</p>
 <p>Dans un monde idéal, on disposerait de mesures pour toutes les unités de la population, afin d’asseoir nos analyses sur des données qui reflètent la réalité dans son ensemble. Cependant, dans la majorité des cas, cette exhaustivité est impossible, pour différentes raisons. La population peut être infinie ou trop vaste, la collecte des données peut être coûteuse, ou encore la mesure nécessite une procédure invasive ou destructive</p>
 <p>En pratique, on est donc amené à sélectionner un <strong>échantillon</strong> c’est-à-dire un sous-ensemble de la population. Le nombre d’unités qui le composent est dénommé <strong>effectif</strong> ou <strong>taille d’échantillon</strong> et sera noté <span class="math inline">\(n\)</span> par la suite.</p>
 <p>Une fois l’échantillon constitué, on réalise une ou plusieurs mesures sur chacun de ses unités. On obtient ainsi un ensemble de données d’observation ou expérimentales, qui peuvent ensuite être analysées selon différentes approches. Les méthodes de <strong>statistique descriptive</strong> servent à résumer ou à explorer les données obtenues (histogrammes, diagrammes en boîte, analyses en composantes principales, classification, etc.). Les méthodes de <strong>statistique inférentielle</strong> visent ensuite à tirer des conclusions concernant la population à partir des observations effectuées sur l’échantillon, notamment en estimant des paramètres de la population ou en testant des hypothèses.</p>
@@ -369,7 +373,7 @@ Figure&nbsp;3.1: <strong>Principe de l’échantillonnage.</strong>
 <p><span class="math display">\[C = \binom{N}{n} = \frac{N!}{n!(N - n)!}\]</span></p>
 <p>A titre d’exemple, dans une population de taille <span class="math inline">\(N=1000\)</span> le nombre possible d’échantillons distincts d’effectif <span class="math inline">\(n=20\)</span> s’élève à</p>
 <p><span class="math display">\[C = \binom{1000}{20} \frac{N!}{20! \times 998!} \approx 3.4 \times 10^{41}\]</span></p>
-<p>Il est donc impossile d’examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste.</p>
+<p>Il est donc impossible d’examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste.</p>
 </section>
 <section id="distributions-déchantillonnage" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="distributions-déchantillonnage"><span class="header-section-number">3.3</span> Distributions d’échantillonnage</h2>
@@ -390,16 +394,16 @@ Figure&nbsp;3.2: <strong>Distribution des valeurs de l’ensemble de la populati
 </div>
 </div>
 <p>Pour illustrer ce principe, nous générons une population artificielle de <span class="math inline">\(N\)</span>&nbsp;=&nbsp;10 000 individus. La <a href="#fig-population-histo" class="quarto-xref">Figure&nbsp;<span>3.2</span></a> représente la distribution des valeurs de la variable étudiée dans l’ensemble de cette population.</p>
-<p>Puisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne (<span class="math inline">\(\mu\)</span>), sa variance (<span class="math inline">\(\sigma^2\)</span>, et son écart-type (<span class="math inline">\(\sigma\)</span>).</p>
+<p>Puisque toutes les mesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne (<span class="math inline">\(\mu\)</span>), sa variance (<span class="math inline">\(\sigma^2\)</span>, et son écart-type (<span class="math inline">\(\sigma\)</span>).</p>
 <p><span class="math display">\[\mu = \frac{1}{N}&nbsp;\sum_{i=1}^N x_i = 150\]</span></p>
-<p><span class="math display">\[\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = 16.5\]</span></p>
-<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = 4.06\]</span></p>
+<p><span class="math display">\[\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2  = 16.14\]</span></p>
+<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}  = 4.02\]</span></p>
 <section id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-moyenne"><span class="header-section-number">3.3.1</span> Effet de la taille d’échantillon sur la distribution d’échantillonnage de la moyenne</h3>
 <p>Nous voudrions évaluer la correspondance entre la moyenne de la population (<span class="math inline">\(\mu\)</span>) et celle des échantillons prélevés aléatoirement dans cette population. Nous réalisons successivement cette expérience pour différentes tailles d’échantillons&nbsp;: <span class="math inline">\(n \in \{2, 4, 8, 16, 32, 64\}\)</span>.</p>
 <p>Pour chaque taille d’échantillon <span class="math inline">\(n\)</span>, nous répétons le tirage <span class="math inline">\(R\)</span>&nbsp;=&nbsp;100 000 fois. Les <span class="math inline">\(R\)</span> échantillons sont tirés indépendamment les uns des autres ; à l’intérieur de chaque échantillon, <span class="math inline">\(n\)</span> individus sont sélectionnés sans remise.</p>
 <p>Pour la répétition d’indice <span class="math inline">\(r\)</span>, nous calculons la moyenne&nbsp;:</p>
-<p><span class="math display">\[\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \cdots, R\]</span></p>
+<p><span class="math display">\[\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \ldots, R\]</span></p>
 <p>Dans cette équation, <span class="math inline">\(x_i^{(r)}\)</span> désigne la valeur du <span class="math inline">\(i\)</span>ème individu de la <span class="math inline">\(r\)</span>!ème répétition. Nous obtenons donc au total <span class="math inline">\(R\)</span> moyennes d’échantillon. L’ensemble de ces <span class="math inline">\(R\)</span> valeurs de <span class="math inline">\(x^{(r)}\)</span> forme une approximation empirique de la distribution d’échantillonnage de la moyenne.</p>
 <p>Nous affichons le résultat sous forme d’un histogramme, qui nous permet d’appréhender la distribution de la moyenne d’échantillon.</p>
 <p>Pour chaque taille d’échantillon <span class="math inline">\(n\)</span>, la <a href="#fig-sampling-means-sample-size" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> représente la distribution des <span class="math inline">\(R\)</span> moyennes d’échantillon. La ligne bleue indique la moyenne de la population, <span class="math inline">\(\mu\)</span>, et la ligne orange pointillée la moyenne des <span class="math inline">\(R\)</span> moyennes d’échantillon – désignée par un symbole <span class="math inline">\(x\)</span> surmonté d’une double barre <span class="math inline">\(\overline{\bar{x}}\)</span>) – calculée ainsi&nbsp;:</p>
@@ -419,9 +423,26 @@ Figure&nbsp;3.3: <strong>Effet de la taille d’échantillon sur la distribution
 </div>
 </div>
 </div>
-<p>Un premier constat est que la moyenne d’échantillon est remarquablement stable : pour toutes les tailles d’échantillon, la moyenne des <span class="math inline">\(R\)</span>&nbsp;=&nbsp;100 000 moyennes d’échantillons (<span class="math inline">\(\overline{\bar{x}}\)</span>) correspond toujours à la moyenne de la population (<span class="math inline">\(\mu\)</span>&nbsp;=&nbsp;150). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l’échantillon augmente.</p>
+<section id="espérance-de-la-moyenne-déchantillon" class="level4" data-number="3.3.1.1">
+<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="espérance-de-la-moyenne-déchantillon"><span class="header-section-number">3.3.1.1</span> Espérance de la moyenne d’échantillon</h4>
+<p>Un premier constat est que la moyenne d’échantillon est remarquablement stable : pour toutes les tailles d’échantillon, la moyenne des <span class="math inline">\(R\)</span>&nbsp;=&nbsp;100 000 moyennes d’échantillons (<span class="math inline">\(\overline{\bar{x}}\)</span>) correspond toujours à la moyenne de la population (<span class="math inline">\(\mu\)</span>&nbsp;=&nbsp;150).</p>
+<p>On peut démontrer que <strong>l’espérance de la moyenne d’échantillon tend vers la moyenne de la population</strong>.</p>
+<p><span class="math display">\[\mathbb E[\bar{X}] = \mu\]</span></p>
+</section>
+<section id="variance-de-la-moyenne-déchantillon" class="level4" data-number="3.3.1.2">
+<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="variance-de-la-moyenne-déchantillon"><span class="header-section-number">3.3.1.2</span> Variance de la moyenne d’échantillon</h4>
+<p>En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l’échantillon augmente.</p>
 <p>La <a href="#tbl-sampling-means-synthesis" class="quarto-xref">Table&nbsp;<span>3.1</span></a> synthétise les statistiques (moyenne, variance, écart-type) calculées sur l’ensemble des 100 000 moyennes d’échantillons, pour chacune des tailles d’échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population.</p>
 <p>Le tableau met en évidence une relation inverse entre la variance des moyennes d’échantillons (<span class="math inline">\(s^2_{\bar{x}}\)</span>) et la taille de l’échantillon (<span class="math inline">\(n\)</span>)&nbsp;: lorsque <span class="math inline">\(n\)</span> est doublé, cette variance est approximativement divisée par deux.</p>
+<p>On peut démontrer que la relation entre la variance de la population et celle de la moyenne d’échantillon prend la forme suivante.</p>
+<p><span class="math inline">\(\sigma^2_{\bar{X}} = \frac{\sigma^2}{n} \left( \frac{N - n}{N - 1} \right)\)</span> pour une population finie</p>
+<p><span class="math inline">\(\sigma^2_{\bar{X}} = \frac{\sigma^2}{n}\)</span> pour une population infinie</p>
+</section>
+<section id="lerreur-standard-est-lécart-type-de-la-moyenne-déchantillon" class="level4" data-number="3.3.1.3">
+<h4 data-number="3.3.1.3" class="anchored" data-anchor-id="lerreur-standard-est-lécart-type-de-la-moyenne-déchantillon"><span class="header-section-number">3.3.1.3</span> L’erreur standard est l’écart-type de la moyenne d’échantillon</h4>
+<p>L’écart-type de la variance de la moyenne d’échantillon est appelée <strong>erreur standard</strong>. Elle décroît en raison de la racine carrée de l’effectif d’échantillon.</p>
+<p><span class="math inline">\(\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}  \sqrt{\frac{N - n}{N - 1})}\)</span> pour une population finie</p>
+<p><span class="math inline">\(\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\)</span> pour une population infinie</p>
 <div class="cell" data-layout-align="center">
 <div id="tbl-sampling-means-synthesis" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -445,50 +466,50 @@ Table&nbsp;3.1: <strong>Centre et dispersion de la population et des distributio
 <td style="text-align: left;">Population</td>
 <td style="text-align: right;">–</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">16.50</td>
-<td style="text-align: right;">4.06</td>
+<td style="text-align: right;">16.14</td>
+<td style="text-align: right;">4.02</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">8.16</td>
-<td style="text-align: right;">2.86</td>
+<td style="text-align: right;">8.01</td>
+<td style="text-align: right;">2.83</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">4</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">4.12</td>
-<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">4.05</td>
+<td style="text-align: right;">2.01</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">8</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">2.05</td>
-<td style="text-align: right;">1.43</td>
+<td style="text-align: right;">2.01</td>
+<td style="text-align: right;">1.42</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">16</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">1.03</td>
+<td style="text-align: right;">1.01</td>
 <td style="text-align: right;">1.01</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">0.52</td>
-<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.51</td>
+<td style="text-align: right;">0.71</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">64</td>
 <td style="text-align: right;">64</td>
 <td style="text-align: right;">150</td>
-<td style="text-align: right;">0.26</td>
-<td style="text-align: right;">0.51</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.50</td>
 </tr>
 </tbody>
 </table>
@@ -550,21 +571,49 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 </div>
 <p>Les écarts-types de moyennes d’échantillon diminuent en raison de la racine carrée de la taille d’échantillon. Ceci a une conséquence importante&nbsp;: si l’on désire doubler la précision de la moyenne d’échantillon, on doit multiplier par 4 la taille de l’échantillon, ce qui nécessite en pratique de quadrupler les coûts d’expérimentation ou de collecte des données.</p>
 </section>
+</section>
 <section id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-variance" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="effet-de-la-taille-déchantillon-sur-la-distribution-déchantillonnage-de-la-variance"><span class="header-section-number">3.3.2</span> Effet de la taille d’échantillon sur la distribution d’échantillonnage de la variance</h3>
+<section id="espérance-de-la-variance-déchantillon" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="espérance-de-la-variance-déchantillon"><span class="header-section-number">3.3.2.1</span> Espérance de la variance d’échantillon</h4>
+<p>L’espérance de la variance d’échantillon <span class="math inline">\(\mathbb E[S^2]\)</span> est inférieure à la variance de la population <span class="math inline">\(\sigma^2\)</span>.</p>
+<p><span class="math display">\[\mathbb E[S^2] =  \frac{(n-1)}{n} \sigma^2\]</span></p>
+<p>En moyenne, la variance d’échantillon sous-estime la variance de population d’un facteur <span class="math inline">\(\frac{(n-1)}{n}\)</span>.</p>
 </section>
 </section>
-<section id="estimer-les-paramètres-dune-population-à-partir-dun-échantillon" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="estimer-les-paramètres-dune-population-à-partir-dun-échantillon"><span class="header-section-number">3.4</span> Estimer les paramètres d’une population à partir d’un échantillon</h2>
 </section>
-<section id="espérance" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="espérance"><span class="header-section-number">3.5</span> Espérance</h2>
+<section id="estimation-des-paramètres-dune-population-à-partir-dun-échantillon" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="estimation-des-paramètres-dune-population-à-partir-dun-échantillon"><span class="header-section-number">3.4</span> Estimation des paramètres d’une population à partir d’un échantillon</h2>
+<p>Les simulations ci-dessus nous ont montré de façon graphique plusieurs propriétés de la distribution des moyennes et des variances d’un grand nombre d’échantillons prélevés dans une population de très grande taille ou infinie.</p>
+<p>L’<strong>estimation</strong> consiste à utiliser les statistiques calculées sur un échantillon pour approcher les valeurs inconnues des paramètres de la population dont il est issu. Les propriétés des distributions d’échantillonnage permettent notamment d’évaluer les biais et la précision de ces estimations.</p>
+<section id="estimation-de-la-moyenne-de-la-population" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="estimation-de-la-moyenne-de-la-population"><span class="header-section-number">3.4.1</span> Estimation de la moyenne de la population</h3>
+<p>Nous avons vu ci-dessus que l’espérance de la moyenne d’échantillon égale la moyenne de la population (<span class="math inline">\(\mathbb E[\bar{X}] = \mu\)</span>). Par conséquent, <strong>la moyenne d’échantillon constitue un estimateur non biaisé de la moyenne de la population</strong>.</p>
+<p><span class="math display">\[\hat{\mu} = \bar{x}\]</span></p>
 </section>
-<section id="lerreur-standard" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="lerreur-standard"><span class="header-section-number">3.6</span> L’erreur standard</h2>
+<section id="estimation-non-biaisée-de-la-variance-de-la-population" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="estimation-non-biaisée-de-la-variance-de-la-population"><span class="header-section-number">3.4.2</span> Estimation non biaisée de la variance de la population</h3>
+<p>Les simulations ci-dessus nous ont montré que la variance d’échantillon calculée avec un dénominateur <span class="math inline">\(n\)</span> est un estimateur biaisé de la variance de la population. Son espérance vaut <span class="math inline">\((n-1)/n\)</span> fois la variance populationnelle : elle tend donc à la sous-estimer en moyenne. Pour éliminer ce biais, on utilise la correction de Bessel, qui consiste à remplacer le dénominateur <span class="math inline">\(n\)</span> par <span class="math inline">\(n-1\)</span>.</p>
+<p><span class="math display">\[\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2\]</span></p>
+<p>L’astérisque indique qu’il s’agit de la variance d’échantillon <em>corrigée</em>.</p>
+<p>On peut démontrer que la même valeur est obtenue par la formule de calcul simplifiée suivante, qui économise à peu près la moitié des d’opérations de calcul.</p>
+<p><span class="math display">\[\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right)\]</span> ### Estimation de l’écart-type de la population</p>
+<p>On utilise l’écart-type de cette variance corrigée comme estimateur de l’écart-type de la population.</p>
+<p><span class="math display">\[\hat{\sigma} = s^* = \sqrt{s^{*2}} = \sqrt{ \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }\]</span></p>
 </section>
-<section id="intervalles-de-confiance-autour-de-la-moyenne" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="intervalles-de-confiance-autour-de-la-moyenne"><span class="header-section-number">3.7</span> Intervalles de confiance autour de la moyenne</h2>
+<section id="estimation-de-lerreur-standard-de-la-moyenne" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="estimation-de-lerreur-standard-de-la-moyenne"><span class="header-section-number">3.4.3</span> Estimation de l’erreur standard de la moyenne</h3>
+<p>Le même facteur correction s’applique à l’estimation de l’erreur standard, qui représente l’écart-type de la moyenne d’échantillon.</p>
+<p><span class="math display">\[\hat{\sigma_{\bar{X}}} =  \frac{\hat{\sigma}}{\sqrt{n}}  = \frac{s^*}{\sqrt{n}} = \sqrt{ \frac{1}{n(n-1)} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n(n-1)} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }\]</span></p>
+</section>
+</section>
+<section id="interprétation-de-lerreur-standard" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="interprétation-de-lerreur-standard"><span class="header-section-number">3.5</span> Interprétation de l’erreur standard</h2>
+<p>L’erreur standard de la moyenne quantifie la dispersion des moyennes que l’on obtiendrait en répétant le prélèvement d’échantillons de même taille dans la population. Elle mesure ainsi la précision de la moyenne d’échantillon comme estimateur de la moyenne de la population. Plus l’erreur standard est faible, plus les moyennes des différents échantillons tendent à être proches de la moyenne populationnelle.</p>
+<p>La relation entre l’écart-type et l’erreur standard a une conséquence pratique importante : puisque l’erreur standard est inversement proportionnelle à <span class="math inline">\(\sqrt{n}\)</span>, il faut multiplier la taille d’échantillon par quatre pour diviser l’erreur standard par deux.</p>
+</section>
+<section id="intervalles-de-confiance-autour-de-la-moyenne" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="intervalles-de-confiance-autour-de-la-moyenne"><span class="header-section-number">3.6</span> Intervalles de confiance autour de la moyenne</h2>
 
 
 <!-- -->
@@ -1137,7 +1186,7 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>les saupes de la baie de Marseille&nbsp;;</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>les sangliers des Calanques.</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Pour chaque variable étudiée, on peut également considére la **population dzs valeurs** que cette variable prendrait sur l'ensemble des unités statistiques, par exemple&nbsp;:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Pour chaque variable étudiée, on peut également considérer la **population des valeurs** que cette variable prendrait sur l'ensemble des unités statistiques, par exemple&nbsp;:</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>le statut infecté ou non de chaque individu&nbsp;;</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la concentration d'hémoglobine dans le sang&nbsp;;</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la concentration d'un médicament dans le sang d'une souris de laboratoire. </span>
@@ -1188,7 +1237,7 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>$$C = \binom{1000}{20} \frac{N!}{20! \times 998!} \approx 3.4 \times 10^{41}$$</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Il est donc impossile d'examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste. </span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Il est donc impossible d'examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste. </span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distributions d'échantillonnage</span></span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
@@ -1209,7 +1258,7 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>mu1 <span class="ot">&lt;-</span> <span class="dv">150</span>     <span class="co"># Mean of the normal distribution</span></span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>sigma1 <span class="ot">&lt;-</span> <span class="dv">4</span>     <span class="co"># Standard deviation of the normal distribution</span></span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the population by ampling N numbers in a normal population of mean mu and standard deviation sigma</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the population by sampling N numbers in a normal population of mean mu and standard deviation sigma</span></span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> N, <span class="at">mean =</span> mu1, <span class="at">sd =</span> sigma1) <span class="do">## Population values</span></span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(X) <span class="do">## population mean</span></span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">&lt;-</span> <span class="fu">mean</span>((X <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span>) <span class="do">## Population variance. We compute it directly because the R var() function does not return the population variance (with N as denominator) but an estimator of population variance  based on a sample (with N-1 as denominator)</span></span>
@@ -1243,7 +1292,7 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>Pour illustrer ce principe, nous générons une population artificielle de $N$&nbsp;=&nbsp;<span class="in">`{r} N`</span> individus. La @fig-population-histo représente la distribution des valeurs de la variable étudiée dans l'ensemble de cette population.</span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>Puisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne ($\mu$), sa variance ($\sigma^2$, et son écart-type ($\sigma$). </span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>Puisque toutes les mesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne ($\mu$), sa variance ($\sigma^2$, et son écart-type ($\sigma$). </span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>$$\mu = \frac{1}{N}&nbsp;\sum_{i=1}^N x_i = <span class="in">`{r} round(mu, digits = 2)`</span>$$</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
@@ -1284,7 +1333,7 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>Pour la répétition d'indice $r$, nous calculons la moyenne&nbsp;:</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>$$\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \cdots, R$$</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>$$\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \ldots, R$$</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Dans cette équation, $x_i^{(r)}$ désigne la valeur du $i$ème individu de la $r$!ème répétition. Nous obtenons donc au total $R$ moyennes d'échantillon. L’ensemble de ces $R$ valeurs de $x^{(r)}$ forme une approximation empirique de la distribution d’échantillonnage de la moyenne.</span>
 <span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
@@ -1400,173 +1449,245 @@ Figure&nbsp;3.5: <strong>Centre et dispersion de la distribution d’échantillo
 <span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$&nbsp;=&nbsp;<span class="in">`{r} R`</span> moyennes d'échantillons ($\overline{\bar{x}}$) correspond toujours à la moyenne de la population ($\mu$&nbsp;=&nbsp;<span class="in">`{r} mu`</span>). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l'échantillon augmente. </span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>La @tbl-sampling-means-synthesis synthétise les statistiques (moyenne, variance, écart-type) calculées sur l'ensemble des <span class="in">`r R`</span> moyennes d'échantillons, pour chacune des tailles d'échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population. </span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Espérance de la moyenne d'échantillon</span></span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>Le tableau met en évidence une relation inverse entre la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) et la taille de l'échantillon ($n$)&nbsp;: lorsque $n$ est doublé, cette variance est approximativement divisée par deux. </span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$&nbsp;=&nbsp;<span class="in">`{r} R`</span> moyennes d'échantillons ($\overline{\bar{x}}$) correspond toujours à la moyenne de la population ($\mu$&nbsp;=&nbsp;<span class="in">`{r} mu`</span>).</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>On peut démontrer que **l'espérance de la moyenne d'échantillon tend vers la moyenne de la population**. </span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-sampling-means-synthesis</span></span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: !expr 'paste0("**Centre et dispersion de la population et des distributions empiriques des moyennes d’échantillon**. La première ligne présente les paramètres de la population. Les lignes suivantes présentent la moyenne ($\\overline{\\bar{x}}$), la variance ($s^2_{\\bar{x}}$) et l’écart-type ($s_{\\bar{x}}$) des $R$ = ", R_label, " moyennes obtenues pour chaque taille d’échantillon.")'</span></span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="do">## Table summarizing the results of the population, followed by the sampling means distributions with increasing sample sizes</span></span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>sampling_means_summary <span class="ot">&lt;-</span> </span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">n =</span> <span class="fu">c</span>(<span class="st">"–"</span>, n_values),</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>             <span class="at">Moyenne =</span> <span class="fu">c</span>(mu, means_m_values),</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>             <span class="at">Variance =</span> <span class="fu">c</span>(sigma2, means_var_values),</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>             <span class="at">Ecart_type =</span> <span class="fu">c</span>(sigma, means_sd_values))</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="do">## Redefine column names</span></span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sampling_means_summary) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>   <span class="st">"$n$"</span>,</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Moyenne"</span>,</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Variance"</span>,</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Écart-type"</span></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a> )</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>$$\mathbb E<span class="co">[</span><span class="ot">\bar{X}</span><span class="co">]</span> = \mu$$</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Variance de la moyenne d'échantillon</span></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l'échantillon augmente. </span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>La @tbl-sampling-means-synthesis synthétise les statistiques (moyenne, variance, écart-type) calculées sur l'ensemble des <span class="in">`r R`</span> moyennes d'échantillons, pour chacune des tailles d'échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population. </span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>Le tableau met en évidence une relation inverse entre la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) et la taille de l'échantillon ($n$)&nbsp;: lorsque $n$ est doublé, cette variance est approximativement divisée par deux. </span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>On peut démontrer que la relation entre la variance de la population et celle de la moyenne d'échantillon prend la forme suivante. </span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>$\sigma^2_{\bar{X}} = \frac{\sigma^2}{n} \left( \frac{N - n}{N - 1} \right)$ pour une  population finie</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>$\sigma^2_{\bar{X}} = \frac{\sigma^2}{n}$ pour une  population infinie</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="fu">#### L'erreur standard est l'écart-type de la moyenne d'échantillon</span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>L'écart-type de la variance de la moyenne d'échantillon est appelée **erreur standard**. Elle décroît en raison de la racine carrée de l’effectif d’échantillon.</span>
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the population and sample sizes as row labels</span></span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(sampling_means_summary) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Population"</span>, n_values)</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="do">## Define mathematical column labels</span></span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="co"># colnames(sampling_means_summary) &lt;- c(</span></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$n$",</span></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$\\overline{\\bar{x}}$",</span></span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$s_{\\bar{x}}^2$",</span></span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$s_{\\bar{x}}$"</span></span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}  \sqrt{\frac{N - n}{N - 1})}$ pour une  population finie</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$ pour une  population infinie</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-sampling-means-synthesis</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: !expr 'paste0("**Centre et dispersion de la population et des distributions empiriques des moyennes d’échantillon**. La première ligne présente les paramètres de la population. Les lignes suivantes présentent la moyenne ($\\overline{\\bar{x}}$), la variance ($s^2_{\\bar{x}}$) et l’écart-type ($s_{\\bar{x}}$) des $R$ = ", R_label, " moyennes obtenues pour chaque taille d’échantillon.")'</span></span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="do">## Print a table with the results</span></span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  sampling_means_summary, </span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"r"</span>,</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>  <span class="at">escape=</span><span class="cn">FALSE</span>)</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>Cette relation est également illustrée sur la @fig-sampling-means-variance, avec des échelles linéaires (a) et logarithmiques (b). </span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sampling-means-variance</span></span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon.** Pour chaque valeur de $n$, la variance empirique $s^2_{\\bar{x}}$ a été calculée à partir de $R=", R_label,"$ moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).")'</span></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-subcap: </span></span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="co">#|  - "La variance diminue approximativement de moitié lorsque la taille d’échantillon est doublée. "</span></span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="co">#|  - "Sur des échelles logarithmiques, la relation apparaît comme une droite de pente proche de&nbsp;−1."</span></span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="do">## Table summarizing the results of the population, followed by the sampling means distributions with increasing sample sizes</span></span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>sampling_means_summary <span class="ot">&lt;-</span> </span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">n =</span> <span class="fu">c</span>(<span class="st">"–"</span>, n_values),</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>             <span class="at">Moyenne =</span> <span class="fu">c</span>(mu, means_m_values),</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>             <span class="at">Variance =</span> <span class="fu">c</span>(sigma2, means_var_values),</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>             <span class="at">Ecart_type =</span> <span class="fu">c</span>(sigma, means_sd_values))</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="do">## Redefine column names</span></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sampling_means_summary) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>   <span class="st">"$n$"</span>,</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Moyenne"</span>,</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Variance"</span>,</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Écart-type"</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a> )</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the population and sample sizes as row labels</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(sampling_means_summary) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Population"</span>, n_values)</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="do">## Define mathematical column labels</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="co"># colnames(sampling_means_summary) &lt;- c(</span></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$n$",</span></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$\\overline{\\bar{x}}$",</span></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$s_{\\bar{x}}^2$",</span></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="co">#   "$s_{\\bar{x}}$"</span></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span>
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the variance of sampling means as a function of sample size</span></span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>     means_var_values, </span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne d'échantillon</span><span class="sc">\n</span><span class="st">"</span>,  </span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prettyNum</span>(R, <span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">" "</span>), </span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>                   <span class="st">" répétitions"</span>),</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"brown"</span>,</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Variance de la moyenne"</span>,</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">ceiling</span>(<span class="fu">max</span>(means_var_values))),</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Sample size (n)"</span>,</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">grid</span>(),</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">"black"</span>))</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the variance of sampling means as a function of sample size</span></span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>     means_var_values, </span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne d'échantillon (échelles logarithmiques)</span><span class="sc">\n</span><span class="st">"</span>,  </span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prettyNum</span>(R, <span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">" "</span>), </span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>                   <span class="st">" répétitions"</span>),</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"brown"</span>,</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>     <span class="at">log =</span> <span class="st">"xy"</span>,</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne"</span>),</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Taille d'échantillon (n)"</span>,</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">grid</span>(, <span class="at">equilogs =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>La @fig-sampling-means-sd montre la relation entre la taille d'échantillon ($n$) et l'écart-type des moyennes d'échantillons ($s_{\bar{x}}$). La ligne bleur horizontale marque la moyenne de la population ($\mu$), les points oranges les moyennes des moyennes d'échantillons (<span class="in">`{r} R`</span> échantillons par point). Les flèches rouges marquent un intervalle d'un écart-type des moyennes d'échantillons ($s_{\bar{x}}$) de part et d'autre de la moyenne (chaque flèche couvre donc 2 écarts-types).</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sampling-means-sd</span></span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: !expr 'paste0("**Centre et dispersion de la distribution d’échantillonnage de la moyenne.** La ligne bleue représente la moyenne de la population ($\\mu$), les points orange la moyenne des $R=", R_label, "$ moyennes d’échantillon, et les flèches rouges l’intervalle $\\overline{\\bar{x}} \\pm s_{\\bar{x}}$. Le centre de la distribution reste proche de $\\mu$, tandis que sa dispersion diminue lorsque $n$ augmente.")'</span></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: "80%"</span></span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the smean and standard deviations of sampling means as a function of sample size</span></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>     means_m_values, </span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"p"</span>,</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"solid"</span>,</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"orange"</span>,</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex=</span> <span class="fl">1.2</span>,</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Mean and standard deviation of sample means</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">prettyNum</span>(R, <span class="at">big.mark =</span> <span class="st">" "</span>), <span class="st">" répétitions"</span>),</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(mu <span class="sc">-</span> sigma, mu <span class="sc">+</span> sigma), </span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Sample size (n)"</span>, </span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="fu">paste0</span>(<span class="st">"Values"</span>),</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">abline</span>(<span class="at">h=</span><span class="fu">seq</span>(<span class="fu">floor</span>(mu <span class="sc">-</span> sigma), <span class="fu">ceiling</span>(mu<span class="sc">+</span>sigma), <span class="fl">0.5</span>), <span class="at">col=</span><span class="st">"#DDDDDD"</span>),</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h=</span><span class="fu">seq</span>(<span class="fu">floor</span>(mu <span class="sc">-</span> sigma), <span class="fu">ceiling</span>(mu<span class="sc">+</span>sigma), <span class="dv">1</span>), <span class="at">col=</span><span class="st">"#BBBBBB"</span>),</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h =</span> mu, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">1</span>),</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">v=</span>n_values, <span class="at">col=</span><span class="st">"#DDDDDD"</span>))</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a><span class="fu">arrows</span>(<span class="at">x0 =</span> n_values, </span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>       <span class="at">x1 =</span> n_values, </span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>       <span class="at">y0 =</span> means_m_values <span class="sc">-</span> means_sd_values,  </span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>       <span class="at">y1 =</span> means_m_values <span class="sc">+</span> means_sd_values, </span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>       <span class="at">code =</span> <span class="dv">3</span>, </span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>       <span class="at">length =</span> <span class="fl">0.07</span>, </span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="st">"brown"</span>) <span class="do">## Mark an interval of ± 1 standard deviation above the mean</span></span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Population mean"</span>, </span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Mean of the sample means"</span>, </span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Mean ± 2SD"</span>),</span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch=</span><span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">19</span>, <span class="cn">NA</span>),</span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="st">"white"</span>,</span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"orange"</span>, <span class="st">"brown"</span>)</span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>Les écarts-types de moyennes d'échantillon diminuent en raison de la racine carrée de la taille d'échantillon. Ceci a une conséquence importante&nbsp;: si l'on désire doubler la précision de la moyenne d'échantillon, on doit multiplier par 4 la taille de l'échantillon, ce qui nécessite en pratique de quadrupler les coûts d'expérimentation ou de collecte des données. </span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a><span class="do">## Print a table with the results</span></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>  sampling_means_summary, </span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">"r"</span>,</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>  <span class="at">escape=</span><span class="cn">FALSE</span>)</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>Cette relation est également illustrée sur la @fig-sampling-means-variance, avec des échelles linéaires (a) et logarithmiques (b). </span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sampling-means-variance</span></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 5</span></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: !expr 'paste0("**Effet de la taille d’échantillon sur la variance de la moyenne d’échantillon.** Pour chaque valeur de $n$, la variance empirique $s^2_{\\bar{x}}$ a été calculée à partir de $R=", R_label,"$ moyennes d’échantillon. La relation est représentée sur des échelles linéaires (a) et logarithmiques (b).")'</span></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-subcap: </span></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="co">#|  - "La variance diminue approximativement de moitié lorsque la taille d’échantillon est doublée. "</span></span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="co">#|  - "Sur des échelles logarithmiques, la relation apparaît comme une droite de pente proche de&nbsp;−1."</span></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the variance of sampling means as a function of sample size</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>     means_var_values, </span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne d'échantillon</span><span class="sc">\n</span><span class="st">"</span>,  </span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prettyNum</span>(R, <span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">" "</span>), </span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>                   <span class="st">" répétitions"</span>),</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"brown"</span>,</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Variance de la moyenne"</span>,</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">ceiling</span>(<span class="fu">max</span>(means_var_values))),</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Sample size (n)"</span>,</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">grid</span>(),</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">"black"</span>))</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the variance of sampling means as a function of sample size</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>     means_var_values, </span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne d'échantillon (échelles logarithmiques)</span><span class="sc">\n</span><span class="st">"</span>,  </span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prettyNum</span>(R, <span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">" "</span>), </span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>                   <span class="st">" répétitions"</span>),</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"brown"</span>,</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>     <span class="at">log =</span> <span class="st">"xy"</span>,</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="fu">paste0</span>(<span class="st">"Variance de la moyenne"</span>),</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Taille d'échantillon (n)"</span>,</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">grid</span>(, <span class="at">equilogs =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>La @fig-sampling-means-sd montre la relation entre la taille d'échantillon ($n$) et l'écart-type des moyennes d'échantillons ($s_{\bar{x}}$). La ligne bleur horizontale marque la moyenne de la population ($\mu$), les points oranges les moyennes des moyennes d'échantillons (<span class="in">`{r} R`</span> échantillons par point). Les flèches rouges marquent un intervalle d'un écart-type des moyennes d'échantillons ($s_{\bar{x}}$) de part et d'autre de la moyenne (chaque flèche couvre donc 2 écarts-types).</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-sampling-means-sd</span></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 5</span></span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: !expr 'paste0("**Centre et dispersion de la distribution d’échantillonnage de la moyenne.** La ligne bleue représente la moyenne de la population ($\\mu$), les points orange la moyenne des $R=", R_label, "$ moyennes d’échantillon, et les flèches rouges l’intervalle $\\overline{\\bar{x}} \\pm s_{\\bar{x}}$. Le centre de la distribution reste proche de $\\mu$, tandis que sa dispersion diminue lorsque $n$ augmente.")'</span></span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="co">#| out-width: "80%"</span></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the smean and standard deviations of sampling means as a function of sample size</span></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n_values, </span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>     means_m_values, </span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"p"</span>,</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>     <span class="at">lty =</span> <span class="st">"solid"</span>,</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"orange"</span>,</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex=</span> <span class="fl">1.2</span>,</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Mean and standard deviation of sample means</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">prettyNum</span>(R, <span class="at">big.mark =</span> <span class="st">" "</span>), <span class="st">" répétitions"</span>),</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(mu <span class="sc">-</span> sigma, mu <span class="sc">+</span> sigma), </span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Sample size (n)"</span>, </span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="fu">paste0</span>(<span class="st">"Values"</span>),</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>     <span class="at">las =</span> <span class="dv">1</span>,</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>     <span class="at">panel.first =</span> <span class="fu">c</span>(<span class="fu">abline</span>(<span class="at">h=</span><span class="fu">seq</span>(<span class="fu">floor</span>(mu <span class="sc">-</span> sigma), <span class="fu">ceiling</span>(mu<span class="sc">+</span>sigma), <span class="fl">0.5</span>), <span class="at">col=</span><span class="st">"#DDDDDD"</span>),</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h=</span><span class="fu">seq</span>(<span class="fu">floor</span>(mu <span class="sc">-</span> sigma), <span class="fu">ceiling</span>(mu<span class="sc">+</span>sigma), <span class="dv">1</span>), <span class="at">col=</span><span class="st">"#BBBBBB"</span>),</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">h =</span> mu, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">1</span>),</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">abline</span>(<span class="at">v=</span>n_values, <span class="at">col=</span><span class="st">"#DDDDDD"</span>))</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>     )</span>
 <span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="fu">### Effet de la taille d'échantillon sur la distribution d'échantillonnage de la variance</span></span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estimer les paramètres d'une population à partir d'un échantillon</span></span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="fu">## Espérance</span></span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a><span class="fu">## L'erreur standard</span></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="fu">arrows</span>(<span class="at">x0 =</span> n_values, </span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>       <span class="at">x1 =</span> n_values, </span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>       <span class="at">y0 =</span> means_m_values <span class="sc">-</span> means_sd_values,  </span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>       <span class="at">y1 =</span> means_m_values <span class="sc">+</span> means_sd_values, </span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>       <span class="at">code =</span> <span class="dv">3</span>, </span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>       <span class="at">length =</span> <span class="fl">0.07</span>, </span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="st">"brown"</span>) <span class="do">## Mark an interval of ± 1 standard deviation above the mean</span></span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="fu">## Intervalles de confiance autour de la moyenne</span></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Population mean"</span>, </span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Mean of the sample means"</span>, </span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Mean ± 2SD"</span>),</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch=</span><span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">19</span>, <span class="cn">NA</span>),</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>       <span class="at">bg =</span> <span class="st">"white"</span>,</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"orange"</span>, <span class="st">"brown"</span>)</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>Les écarts-types de moyennes d'échantillon diminuent en raison de la racine carrée de la taille d'échantillon. Ceci a une conséquence importante&nbsp;: si l'on désire doubler la précision de la moyenne d'échantillon, on doit multiplier par 4 la taille de l'échantillon, ce qui nécessite en pratique de quadrupler les coûts d'expérimentation ou de collecte des données. </span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a><span class="fu">### Effet de la taille d'échantillon sur la distribution d'échantillonnage de la variance</span></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Espérance de la variance d’échantillon</span></span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>L’espérance de la variance d’échantillon $\mathbb E<span class="co">[</span><span class="ot">S^2</span><span class="co">]</span>$ est inférieure à la variance de la population $\sigma^2$. </span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>$$\mathbb E<span class="co">[</span><span class="ot">S^2</span><span class="co">]</span> =  \frac{(n-1)}{n} \sigma^2$$</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>En moyenne, la variance d'échantillon sous-estime la variance de population d’un facteur $\frac{(n-1)}{n}$. </span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estimation des paramètres d'une population à partir d'un échantillon</span></span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>Les simulations ci-dessus nous ont montré de façon graphique plusieurs propriétés de la distribution des moyennes et des variances d'un grand nombre d'échantillons prélevés dans une population de très grande taille ou infinie. </span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>L'**estimation** consiste à utiliser les statistiques calculées sur un échantillon pour approcher les valeurs inconnues des paramètres de la population dont il est issu. Les propriétés des distributions d'échantillonnage permettent notamment d'évaluer les biais et la précision de ces estimations.</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimation de la moyenne de la population</span></span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>Nous avons vu ci-dessus que l'espérance de la moyenne d'échantillon égale la moyenne de la population ($\mathbb E<span class="co">[</span><span class="ot">\bar{X}</span><span class="co">]</span> = \mu$). Par conséquent, **la moyenne d'échantillon constitue un estimateur non biaisé de la moyenne de la population**. </span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>$$\hat{\mu} = \bar{x}$$</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimation non biaisée de la variance de la population</span></span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>Les simulations ci-dessus nous ont montré que la variance d'échantillon calculée avec un dénominateur $n$ est un estimateur biaisé de la variance de la population. Son espérance vaut $(n-1)/n$ fois la variance populationnelle : elle tend donc à la sous-estimer en moyenne. Pour éliminer ce biais, on utilise la correction de Bessel, qui consiste à remplacer le dénominateur $n$ par $n-1$.</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>$$\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2$$</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>L'astérisque indique qu'il s'agit de la variance d'échantillon *corrigée*. </span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>On peut démontrer que la même valeur est obtenue par la formule de calcul simplifiée suivante, qui économise à peu près la moitié des d'opérations de calcul. </span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>$$\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right)$$</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimation de l'écart-type de la population</span></span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>On utilise l'écart-type de cette variance corrigée comme estimateur de l'écart-type de la population. </span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>$$\hat{\sigma} = s^* = \sqrt{s^{*2}} = \sqrt{ \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }$$</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimation de l'erreur standard de la moyenne</span></span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>Le même facteur correction s'applique à l'estimation de l'erreur standard, qui représente l'écart-type de la moyenne d'échantillon. </span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>$$\hat{\sigma_{\bar{X}}} =  \frac{\hat{\sigma}}{\sqrt{n}}  = \frac{s^*}{\sqrt{n}} = \sqrt{ \frac{1}{n(n-1)} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n(n-1)} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }$$</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interprétation de l'erreur standard</span></span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>L'erreur standard de la moyenne quantifie la dispersion des moyennes que l'on obtiendrait en répétant le prélèvement d'échantillons de même taille dans la population. Elle mesure ainsi la précision de la moyenne d'échantillon comme estimateur de la moyenne de la population. Plus l'erreur standard est faible, plus les moyennes des différents échantillons tendent à être proches de la moyenne populationnelle.</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>La relation entre l'écart-type et l'erreur standard a une conséquence pratique importante : puisque l'erreur standard est inversement proportionnelle à $\sqrt{n}$, il faut multiplier la taille d'échantillon par quatre pour diviser l'erreur standard par deux.</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a><span class="fu">## Intervalles de confiance autour de la moyenne</span></span>
 </code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
