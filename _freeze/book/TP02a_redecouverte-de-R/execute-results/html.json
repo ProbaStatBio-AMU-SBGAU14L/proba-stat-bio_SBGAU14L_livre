@@ -1,0 +1,15 @@
+{
+  "hash": "30c4eb942f7e681e5ebbe636ebc67737",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# Tuto -- (re)prise en main des éléments de base de R {#sec-tuto-R .unnumbered}\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

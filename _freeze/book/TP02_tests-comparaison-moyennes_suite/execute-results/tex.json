@@ -1,0 +1,21 @@
+{
+  "hash": "2713de9ffaea83d8fff22684ca0541ab",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# TP2 -- Tests d’égalité des moyennes avec R {#sec-tp2 .unnumbered}\n\n\n## Introduction\n\n### Objectifs du TP\n\n- Prise en main ou reprise en main des éléments de base du langage R (optionnel)\n- Mise en oeuvre et interprétation d'un test non paramétrique pour la comparaison des moyennes\n- Comparaison des résultats de différents tests de comparaison de moyennes\n\n### Prérequis\n\n- Utilisation des éléments de base du langage R\n\nSi vous n'êtes pas ou plus trop familier avec R, suivez le [tutoriel de *(re)prise en main des éléments de base de R*](TP02a_redecouverte-de-R.qmd)). \n\nSi vous vous sentez à l'aise avec R, vous pouvez passer tout à la suite de ce TP. \n\n### Connaissances mobilisées\n\n- Tests non paramétriques de comparaison de moyennes\n- Autres tests de comparaisons de moyennes\n\n### Compétences\n\n- Mise en oeuvre de tests d'hypothèse avec R\n- Evaluation de l'adéquation d'un test, et de l'impact du choix de la méthode sur les résultats d'un test de comparaison de moyennes\n\n\n## Énoncé {.tp-section}\n\n\nNous utilisons le même jeu de données que pour le [TP1 *Tests d’égalité des moyennes*](TP01_tests-comparaison-moyennes.qmd#sec-tp01), dont l'énoncé est repris ci-dessous. \n\nOn a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline (abrévié **IG** ci-dessous ) avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). \n\nVoici les données. \n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n\n\nTable: **Taux d'immunoglobuline mesuré chez 6 souris, avant et après le traitement**\n\n|   | before| after| diff|\n|:--|------:|-----:|----:|\n|1  |      6|     7|    1|\n|2  |      9|    11|    2|\n|3  |     10|    NA|   NA|\n|4  |     11|    12|    1|\n|5  |     13|    13|    0|\n|6  |     14|    15|    1|\n\n\n:::\n:::\n\n\n\nNous poursuivons les analyses selon le plan suivant\n\n1. Prise ou reprise en main des éléments de base du langage R\n2. Mise en oeuvre d'un test non-paramétrique pour comparer les moyennes des taux d'immunoglobilines avant et après traitement\n\n## Questions {.tp-section}\n\n\n\n## Solutions {.tp-section}\n\n\n\n\n## Eléments-clés du TP\n\n\n",
+    "supporting": [
+      "TP02_tests-comparaison-moyennes_suite_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
