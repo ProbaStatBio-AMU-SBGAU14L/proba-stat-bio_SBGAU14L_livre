@@ -4,7 +4,7 @@
 ```
 
 
-# TP1 -- Tests d’égalité des moyennes {.unnumbered}
+# TP1 -- Tests d’égalité des moyennes {#sec-tp01 .unnumbered}
 
 
 ## Introduction
@@ -36,7 +36,7 @@
 
 ## Énoncé {.tp-section}
 
-On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
+On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline (abrévié **IG** ci-dessous ) avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
 
 Voici les données. 
 
@@ -421,6 +421,11 @@ Au fil des sections précédentes, nous avons a calculé la statistique du test 
 Nous observons qu'elle est supérieure à la valeur critique  $t_\text{theor}=2.776$. 
 Nous rejetons donc l'hypothèse nulle.  
 
-Chez les cinq souris pour lesquelles les deux mesures sont disponibles, le taux d'immunoglobulines augmente en moyenne de 1 unité après traitement. Le test de Student apparié indique que cette différence est statistiquement significative au seuil de 5 % ($t_{\text{obs}=3.162$,  $t_\text{theor}=2.776$ avec $\text{ddl=4}$), sous l'hypothèse de normalité des différences. Ce résultat suggère un effet du traitement, mais n'est pas conclusif à lui seul, car il faudrait avoir effectué parallèlement un contrôle avec un groupe témoin, non-traité, dont on aurait pris les mesures aux mêmes moments et dans les mêmes conditions. 
+Chez les cinq souris pour lesquelles les deux mesures sont disponibles, le taux d'immunoglobulines augmente en moyenne de 1 unité après traitement. Le test de Student apparié indique que cette différence est statistiquement significative au seuil de 5 % ($t_{\text{obs}}=3.162$,  $t_{\text{theor}}=2.776$ avec $\text{ddl=4}$), sous l'hypothèse de normalité des différences. Ce résultat suggère un effet du traitement, mais n'est pas conclusif à lui seul, car il faudrait avoir effectué parallèlement un contrôle avec un groupe témoin, non-traité, dont on aurait pris les mesures aux mêmes moments et dans les mêmes conditions. 
 
 
+## Eléments-clés du TP
+
+- Différence entre paramètres d'échantillon et de population
+- Choix d'un test de comparaison de moyennes en tenant compte de la nature des données
+- Interprétation du résultat
