@@ -176,3 +176,69 @@ student_table_output
 ```
 
 
+## Valeurs critiques du test des rangs signés de Wilcoxon
+
+Source: [www.medcalc.org/fr/manual/wilcoxon-table.php](https://www.medcalc.org/fr/manual/wilcoxon-table.php)
+
+### Test bilatéral
+
+
+| n (paires) | α = 0.10 | α = 0.05 | α = 0.02 | α = 0.01 |
+|:----------:|:--------:|:--------:|:--------:|:--------:|
+| 5          | 0        | —        | —        | —        |
+| 6          | 2        | 0        | —        | —        |
+| 7          | 3        | 2        | 0        | —        |
+| 8          | 5        | 3        | 1        | 0        |
+| 9          | 8        | 5        | 3        | 1        |
+| 10         | 10       | 8        | 5        | 3        |
+| 11         | 13       | 10       | 7        | 5        |
+| 12         | 17       | 13       | 9        | 7        |
+| 13         | 21       | 17       | 12       | 9        |
+| 14         | 25       | 21       | 15       | 12       |
+| 15         | 30       | 25       | 19       | 15       |
+| 16         | 35       | 29       | 23       | 19       |
+| 17         | 41       | 34       | 27       | 23       |
+| 18         | 47       | 40       | 32       | 27       |
+| 19         | 53       | 46       | 37       | 32       |
+| 20         | 60       | 52       | 43       | 37       |
+| 21         | 67       | 58       | 49       | 42       |
+| 22         | 75       | 65       | 55       | 48       |
+| 23         | 83       | 73       | 62       | 54       |
+| 24         | 91       | 81       | 69       | 61       |
+| 25         | 100      | 89       | 76       | 68       |
+
+: Valeurs critiques du test bilatéral des rangs signés de Wilcoxon, pour la statistique $T = \min(W^+, W^-)$. {#tbl-wilcoxon}
+
+Lecture du tableau : on rejette $H_0$ au seuil $\alpha$ si $T$- est inférieur ou égal à la valeur critique indiquée. Un tiret signifie qu'aucune valeur de $T$ ne permet de rejeter $H_0$ au seuil considéré.
+
+Pour $n > 25$, utilisez l'approximation normale, puis comparez $z$ à la distribution normale standard en utilisant la valeur P bilatérale.
+
+### Test unilatéral
+
+
+| n (paires) | α = 0.10 | α = 0.05 | α = 0.02 | α = 0.01 |
+|:----------:|:--------:|:--------:|:--------:|:--------:|
+| 5          | 2        | 0        | —        | —        |
+| 6          | 3        | 2        | 0        | —        |
+| 7          | 5        | 3        | 1        | 0        |
+| 8          | 8        | 5        | 3        | 1        |
+| 9          | 10       | 8        | 5        | 3        |
+| 10         | 14       | 10       | 7        | 5        |
+| 11         | 17       | 13       | 9        | 7        |
+| 12         | 21       | 17       | 12       | 9        |
+| 13         | 26       | 21       | 16       | 12       |
+| 14         | 31       | 25       | 19       | 15       |
+| 15         | 36       | 30       | 23       | 19       |
+| 16         | 42       | 35       | 28       | 23       |
+| 17         | 48       | 41       | 33       | 27       |
+| 18         | 55       | 47       | 38       | 32       |
+| 19         | 62       | 53       | 43       | 37       |
+| 20         | 69       | 60       | 50       | 43       |
+| 21         | 77       | 67       | 56       | 49       |
+| 22         | 86       | 75       | 63       | 55       |
+| 23         | 94       | 83       | 70       | 62       |
+| 24         | 104      | 91       | 78       | 69       |
+| 25         | 113      | 100      | 86       | 76       |
+
+: Valeurs critiques du test unilatéral des rangs signés de Wilcoxon. {#tbl-wilcoxon-unilateral}
+

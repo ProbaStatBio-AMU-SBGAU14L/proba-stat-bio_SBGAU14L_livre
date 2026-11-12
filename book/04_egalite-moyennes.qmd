@@ -61,9 +61,23 @@ include_mean_test_choice(
 ```
 
 
-
 ## Effet de taille : la statistique $t$ observée ($t_{\text{obs}}$)
 
+
+| | Student apparié | Student | Welch |
+|:---------:|:---------------:|:-------------------------:|:----------------------------:|
+|  $H_0$  | $\delta = 0$ | $\mu_1 = \mu_2$ | $\mu_1 = \mu_2$ |
+|  $H_1$  test bilatéral | $\delta \neq 0$ | $\mu_1 \neq \mu_2$ | $\mu_1 \neq \mu_2$ |
+|  $H_1$  test unilatéral à gauche | $\delta < 0$ | $\mu_1 < \mu_2$ | $\mu_1 < \mu_2$ |
+|  $H_1$  test unilatéral à droite | $\delta > 0$ | $\mu_1 > \mu_2$ | $\mu_1 > \mu_2$ |
+| Statistique $t_{\text{obs}}$ | $$\frac{\bar{d}}{s^*_d / \sqrt{n}}$$ | $$\frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\frac{(n_1 - 1)s_{1}^{*2} + (n_2 -1) s_{2}^{*2}}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ | $$\frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac {s^{*2}_{1}}{n_1} + \frac{s^{*2}_{2}}{n_2}}}$$ |
+| Degrés de liberté | $$\nu = n-1$$ | $$\nu = n_1 + n_2 - 2$$ |  $$$$   |
+
+: **Synthèse des statistiques à calculer pour les différentes modalités de tests paramétriques de comparaison entre deux moyennes**. {#tbl-synthese-stat-student}
+
+Attention, dans ces formules le symbole $s^{*}$ désigne l'écart-type d'échantillon  *corrigé*: 
+
+$$s^{*} = \sqrt{s^{*2}} = \sqrt{ \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2}$$
 
 ## La distribution de Student
 
