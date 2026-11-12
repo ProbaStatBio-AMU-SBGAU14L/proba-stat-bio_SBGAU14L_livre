@@ -1,0 +1,10 @@
+
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+
+# Tuto -- (re)prise en main des éléments de base de R {#sec-tuto-R .unnumbered}
+
+
+

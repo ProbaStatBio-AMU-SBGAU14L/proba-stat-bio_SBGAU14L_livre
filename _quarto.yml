@@ -34,6 +34,8 @@ book:
     - part: "Exercices"
       chapters:
         - book/TP01_tests-comparaison-moyennes.qmd
+        - book/TP02a_redecouverte-de-R.qmd
+        - book/TP02_tests-comparaison-moyennes_suite.qmd
 
   appendices:
     - book/A1_distrib-theoriques.qmd

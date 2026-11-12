@@ -1,0 +1,74 @@
+
+```{r settings, echo=FALSE, message=FALSE, warning=TRUE}
+ source("R/setup.R", local = knitr::knit_global())
+```
+
+
+# TP2 -- Tests d’égalité des moyennes avec R {#sec-tp2 .unnumbered}
+
+
+## Introduction
+
+### Objectifs du TP
+
+- Prise en main ou reprise en main des éléments de base du langage R (optionnel)
+- Mise en oeuvre et interprétation d'un test non paramétrique pour la comparaison des moyennes
+- Comparaison des résultats de différents tests de comparaison de moyennes
+
+### Prérequis
+
+- Utilisation des éléments de base du langage R
+
+Si vous n'êtes pas ou plus trop familier avec R, suivez le [tutoriel de *(re)prise en main des éléments de base de R*](TP02a_redecouverte-de-R.qmd)). 
+
+Si vous vous sentez à l'aise avec R, vous pouvez passer tout à la suite de ce TP. 
+
+### Connaissances mobilisées
+
+- Tests non paramétriques de comparaison de moyennes
+- Autres tests de comparaisons de moyennes
+
+### Compétences
+
+- Mise en oeuvre de tests d'hypothèse avec R
+- Evaluation de l'adéquation d'un test, et de l'impact du choix de la méthode sur les résultats d'un test de comparaison de moyennes
+
+
+## Énoncé {.tp-section}
+
+
+Nous utilisons le même jeu de données que pour le [TP1 *Tests d’égalité des moyennes*](TP01_tests-comparaison-moyennes.qmd#sec-tp01), dont l'énoncé est repris ci-dessous. 
+
+On a testé l’effet d'un médicament, en mesurant sur 6 souris le taux d’immunoglobuline (abrévié **IG** ci-dessous ) avant et après le traitement. Pour le test, l’une des 6 mesures a échoué, on a donc une valeur non définie (NA). 
+
+Voici les données. 
+
+```{r data}
+
+ig_data_raw = data.frame(before = c(6, 9, 10, 11, 13, 14),
+                     after = c(7, 11, NA, 12, 13, 15))
+
+ig_data_raw$diff = ig_data_raw$after - ig_data_raw$before
+
+
+kable(ig_data_raw, caption = "**Taux d'immunoglobuline mesuré chez 6 souris, avant et après le traitement**", row.names = TRUE)
+```
+
+
+Nous poursuivons les analyses selon le plan suivant
+
+1. Prise ou reprise en main des éléments de base du langage R
+2. Mise en oeuvre d'un test non-paramétrique pour comparer les moyennes des taux d'immunoglobilines avant et après traitement
+
+## Questions {.tp-section}
+
+
+
+## Solutions {.tp-section}
+
+
+
+
+## Eléments-clés du TP
+
+
