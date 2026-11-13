@@ -326,160 +326,124 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\mu_{1},  \mu_{2}\)</span></td>
+<td style="text-align: center;"><strong>Paramètres des populations</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[N_1, N_2\]</span></td>
+<td style="text-align: left;">Tailles (nombre d’individus) des populations 1 et 2.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\mu_{1},  \mu_{2}\]</span></td>
 <td style="text-align: left;">Moyennes respectives des populations 1 et 2.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\sigma_{1}, \sigma_{2}\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\sigma_{1}, \sigma_{2}\]</span></td>
 <td style="text-align: left;">Ecarts-types respectifs des populations 1 and 2.</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N_1\)</span>, <span class="math inline">\(N_2\)</span></td>
-<td style="text-align: left;">Tailles (nombre d’individus) des populations 1 et 2.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span></td>
-<td style="text-align: left;">Effectifs (nombre d’individus) des échantillons prélevés sur les populations 1 et 2.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\hat{\mu}_1 =\bar{x}_{1} ~=~ \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \; ; \;  \hat{\mu}_2 ~=~ \bar{x}_{2} ~=~  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}\)</span></td>
-<td style="text-align: left;">Moyennes d’échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\delta ~=~ \mu_{2} ~-~ \mu_{1}\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\delta = \mu_{2} ~-~ \mu_{1}\]</span></td>
 <td style="text-align: left;">Différence entre les moyennes des populations.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>Paramètres des échantillons</strong></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(d ~=~ \hat{\delta} ~=~ \hat{\mu}_2 ~-~ \hat{\mu}_1  ~=~ \bar{x}_2 ~-~ \bar{x}_1\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(d\)</span> <sub>=</sub> <strong>Taille d’effet</strong>: dans un test de comparaison de moyennes, il s’agit de la différence</td>
+<td style="text-align: center;"><span class="math display">\[n_1, n_2\]</span></td>
+<td style="text-align: left;">Effectifs (nombre d’individus) des échantillons prélevés sur les populations 1 et 2.</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">entre les moyennes d’échantillons, utilisée comme estimateur de <span class="math inline">\(\delta\)</span>.</td>
+<td style="text-align: center;"><span class="math display">\[ \bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad\]</span> <span class="math display">\[\bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}\]</span></td>
+<td style="text-align: left;">Moyennes d’échantillons</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[s^2_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad\]</span> <span class="math display">\[s^2_{2} = \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2\]</span></td>
+<td style="text-align: left;">Variances d’échantillons (<em>non-corrigées</em>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Estimation des paramètres de populations à partir des paramètres des échantillons</strong></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[\hat{\mu}_1 =\bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad\]</span> <span class="math display">\[\hat{\mu}_2 = \bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}\]</span></td>
+<td style="text-align: left;">Moyennes d’échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(s^2_{1}, s^2_{2}\)</span></td>
-<td style="text-align: left;">Variances mesurées sur les échantillons.</td>
+<td style="text-align: center;"><span class="math display">\[\hat{\delta} = \Delta_\bar{x} = \bar{x}_2 - \bar{x}_1\]</span></td>
+<td style="text-align: left;"><span class="math inline">\(d\)</span> = différence entre les moyennes d’échantillons, utilisée comme estimateur de <span class="math inline">\(\delta\)</span>.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[s^{*2}_{1} = \frac{n_1}{n_1-1} s^2_1\]</span> <span class="math display">\[s^{*2}_{2} = \frac{n_2}{n_2-1} s^2_2\]</span></td>
+<td style="text-align: left;">Variances d’échantillons corrigées (estimation de la variance de population)</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\hat{\sigma}^2_1 ~=~ \frac{n_1}{n_1-1} s^2_{1} ~=~ \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} ~-~ \bar{x}_1)^2 \quad\)</span> <span class="math inline">\(\hat{\sigma}^2_2 ~=~ \frac{n_2}{n_2-1} s^2_{2} ~=~ \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} ~-~ \bar{x}_2)^2\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\hat{\sigma}^2_1 = s^{*2}_1 = \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad\]</span> <span class="math display">\[\hat{\sigma}^2_2 = s^{*2}_{2} = \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2\]</span></td>
 <td style="text-align: left;">Estimateurs corrigés (non biaisés) de la variance des populations respectives</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[\hat{\sigma}_1 = \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 = \sqrt{\hat{\sigma}^2_2}\]</span></td>
+<td style="text-align: left;">Estimateurs corrigés de l’écart-type des populations respectives</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\hat{\sigma}_1 ~=~ \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 ~=~ \sqrt{\hat{\sigma}^2_2}\)</span></td>
-<td style="text-align: left;">Estimateurs corrigés (non biaisés) de l’écart-type des populations respectives</td>
+<td style="text-align: center;"><span class="math display">\[\hat{\sigma}_p = \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}} = \sqrt{\frac{(n_1 -1) s_1^{*2} + (n_2 -1) s_2^{*2}}{n_1+n_2-2}}\]</span></td>
+<td style="text-align: left;">Ecart-type groupé (<em>pooled standard deviation</em>), utilisé comme estimation de l’écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d’homoscédasticité).</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\hat{\sigma}_p ~=~ \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}}\)</span></td>
-<td style="text-align: left;">Ecart-type groupé (<em>pooled standard deviation</em>), utilisé comme estimateur de l’écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d’homoscédasticité).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\hat{\sigma}_\delta ~=~ \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\hat{\sigma}_\delta = \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}\]</span></td>
 <td style="text-align: left;">Erreur standard sur la différence entre moyennes, en supposant que les populations ont la même variance (test de Student).</td>
 </tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Test <span class="math inline">\(t\)</span> de Student (variances égales)</strong></td>
+<td style="text-align: left;"></td>
+</tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math display">\[t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{(n_1 -1) s_{1}^{*2} + (n_2 -1) s_{2}^{*2}}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}\]</span></td>
+<td style="text-align: left;">Statistique <span class="math inline">\(t\)</span> de Student calculée avec les variances corrigées <span class="math inline">\(s^{*2}_1, s^{*2}_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}\]</span></td>
+<td style="text-align: left;">Statistique <span class="math inline">\(t\)</span> de Student calculée avec les variances <em>non corrigées</em> <span class="math inline">\(s^2_1, s^2_2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\nu_S = n_1 + n_2 -2\]</span></td>
+<td style="text-align: left;">Degrés de liberté pour le test <span class="math inline">\(t\)</span> de Student</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Test <span class="math inline">\(t\)</span> de Welch(variances inégales)</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^{*2}_{1}}{n_1} + \frac{s^{*2}_{2}}{n_2}}}\]</span></td>
+<td style="text-align: left;">Statistique <span class="math inline">\(t\)</span> de Welch calculée avec les variances corrigées <span class="math inline">\(s^{*2}_1, s^{*2}_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\nu_W = \frac{\left( \frac{s_1^{*2}}{n_1} + \frac{s_2^{*2}}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{s_1^{*2}}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{s_2^{*2}}{n_2} \right)^2}\]</span></td>
+<td style="text-align: left;">Degrés de liberté pour le test <span class="math inline">\(t\)</span> de Welch, calculés d’après les estimateurs non-biaisés de la variance des populations <span class="math inline">\(s_1^{*2}\)</span> et <span class="math inline">\(s_2^{*2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^2_{1}}{n_1 - 1} + \frac{s^2_{2}}{n_2 - 1}}}\]</span></td>
+<td style="text-align: left;">Statistique <span class="math inline">\(t\)</span> de Welch calculée avec les variances <em>non corrigées</em> <span class="math inline">\(s^2_1, s^2_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\nu_W = \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}\]</span></td>
+<td style="text-align: left;">Degrés de liberté pour le test <span class="math inline">\(t\)</span> de Welch, calculés d’après les variances d’échantillons <em>non-corrigées</em> <span class="math inline">\(s_1^2\)</span> et <span class="math inline">\(s_2^2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Test <span class="math inline">\(t\)</span> de Student pour échantillons appariés</strong></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(t_{\text{obs}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\hat{\sigma}_{\mu_1 ~-~ \mu_2}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\sqrt{\frac {\hat{\sigma}^2_{1}}{n_1} + \frac{\hat{\sigma}^2_{2}}{n_2}}}\)</span></td>
-<td style="text-align: left;">statistique <span class="math inline">\(t\)</span> observée, formule basée sur les estimateurs</td>
+<td style="text-align: center;"><span class="math display">\[\bar{d} = \sum_{i=1}^{n} d_i \quad d_i = x_{2i} - x_{1i}\]</span></td>
+<td style="text-align: left;">Moyenne des différences individuelles pour des échantillons appariés</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[s_{d}^{*2} = \frac{1}{n-1} \sum_{i=1}^n (d_i - \bar{d})^2\]</span></td>
+<td style="text-align: left;">Variance des différences individuelles pour des échantillons appariés</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(t_{S} ~=~ \frac{\hat{\delta}}{\hat{\sigma}_\delta} ~=~  \frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}\)</span></td>
-<td style="text-align: left;">statistique <span class="math inline">\(t\)</span> de Student</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(t_{W}=\frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac {s^2_{1}}{n_1 ~-~ 1} + \frac{s^2_{2}}{n_2 ~-~ 1}}}\)</span></td>
-<td style="text-align: left;">statistique <span class="math inline">\(t\)</span> de Welch</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\nu_S ~=~ n_1 + n_2 -2\)</span></td>
-<td style="text-align: left;">Degrees of freedom for the <span class="math inline">\(t\)</span> distribution in a Student test</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\nu_W ~=~ \frac{\left( \frac{\hat{s}_1^2}{n_1} + \frac{\hat{s}_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{\hat{s}_1^2}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{\hat{s}_2^2}{n_2} \right)^2}\)</span></td>
-<td style="text-align: left;">Welch degrees of freedom, computed from the corrected estimators of population variances <span class="math inline">\(\hat{s_1}^2\)</span> and <span class="math inline">\(\hat{s_2}^2\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\nu_W ~=~ \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}\)</span></td>
-<td style="text-align: left;">Welch degrees of freedom, computed from the sample variances <span class="math inline">\(s_1^2\)</span> and <span class="math inline">\(s_2^2\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[t_p = \frac{\bar{d}}{\sqrt{s_d^{*2}/n}}\]</span></td>
+<td style="text-align: left;">Statistique <span class="math inline">\(t\)</span> de Student pour des échantillons appariés</td>
 </tr>
 </tbody>
 </table>
@@ -1037,52 +1001,42 @@ window.Quarto = {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Les symboles grecs ($\mu$, $\sigma$) correspondent aux statistiques de population, les symboles romains ($\bar{x}$, $s$) aux statistiques d'échantillon.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>L'accent circonflexe ($\hat{ }$) indique les estimateurs de paramètres de population calculés à partir de paramètres d'échantillons. </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Symboles et formules       <span class="pp">|</span> Description   <span class="pp">|</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|:--------------------------------------------------:|:------------------------------|</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\mu_{1},  \mu_{2}$ <span class="pp">|</span> Moyennes respectives des populations 1 et 2. <span class="pp">|</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\sigma_{1}, \sigma_{2}$ <span class="pp">|</span> Ecarts-types respectifs des populations 1 and 2. <span class="pp">|</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $N_1$, $N_2$ <span class="pp">|</span> Tailles (nombre d'individus) des populations 1 et 2. <span class="pp">|</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $n_1$, $n_2$ <span class="pp">|</span> Effectifs (nombre d'individus) des échantillons prélevés sur les populations 1 et 2. <span class="pp">|</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\hat{\mu}_1 =\bar{x}_{1} ~=~ \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \; ; \;  \hat{\mu}_2 ~=~ \bar{x}_{2} ~=~  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$ <span class="pp">|</span> Moyennes d'échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives <span class="pp">|</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\delta ~=~ \mu_{2} ~-~ \mu_{1}$ <span class="pp">|</span> Différence entre les moyennes des populations. <span class="pp">|</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $d ~=~ \hat{\delta} ~=~ \hat{\mu}_2 ~-~ \hat{\mu}_1  ~=~ \bar{x}_2 ~-~ \bar{x}_1$ <span class="pp">|</span> $d$ ~=~ **Taille d'effet**: dans un test de comparaison de moyennes, il s'agit de la différence <span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>entre les moyennes d'échantillons, utilisée comme estimateur de $\delta$. |</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $s^2_{1}, s^2_{2}$ <span class="pp">|</span> Variances mesurées sur les échantillons. <span class="pp">|</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\hat{\sigma}^2_1 ~=~ \frac{n_1}{n_1-1} s^2_{1} ~=~ \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} ~-~ \bar{x}_1)^2 \quad$ $\hat{\sigma}^2_2 ~=~ \frac{n_2}{n_2-1} s^2_{2} ~=~ \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} ~-~ \bar{x}_2)^2$ <span class="pp">|</span> Estimateurs corrigés (non biaisés) de la variance des populations respectives <span class="pp">|</span>  </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\hat{\sigma}_1 ~=~ \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 ~=~ \sqrt{\hat{\sigma}^2_2}$ <span class="pp">|</span> Estimateurs corrigés (non biaisés) de l'écart-type des populations respectives <span class="pp">|</span>  </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\hat{\sigma}_p ~=~ \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}}$ <span class="pp">|</span> Ecart-type groupé (*pooled standard deviation*), utilisé comme estimateur de l'écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). <span class="pp">|</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\hat{\sigma}_\delta ~=~ \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}$  <span class="pp">|</span> Erreur standard sur la différence entre moyennes, en supposant que les populations ont la même variance (test de Student). <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $t_{\text{obs}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\hat{\sigma}_{\mu_1 ~-~ \mu_2}} ~=~ \frac{\hat{\mu}_{1} ~-~ \hat{\mu}_{2}}{\sqrt{\frac {\hat{\sigma}^2_{1}}{n_1} + \frac{\hat{\sigma}^2_{2}}{n_2}}}$ <span class="pp">|</span> statistique $t$ observée, formule basée sur les estimateurs <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $t_{S} ~=~ \frac{\hat{\delta}}{\hat{\sigma}_\delta} ~=~  \frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$ <span class="pp">|</span> statistique $t$ de Student <span class="pp">|</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $t_{W}=\frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac {s^2_{1}}{n_1 ~-~ 1} + \frac{s^2_{2}}{n_2 ~-~ 1}}}$ <span class="pp">|</span> statistique $t$ de Welch <span class="pp">|</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\nu_S ~=~ n_1 + n_2 -2$ <span class="pp">|</span> Degrees of freedom for the $t$ distribution in a Student test <span class="pp">|</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\nu_W ~=~ \frac{\left( \frac{\hat{s}_1^2}{n_1} + \frac{\hat{s}_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{\hat{s}_1^2}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{\hat{s}_2^2}{n_2} \right)^2}$ <span class="pp">|</span> Welch degrees of freedom, computed from the corrected estimators of population variances $\hat{s_1}^2$ and $\hat{s_2}^2$ <span class="pp">|</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\nu_W ~=~ \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}$ <span class="pp">|</span> Welch degrees of freedom, computed from the sample variances $s_1^2$ and $s_2^2$  <span class="pp">|</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span> </span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="pp">|</span> <span class="pp">|</span> </span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Symboles et formules       <span class="pp">|</span> Description   <span class="pp">|</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|:--------------------------------------------------:|:------------------------------|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Paramètres des populations** <span class="pp">|</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$N_1, N_2$$ <span class="pp">|</span> Tailles (nombre d'individus) des populations 1 et 2. <span class="pp">|</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\mu_{1},  \mu_{2}$$ <span class="pp">|</span> Moyennes respectives des populations 1 et 2. <span class="pp">|</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\sigma_{1}, \sigma_{2}$$ <span class="pp">|</span> Ecarts-types respectifs des populations 1 and 2. <span class="pp">|</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\delta = \mu_{2} ~-~ \mu_{1}$$ <span class="pp">|</span> Différence entre les moyennes des populations. <span class="pp">|</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Paramètres des échantillons** <span class="pp">|</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$n_1, n_2$$ <span class="pp">|</span> Effectifs (nombre d'individus) des échantillons prélevés sur les populations 1 et 2. <span class="pp">|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$ \bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad$$ $$\bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$$ <span class="pp">|</span> Moyennes d'échantillons <span class="pp">|</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$s^2_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$  $$s^2_{2} = \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ <span class="pp">|</span> Variances d'échantillons (*non-corrigées*)  <span class="pp">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Estimation des paramètres de populations à partir des paramètres des échantillons** <span class="pp">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\mu}_1 =\bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad$$ $$\hat{\mu}_2 = \bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$$ <span class="pp">|</span> Moyennes d'échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\delta} = \Delta_\bar{x} = \bar{x}_2 - \bar{x}_1$$ <span class="pp">|</span> $d$ = différence entre les moyennes d'échantillons, utilisée comme estimateur de $\delta$. <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$s^{*2}_{1} = \frac{n_1}{n_1-1} s^2_1$$ $$s^{*2}_{2} = \frac{n_2}{n_2-1} s^2_2$$ <span class="pp">|</span> Variances d'échantillons corrigées (estimation de la variance de population) <span class="pp">|</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\sigma}^2_1 = s^{*2}_1 = \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$ $$\hat{\sigma}^2_2 = s^{*2}_{2} = \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ <span class="pp">|</span> Estimateurs corrigés (non biaisés) de la variance des populations respectives <span class="pp">|</span> </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\sigma}_1 = \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 = \sqrt{\hat{\sigma}^2_2}$$ <span class="pp">|</span> Estimateurs corrigés de l'écart-type des populations respectives <span class="pp">|</span>  </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\sigma}_p = \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}} = \sqrt{\frac{(n_1 -1) s_1^{*2} + (n_2 -1) s_2^{*2}}{n_1+n_2-2}}$$ | Ecart-type groupé (*pooled standard deviation*), utilisé comme estimation de l'écart-type commun des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\hat{\sigma}_\delta = \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}$$  <span class="pp">|</span> Erreur standard sur la différence entre moyennes, en supposant que les populations ont la même variance (test de Student). <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Test $t$ de Student (variances égales)** <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{(n_1 -1) s_{1}^{*2} + (n_2 -1) s_{2}^{*2}}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ | Statistique $t$ de Student  calculée avec les variances corrigées $s^{*2}_1, s^{*2}_2$ <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ <span class="pp">|</span> Statistique $t$ de Student  calculée avec les variances *non corrigées* $s^2_1, s^2_2$ <span class="pp">|</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\nu_S = n_1 + n_2 -2$$ <span class="pp">|</span> Degrés de liberté pour le test $t$ de Student <span class="pp">|</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Test $t$ de Welch(variances inégales)** <span class="pp">|</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^{*2}_{1}}{n_1} + \frac{s^{*2}_{2}}{n_2}}}$$ <span class="pp">|</span> Statistique $t$ de Welch calculée avec les variances corrigées $s^{*2}_1, s^{*2}_2$ <span class="pp">|</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\nu_W = \frac{\left( \frac{s_1^{*2}}{n_1} + \frac{s_2^{*2}}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{s_1^{*2}}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{s_2^{*2}}{n_2} \right)^2}$$ | Degrés de liberté pour le test $t$ de Welch, calculés d'après les estimateurs non-biaisés de la variance des populations $s_1^{*2}$ et $s_2^{*2}$ <span class="pp">|</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^2_{1}}{n_1 - 1} + \frac{s^2_{2}}{n_2 - 1}}}$$ <span class="pp">|</span> Statistique $t$ de Welch calculée avec les variances *non corrigées* $s^2_1, s^2_2$ <span class="pp">|</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\nu_W = \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}$$ <span class="pp">|</span> Degrés de liberté pour le test $t$ de Welch, calculés d'après les variances d'échantillons *non-corrigées* $s_1^2$ et $s_2^2$ <span class="pp">|</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Test $t$ de Student pour échantillons appariés** <span class="pp">|</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$\bar{d} = \sum_{i=1}^{n} d_i \quad d_i = x_{2i} - x_{1i}$$ <span class="pp">|</span> Moyenne des différences individuelles pour des échantillons appariés <span class="pp">|</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$s_{d}^{*2} = \frac{1}{n-1} \sum_{i=1}^n (d_i - \bar{d})^2$$ <span class="pp">|</span> Variance des différences individuelles pour des échantillons appariés <span class="pp">|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $$t_p = \frac{\bar{d}}{\sqrt{s_d^{*2}/n}}$$ <span class="pp">|</span> Statistique $t$ de Student pour des échantillons appariés <span class="pp">|</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
