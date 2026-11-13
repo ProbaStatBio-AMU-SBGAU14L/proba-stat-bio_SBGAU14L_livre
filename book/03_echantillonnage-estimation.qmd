@@ -18,7 +18,7 @@ Voici quelques exemples de populations illustratives de la recherche en biologie
 - les saupes de la baie de Marseille ;
 - les sangliers des Calanques.
 
-Pour chaque variable étudiée, on peut également considére la **population dzs valeurs** que cette variable prendrait sur l'ensemble des unités statistiques, par exemple :
+Pour chaque variable étudiée, on peut également considérer la **population des valeurs** que cette variable prendrait sur l'ensemble des unités statistiques, par exemple :
 - le statut infecté ou non de chaque individu ;
 - la concentration d'hémoglobine dans le sang ;
 - la concentration d'un médicament dans le sang d'une souris de laboratoire. 
@@ -69,7 +69,7 @@ A titre d'exemple, dans une population de taille $N=1000$ le nombre possible d'�
 
 $$C = \binom{1000}{20} \frac{N!}{20! \times 998!} \approx 3.4 \times 10^{41}$$
 
-Il est donc impossile d'examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste. 
+Il est donc impossible d'examiner exhaustivement tous les échantillons possibles, même quand la population est de taille relativement modeste. 
 
 ## Distributions d'échantillonnage
 
@@ -90,7 +90,7 @@ N <- 10000 # Population size
 mu1 <- 150     # Mean of the normal distribution
 sigma1 <- 4     # Standard deviation of the normal distribution
 
-# Generate the population by ampling N numbers in a normal population of mean mu and standard deviation sigma
+# Generate the population by sampling N numbers in a normal population of mean mu and standard deviation sigma
 X <- rnorm(n = N, mean = mu1, sd = sigma1) ## Population values
 mu <- mean(X) ## population mean
 sigma2 <- mean((X - mu)^2) ## Population variance. We compute it directly because the R var() function does not return the population variance (with N as denominator) but an estimator of population variance  based on a sample (with N-1 as denominator)
@@ -124,7 +124,7 @@ grid() ## Add a grid
 
 Pour illustrer ce principe, nous générons une population artificielle de $N$ = `{r} N` individus. La @fig-population-histo représente la distribution des valeurs de la variable étudiée dans l'ensemble de cette population.
 
-Puisque toutes lesmesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne ($\mu$), sa variance ($\sigma^2$, et son écart-type ($\sigma$). 
+Puisque toutes les mesures de cette population simulées sont connues, nous pouvons calculer directement sa moyenne ($\mu$), sa variance ($\sigma^2$, et son écart-type ($\sigma$). 
 
 $$\mu = \frac{1}{N} \sum_{i=1}^N x_i = `{r} round(mu, digits = 2)`$$
 
@@ -165,7 +165,7 @@ Pour chaque taille d’échantillon $n$, nous répétons le tirage $R$ = `{r} 
 
 Pour la répétition d'indice $r$, nous calculons la moyenne :
 
-$$\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \cdots, R$$
+$$\bar{x}^{(r)} = \frac{1}{n}\sum_{i=1}^n x_i^{(r)}, \qquad r = 1, \ldots, R$$
 
 Dans cette équation, $x_i^{(r)}$ désigne la valeur du $i$ème individu de la $r$!ème répétition. Nous obtenons donc au total $R$ moyennes d'échantillon. L’ensemble de ces $R$ valeurs de $x^{(r)}$ forme une approximation empirique de la distribution d’échantillonnage de la moyenne.
 
@@ -281,13 +281,38 @@ par(mfrow = c(1, 1))
 
 ```
 
-Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$ = `{r} R` moyennes d'échantillons ($\overline{\bar{x}}$) correspond toujours à la moyenne de la population ($\mu$ = `{r} mu`). En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l'échantillon augmente. 
+
+
+#### Espérance de la moyenne d'échantillon
+
+Un premier constat est que la moyenne d'échantillon est remarquablement stable : pour toutes les tailles d'échantillon, la moyenne des $R$ = `{r} R` moyennes d'échantillons ($\overline{\bar{x}}$) correspond toujours à la moyenne de la population ($\mu$ = `{r} mu`).
+
+On peut démontrer que **l'espérance de la moyenne d'échantillon tend vers la moyenne de la population**. 
+
+$$\mathbb E[\bar{X}] = \mu$$
+
+#### Variance de la moyenne d'échantillon
+
+En comparant les histogrammes, on remarque que la dispersion des valeurs diminue progressivement quand la taille de l'échantillon augmente. 
 
 La @tbl-sampling-means-synthesis synthétise les statistiques (moyenne, variance, écart-type) calculées sur l'ensemble des `r R` moyennes d'échantillons, pour chacune des tailles d'échantillon que nous avons testées. Pour la comparaison, la première ligne rappelle les paramètres de la population. 
 
 
 Le tableau met en évidence une relation inverse entre la variance des moyennes d'échantillons ($s^2_{\bar{x}}$) et la taille de l'échantillon ($n$) : lorsque $n$ est doublé, cette variance est approximativement divisée par deux. 
 
+On peut démontrer que la relation entre la variance de la population et celle de la moyenne d'échantillon prend la forme suivante. 
+
+$\sigma^2_{\bar{X}} = \frac{\sigma^2}{n} \left( \frac{N - n}{N - 1} \right)$ pour une  population finie
+
+$\sigma^2_{\bar{X}} = \frac{\sigma^2}{n}$ pour une  population infinie
+
+#### L'erreur standard est l'écart-type de la moyenne d'échantillon
+
+L'écart-type de la variance de la moyenne d'échantillon est appelée **erreur standard**. Elle décroît en raison de la racine carrée de l’effectif d’échantillon.
+
+$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}  \sqrt{\frac{N - n}{N - 1})}$ pour une  population finie
+
+$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$ pour une  population infinie
 
 
 ```{r}
@@ -440,11 +465,58 @@ Les écarts-types de moyennes d'échantillon diminuent en raison de la racine ca
 ### Effet de la taille d'échantillon sur la distribution d'échantillonnage de la variance
 
 
-## Estimer les paramètres d'une population à partir d'un échantillon
+#### Espérance de la variance d’échantillon
 
-## Espérance
+L’espérance de la variance d’échantillon $\mathbb E[S^2]$ est inférieure à la variance de la population $\sigma^2$. 
+
+$$\mathbb E[S^2] =  \frac{(n-1)}{n} \sigma^2$$
+
+En moyenne, la variance d'échantillon sous-estime la variance de population d’un facteur $\frac{(n-1)}{n}$. 
 
 
-## L'erreur standard
+## Estimation des paramètres d'une population à partir d'un échantillon
+
+Les simulations ci-dessus nous ont montré de façon graphique plusieurs propriétés de la distribution des moyennes et des variances d'un grand nombre d'échantillons prélevés dans une population de très grande taille ou infinie. 
+
+L'**estimation** consiste à utiliser les statistiques calculées sur un échantillon pour approcher les valeurs inconnues des paramètres de la population dont il est issu. Les propriétés des distributions d'échantillonnage permettent notamment d'évaluer les biais et la précision de ces estimations.
+
+### Estimation de la moyenne de la population
+
+
+Nous avons vu ci-dessus que l'espérance de la moyenne d'échantillon égale la moyenne de la population ($\mathbb E[\bar{X}] = \mu$). Par conséquent, **la moyenne d'échantillon constitue un estimateur non biaisé de la moyenne de la population**. 
+
+$$\hat{\mu} = \bar{x}$$
+
+
+### Estimation non biaisée de la variance de la population
+
+Les simulations ci-dessus nous ont montré que la variance d'échantillon calculée avec un dénominateur $n$ est un estimateur biaisé de la variance de la population. Son espérance vaut $(n-1)/n$ fois la variance populationnelle : elle tend donc à la sous-estimer en moyenne. Pour éliminer ce biais, on utilise la correction de Bessel, qui consiste à remplacer le dénominateur $n$ par $n-1$.
+
+
+$$\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2$$
+
+L'astérisque indique qu'il s'agit de la variance d'échantillon *corrigée*. 
+
+On peut démontrer que la même valeur est obtenue par la formule de calcul simplifiée suivante, qui économise à peu près la moitié des d'opérations de calcul. 
+
+$$\hat{\sigma^2} = s^{*2} = \frac{n}{n-1}s^2  = \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right)$$
+### Estimation de l'écart-type de la population
+
+On utilise l'écart-type de cette variance corrigée comme estimateur de l'écart-type de la population. 
+
+$$\hat{\sigma} = s^* = \sqrt{s^{*2}} = \sqrt{ \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n-1} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }$$
+
+### Estimation de l'erreur standard de la moyenne
+
+Le même facteur correction s'applique à l'estimation de l'erreur standard, qui représente l'écart-type de la moyenne d'échantillon. 
+
+$$\hat{\sigma_{\bar{X}}} =  \frac{\hat{\sigma}}{\sqrt{n}}  = \frac{s^*}{\sqrt{n}} = \sqrt{ \frac{1}{n(n-1)} \sum_{i=1}^n (x_i - \bar{x})^2} = \sqrt{ \frac{1}{n(n-1)} \left( \sum_{i=1}^n x_i^2 - n \bar{x}^2 \right) }$$
+
+
+## Interprétation de l'erreur standard
+
+L'erreur standard de la moyenne quantifie la dispersion des moyennes que l'on obtiendrait en répétant le prélèvement d'échantillons de même taille dans la population. Elle mesure ainsi la précision de la moyenne d'échantillon comme estimateur de la moyenne de la population. Plus l'erreur standard est faible, plus les moyennes des différents échantillons tendent à être proches de la moyenne populationnelle.
+
+La relation entre l'écart-type et l'erreur standard a une conséquence pratique importante : puisque l'erreur standard est inversement proportionnelle à $\sqrt{n}$, il faut multiplier la taille d'échantillon par quatre pour diviser l'erreur standard par deux.
 
 ## Intervalles de confiance autour de la moyenne

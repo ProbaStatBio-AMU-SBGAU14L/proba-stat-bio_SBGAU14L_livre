@@ -3,7 +3,7 @@
 ```
 
 
-# Tests d’égalité des moyennes -- Analyse différentielle de l’abondance des protéines  {#sec-mean-equality-test}
+# Tests de comparaison des moyennes -- Analyse différentielle de l’abondance des protéines  {#sec-mean-equality-test}
 
 Dans ce chapitre, nous décrivons la façon de mettre un oeuvre le test d'égalité des moyennes de deux populations. Il s'agit sans aucun doute du test le plus fréquemment utilisé en analyse statistique. 
 
@@ -14,6 +14,25 @@ Nous tenterons d'aborder cette extension de l'analyse en nous appuyant sur des r
 Nous établirons systématiquement le lien entre les concepts théoriques, leur formulation mathématique, et l'intuition acquise au moyen de ces représentations graphiques. 
 
 ## Principe général du test d'hypothèse
+
+
+## Principe du test de comparaison de moyennes
+
+- On s'intéresse à deux populations, dénotées par les symboles  $a$ et $b$
+- On s'intéresse à une grandeur mesurable sur chaque individu
+- On désire savoir si les moyennes sont égales entre les deux populations
+- Cependant, il est impossible de prendre cette mesure sur chaque individu de chaque population, soit parce que les populations sont de trop grande taille, soit parce que la mesure est destructive
+- On prélève donc un **échantillon** de chaque population, seln on tirage aléatoire et simple
+- Sur base de paramètres calculés sur ces échantillons, on va tester l'hypothèse d'égalité des moyennes entre ces deux populations. 
+- Il s’agit d’une démarche d’**inférence** : on se base sur des paramètres de nos échantillons pour inférer des propriétés des populations dont ils sont issus. 
+
+ Paramètres
+ 
+- $\mu_a, \sigma_a$ : moyenne et écart-type de la population $a$
+- $\mu_b, \sigma_b$ : moyenne et écart-type de la population $b$
+- $\bar{x}_a, s_a$ : moyenne et écart-type de l'échantillon $a$
+- $\bar{x}_b, s_b$ : moyenne et écart-type de l'échantillon $b$
+
 
 ## Choix d’un test de comparaison de moyennes
 
@@ -42,9 +61,23 @@ include_mean_test_choice(
 ```
 
 
-
 ## Effet de taille : la statistique $t$ observée ($t_{\text{obs}}$)
 
+
+| | Student apparié | Student | Welch |
+|:---------:|:---------------:|:-------------------------:|:----------------------------:|
+|  $H_0$  | $\delta = 0$ | $\mu_1 = \mu_2$ | $\mu_1 = \mu_2$ |
+|  $H_1$  test bilatéral | $\delta \neq 0$ | $\mu_1 \neq \mu_2$ | $\mu_1 \neq \mu_2$ |
+|  $H_1$  test unilatéral à gauche | $\delta < 0$ | $\mu_1 < \mu_2$ | $\mu_1 < \mu_2$ |
+|  $H_1$  test unilatéral à droite | $\delta > 0$ | $\mu_1 > \mu_2$ | $\mu_1 > \mu_2$ |
+| Statistique $t_{\text{obs}}$ | $$\frac{\bar{d}}{s^*_d / \sqrt{n}}$$ | $$\frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\frac{(n_1 - 1)s_{1}^{*2} + (n_2 -1) s_{2}^{*2}}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ | $$\frac{\bar{x}_{1} ~-~ \bar{x}_{2}}{\sqrt{\frac {s^{*2}_{1}}{n_1} + \frac{s^{*2}_{2}}{n_2}}}$$ |
+| Degrés de liberté | $$\nu = n-1$$ | $$\nu = n_1 + n_2 - 2$$ |  $$$$   |
+
+: **Synthèse des statistiques à calculer pour les différentes modalités de tests paramétriques de comparaison entre deux moyennes**. {#tbl-synthese-stat-student}
+
+Attention, dans ces formules le symbole $s^{*}$ désigne l'écart-type d'échantillon  *corrigé*: 
+
+$$s^{*} = \sqrt{s^{*2}} = \sqrt{ \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2}$$
 
 ## La distribution de Student
 
