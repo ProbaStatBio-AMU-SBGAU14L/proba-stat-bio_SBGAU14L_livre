@@ -23,7 +23,7 @@
 | $$s^2_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$  $$s^2_{2} = \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ | Variances d'échantillons (*non-corrigées*)  |
 | **Estimation des paramètres de populations à partir des paramètres des échantillons** |
 | $$\hat{\mu}_1 =\bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad$$ $$\hat{\mu}_2 = \bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$$ | Moyennes d'échantillons, utilisées comme estimateurs non biaisés des moyennes des populations respectives |
-| $$\hat{\delta} = \Delta_\bar{x} = \bar{x}_2 - \bar{x}_1$$ | $d$ = différence entre les moyennes d'échantillons, utilisée comme estimateur de $\delta$. |
+| $$\hat{\delta} = \Delta_{\bar{x}} = \bar{x}_2 - \bar{x}_1$$ | $d$ = différence entre les moyennes d'échantillons, utilisée comme estimateur de $\delta$. |
 | $$s^{*2}_{1} = \frac{n_1}{n_1-1} s^2_1$$ $$s^{*2}_{2} = \frac{n_2}{n_2-1} s^2_2$$ | Variances d'échantillons corrigées (estimation de la variance de population) |
 | $$\hat{\sigma}^2_1 = s^{*2}_1 = \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$ $$\hat{\sigma}^2_2 = s^{*2}_{2} = \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ | Estimateurs corrigés (non biaisés) de la variance des populations respectives | 
 | $$\hat{\sigma}_1 = \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 = \sqrt{\hat{\sigma}^2_2}$$ | Estimateurs corrigés de l'écart-type des populations respectives |  
