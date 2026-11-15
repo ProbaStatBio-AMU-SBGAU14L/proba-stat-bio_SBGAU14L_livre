@@ -95,3 +95,33 @@ Certains paramètres sont basés sur les moments, d’autres sur les quantiles.
 
 ## Standardisation
 
+### Centrage
+
+Centrate autour d'une constante arbitraire
+
+$$x'_i = x_i - C$$
+La pratique la plus courante est de centrer sur la moyenne. A chaque valeur $x_i$ on soustrait la moyenne des observations. 
+
+$$x'_i = x_i - \bar{x}$$
+On obtient ainsi une variable aléatoire centrée autour de la moyenne. 
+
+$$X' = X = \bar{x}$$
+La moyenne de cette variable vaut 0, par définition. 
+
+Dans certains cas, on peut cependant utiliser une autre constante de centrage, par exemple la médiane, au cas où on suspecterait que la moyenne puisse être biaisée par des valeurs aberrantes. 
+
+$$x'_i = x_i - \tilde{x}$$
+
+Dans ce cas, c'est la médiane de la variable aléatoire centrée qui vaut 0, et sa moyenne peut être différente. 
+
+### Score $z$
+
+Le score $z$ (*z-score*) est le résultat d'une double transformation par un centrage suivi d'une  mise à l’échelle. Le résultat est un score standardisé, centré en 0 et d’écart-type 1 (par construction). 
+
+
+$$z_i = \frac{x_i -\bar{x}}{s}$$
+
+La variable aléatoire obtenue: 
+
+$$Z = X - \bar{x}$$
+
