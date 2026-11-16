@@ -4,10 +4,11 @@
 
 # Formules mathématiques {#sec-math-formula}
 
-## Tests de Student et de Welch
+## Tests paramétriques de comparaison de moyennes (Student et  Welch)
 
-- Les symboles grecs ($\mu$, $\sigma$) correspondent aux statistiques de population, les symboles romains ($\bar{x}$, $s$) aux statistiques d'échantillon.
-- L'accent circonflexe ($\hat{ }$) indique les estimateurs de paramètres de population calculés à partir de paramètres d'échantillons. 
+- Les symboles grecs ($\mu$, $\sigma$) correspondent aux paramètres de population, les symboles romains ($\bar{x}$, $s$) aux statistiques d'échantillon.
+
+- L'accent circonflexe sur un symbole grec ($\hat{\mu}, \hat{\sigma}, \hat{\delta}$) indique un estimateur de paramètre de population calculé à partir d'une statistique d'échantillon. 
 
 
 | Symboles et formules       | Description   |
@@ -17,7 +18,8 @@
 | $$\mu_{1},  \mu_{2}$$ | Moyennes respectives des populations 1 et 2. |
 | $$\sigma_{1}, \sigma_{2}$$ | Ecarts-types respectifs des populations 1 and 2. |
 | $$\delta = \mu_{2} ~-~ \mu_{1}$$ | Différence entre les moyennes des populations. |
-| **Paramètres des échantillons** |
+| | | |
+| **Statistiques d'échantillons** |
 | $$n_1, n_2$$ | Effectifs (nombre d'individus) des échantillons prélevés sur les populations 1 et 2. |
 | $$ \bar{x}_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} x_{1i} \quad$$ $$\bar{x}_{2} =  \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} x_{2i}$$ | Moyennes d'échantillons |
 | $$s^2_{1} = \frac{1}{n_1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$  $$s^2_{2} = \frac{1}{n_2}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ | Variances d'échantillons (*non-corrigées*)  |
@@ -27,22 +29,34 @@
 | $$s^{*2}_{1} = \frac{n_1}{n_1-1} s^2_1$$ $$s^{*2}_{2} = \frac{n_2}{n_2-1} s^2_2$$ | Variances d'échantillons corrigées, utilisées comme estimateurs sans biais de la variance des populations) |
 | $$\hat{\sigma}^2_1 = s^{*2}_1 = \frac{1}{n_1-1}\displaystyle\sum_{i=1}^{n_1} (x_{1i} - \bar{x}_1)^2 \quad$$ $$\hat{\sigma}^2_2 = s^{*2}_{2} = \frac{1}{n_2-1}\displaystyle\sum_{i=1}^{n_2} (x_{2i} - \bar{x}_2)^2$$ | Estimateurs corrigés (non biaisés) de la variance des populations respectives | 
 | $$\hat{\sigma}_1 = \sqrt{\hat{\sigma}^2_1} \; ; \; \hat{\sigma}_2 = \sqrt{\hat{\sigma}^2_2}$$ | Estimateurs des écarts-types des populations, obtenus à partir des variances corrigées. |  
-| $$\hat{\sigma}_p = \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}} = \sqrt{\frac{(n_1 -1) s_1^{*2} + (n_2 -1) s_2^{*2}}{n_1+n_2-2}}$$ | Estimation de l'écart-type commun (*pooled standard deviation*) des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). |
+| $$\hat{\sigma}_p = s^*_p = \sqrt{\frac{(n_1 -1) s_1^{*2} + (n_2 -1) s_2^{*2}}{n_1+n_2-2}}$$ | Estimation de l'écart-type commun (*pooled standard deviation*) des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). Formule basée sur les écarts-types corrigés $s^*_1, s^*_2$|
+| $$\hat{\sigma}_p = \sqrt{\frac{n_1 s_1^2 + n_2 s_2^2}{n_1+n_2-2}}$$ | Estimation de l'écart-type commun (*pooled standard deviation*) des deux populations, en supposant leurs variances égales (hypothèse de travail d'homoscédasticité). Formule basée sur les écarts-types *non-corrigés* |
 | $$\hat{\sigma}_\delta = \hat{\sigma}_p \sqrt{\left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}$$  | Erreur standard sur la différence entre moyennes, estimée d'après les variances d'échantillons, en supposant que les populations ont des variances égales. |
+| | | |
 | **Test $t$ de Student (variances égales)** |
+| $$t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{s^*_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$$ | Statistique $t$ de Student  calculée avec les variances corrigées $s^{*2}_1, s^{*2}_2$ |
+| | | |
 | $$t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{(n_1 -1) s_{1}^{*2} + (n_2 -1) s_{2}^{*2}}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ | Statistique $t$ de Student  calculée avec les variances corrigées $s^{*2}_1, s^{*2}_2$ |
+| | | |
 | $$t_{S} = \frac{\hat{\delta}}{\hat{\sigma}_\delta} =  \frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac{n_1 s_{1}^2 + n_2 s_{2}^2}{n_1+n_2-2} \left(\frac{1}{n_1}+ \frac{1}{n_2}\right)}}$$ | Statistique $t$ de Student  calculée avec les variances *non corrigées* $s^2_1, s^2_2$ |
+| | | |
 | $$\nu_S = n_1 + n_2 -2$$ | Degrés de liberté pour le test $t$ de Student |
+| | | |
 | **Test $t$ de Welch(variances inégales)** |
 | $$t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^{*2}_{1}}{n_1} + \frac{s^{*2}_{2}}{n_2}}}$$ | Statistique $t$ de Welch calculée avec les variances corrigées $s^{*2}_1, s^{*2}_2$ |
+| | | |
 | $$\nu_W = \frac{\left( \frac{s_1^{*2}}{n_1} + \frac{s_2^{*2}}{n_2}\right)^2}{\frac{1}{n_1-1}  \left( \frac{s_1^{*2}}{n_1} \right)^2 + \frac{1}{n_2-1} \left( \frac{s_2^{*2}}{n_2} \right)^2}$$ | Degrés de liberté pour le test $t$ de Welch, calculés d'après les estimateurs non-biaisés de la variance des populations $s_1^{*2}$ et $s_2^{*2}$ |
+| | | |
 | $$t_{W}=\frac{\bar{x}_{2} - \bar{x}_{1}}{\sqrt{\frac {s^2_{1}}{n_1 - 1} + \frac{s^2_{2}}{n_2 - 1}}}$$ | Statistique $t$ de Welch calculée avec les variances *non corrigées* $s^2_1, s^2_2$ |
+| | | |
 | $$\nu_W = \frac{\left( \frac{s_1^2}{n_1-1} + \frac{s_2^2}{n_2-1}\right)^2}{\frac{s_1^4}{(n_1-1)^3} + \frac{s_2^4}{(n_2-1)^3}}$$ | Degrés de liberté pour le test $t$ de Welch, calculés d'après les variances d'échantillons *non-corrigées* $s_1^2$ et $s_2^2$ |
+| | | |
 | **Test $t$ de Student pour échantillons appariés** |
 | $$\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_i \quad d_i = x_{2i} - x_{1i}$$ | Moyenne des différences individuelles pour des échantillons appariés |
 | $$s_{d}^{*2} = \frac{1}{n-1} \sum_{i=1}^n (d_i - \bar{d})^2$$ | Variance des différences individuelles pour des échantillons appariés |
 | $$t_p = \frac{\bar{d}}{\sqrt{s_d^{*2}/n}}$$ | Statistique $t$ de Student pour des échantillons appariés |
 | $\nu_p = n - 1$ | Degrés de liberté pour le test $t$ de Student avec échantillons appariés |
+
 
 
 
