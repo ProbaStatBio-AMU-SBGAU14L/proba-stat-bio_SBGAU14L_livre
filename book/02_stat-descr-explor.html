@@ -310,7 +310,11 @@ window.Quarto = {
   <li><a href="#paramètres-dacuité-voussure" id="toc-paramètres-dacuité-voussure" class="nav-link" data-scroll-target="#paramètres-dacuité-voussure"><span class="header-section-number">2.2.4</span> Paramètres d’acuité (voussure)</a></li>
   </ul></li>
   <li><a href="#filtrage-des-données-trop-incomplètes" id="toc-filtrage-des-données-trop-incomplètes" class="nav-link" data-scroll-target="#filtrage-des-données-trop-incomplètes"><span class="header-section-number">2.3</span> Filtrage des données trop incomplètes</a></li>
-  <li><a href="#standardisation" id="toc-standardisation" class="nav-link" data-scroll-target="#standardisation"><span class="header-section-number">2.4</span> Standardisation</a></li>
+  <li><a href="#standardisation" id="toc-standardisation" class="nav-link" data-scroll-target="#standardisation"><span class="header-section-number">2.4</span> Standardisation</a>
+  <ul class="collapse">
+  <li><a href="#centrage" id="toc-centrage" class="nav-link" data-scroll-target="#centrage"><span class="header-section-number">2.4.1</span> Centrage</a></li>
+  <li><a href="#score-z" id="toc-score-z" class="nav-link" data-scroll-target="#score-z"><span class="header-section-number">2.4.2</span> Score <span class="math inline">\(z\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -420,6 +424,22 @@ Figure&nbsp;2.1: <strong>Abstract schématique de Canale et al.&nbsp;(2023)</str
 </section>
 <section id="standardisation" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="standardisation"><span class="header-section-number">2.4</span> Standardisation</h2>
+<section id="centrage" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="centrage"><span class="header-section-number">2.4.1</span> Centrage</h3>
+<p>Centrate autour d’une constante arbitraire</p>
+<p><span class="math display">\[x'_i = x_i - C\]</span> La pratique la plus courante est de centrer sur la moyenne. A chaque valeur <span class="math inline">\(x_i\)</span> on soustrait la moyenne des observations.</p>
+<p><span class="math display">\[x'_i = x_i - \bar{x}\]</span> On obtient ainsi une variable aléatoire centrée autour de la moyenne.</p>
+<p><span class="math display">\[X' = X = \bar{x}\]</span> La moyenne de cette variable vaut 0, par définition.</p>
+<p>Dans certains cas, on peut cependant utiliser une autre constante de centrage, par exemple la médiane, au cas où on suspecterait que la moyenne puisse être biaisée par des valeurs aberrantes.</p>
+<p><span class="math display">\[x'_i = x_i - \tilde{x}\]</span></p>
+<p>Dans ce cas, c’est la médiane de la variable aléatoire centrée qui vaut 0, et sa moyenne peut être différente.</p>
+</section>
+<section id="score-z" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="score-z"><span class="header-section-number">2.4.2</span> Score <span class="math inline">\(z\)</span></h3>
+<p>Le score <span class="math inline">\(z\)</span> (<em>z-score</em>) est le résultat d’une double transformation par un centrage suivi d’une mise à l’échelle. Le résultat est un score standardisé, centré en 0 et d’écart-type 1 (par construction).</p>
+<p><span class="math display">\[z_i = \frac{x_i -\bar{x}}{s}\]</span></p>
+<p>La variable aléatoire obtenue:</p>
+<p><span class="math display">\[Z = X - \bar{x}\]</span></p>
 
 
 <!-- -->
@@ -429,6 +449,7 @@ Figure&nbsp;2.1: <strong>Abstract schématique de Canale et al.&nbsp;(2023)</str
 Canale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. <span>«&nbsp;Proteomics of Immune Cells from Liver Tumors Reveals Immunotherapy Targets&nbsp;»</span>. <em>Cell Genomics</em> 3 (6): 100331. <a href="https://doi.org/10.1016/j.xgen.2023.100331">https://doi.org/10.1016/j.xgen.2023.100331</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1067,6 +1088,36 @@ Canale, Fernando P., Julia Neumann, Janusz Von Renesse, et al. 2023. <span>«&nb
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filtrage des données trop incomplètes</span></span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Standardisation</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Centrage</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Centrate autour d'une constante arbitraire</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>$$x'_i = x_i - C$$</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>La pratique la plus courante est de centrer sur la moyenne. A chaque valeur $x_i$ on soustrait la moyenne des observations. </span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$x'_i = x_i - \bar{x}$$</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>On obtient ainsi une variable aléatoire centrée autour de la moyenne. </span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>$$X' = X = \bar{x}$$</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>La moyenne de cette variable vaut 0, par définition. </span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Dans certains cas, on peut cependant utiliser une autre constante de centrage, par exemple la médiane, au cas où on suspecterait que la moyenne puisse être biaisée par des valeurs aberrantes. </span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>$$x'_i = x_i - \tilde{x}$$</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>Dans ce cas, c'est la médiane de la variable aléatoire centrée qui vaut 0, et sa moyenne peut être différente. </span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### Score $z$</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Le score $z$ (*z-score*) est le résultat d'une double transformation par un centrage suivi d'une  mise à l’échelle. Le résultat est un score standardisé, centré en 0 et d’écart-type 1 (par construction). </span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>$$z_i = \frac{x_i -\bar{x}}{s}$$</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>La variable aléatoire obtenue: </span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>$$Z = X - \bar{x}$$</span>
 </code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
