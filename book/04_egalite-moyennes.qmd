@@ -15,6 +15,29 @@ Nous établirons systématiquement le lien entre les concepts théoriques, leur 
 
 ## Principe général du test d'hypothèse
 
+On s'intéresse à deux populations, dont on peut caractériser une propriété particulière par une variable aléatoire quantitative qu'il ne nous est pas possible de mesurer de façon exhaustive:  
+
+- $X_1$ pour la première population
+- $X_2$ pour la seconde population
+
+Chacune de ces variables aléatoires est caractérisées par des paramètres de population, qui sont et resteront donc inconnus. 
+
+- Moyenne et écart-type de la première population : $$\mu_1, \sigma_1$$
+- Moyenne et écart-type de la deuxième population : $$\mu_2, \sigma_2$$
+
+Nous disposons, pour chacune de ces populations, d’un échantillon, sur lequel nous pouvons mesurer des statistiques descriptives. 
+
+- Effectifs (taille) des échantillons : $n_1, n_2$
+- Moyennes des échantillons : $$\bar{x}_1, \bar{x_2}$$
+- Écarts-types non-corrigés des échantillons : $s_1, s_2$
+- Écarts-types corrigés des échantillons : $s^*_1, s^*_2$
+
+On désire savoir s’il existe une différence significative entre les moyennes des deux populations. Comme ces moyennes nous sont inaccessibles, on est ramenés à se baser sur les statistiques des deux échantillons pour tester l’égalité entre les moyennes de la population. Il s’agit d’une démarche d’***inférence***. On tire des conclusions générales sur base d’observations particulières. 
+
+
+
+
+
 
 ## Principe du test de comparaison de moyennes
 
