@@ -80,3 +80,5 @@ renv/local/
 _freeze/
 **/*.quarto_ipynb
 
+## ignore rendered files
+rendered
