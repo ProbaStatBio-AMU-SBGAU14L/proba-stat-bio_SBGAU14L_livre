@@ -1,9 +1,0 @@
-/.quarto/
-**/*.quarto_ipynb
-_book
-*_files
-*.aux
-*.log
-*.toc
-*.tex
-site_libs
